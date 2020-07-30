@@ -5,24 +5,24 @@
     <h1 slot="header">Hamburgeria</h1>
     <p slot="content">MANGIA BELLO DE NONNA</p>
   </card>
-  <card redirect='/Cocktails' data-image="https://ksr-ugc.imgix.net/assets/012/248/850/e73e5e4b4ba0d0066a191423cd190475_original.png?w=1536&h=864&fit=fill&bg=000000&v=1463746322&auto=format&q=92&s=1d99d3869bbe7e71ad33fa2ba73ccf81">
+  <card redirect='Cocktails' data-image="https://ksr-ugc.imgix.net/assets/012/248/850/e73e5e4b4ba0d0066a191423cd190475_original.png?w=1536&h=864&fit=fill&bg=000000&v=1463746322&auto=format&q=92&s=1d99d3869bbe7e71ad33fa2ba73ccf81">
     <h1 slot="header">Cocktails</h1>
     <p slot="content">Letteralmente cazzo code
     </p>
   </card>
-  <card redirect='/Fumetteria' data-image="https://th.bing.com/th/id/OIP.WJajujc6ZajXLNo2MchD9wHaLK?pid=Api&rs=1">
+  <card redirect='Fumetteria' data-image="https://th.bing.com/th/id/OIP.WJajujc6ZajXLNo2MchD9wHaLK?pid=Api&rs=1">
     <h1 slot="header">Fumetteria</h1>
     <p slot="content">A ma quindi dragon ball?</p>
   </card>
-  <card redirect='/SalaLan' data-image="https://cdn141.picsart.com/265414414012202.jpg">
+  <card redirect='SalaLan' data-image="https://cdn141.picsart.com/265414414012202.jpg">
     <h1 slot="header">Sala Lan</h1>
     <p slot="content">2k de pc per giocare a fornite MORTACCIVOSTRA!!</p>
   </card>
-  <card redirect='/Eventi' data-image="https://i.ytimg.com/vi/3jZ9INUXVP0/maxresdefault.jpg">
+  <card redirect='Eventi' data-image="https://i.ytimg.com/vi/3jZ9INUXVP0/maxresdefault.jpg">
     <h1 slot="header">Eventi</h1>
     <p slot="content">Ma fate altro oltre il fottuto Karaoke?</p>
   </card>
-  <card redirect='/Contattaci' data-image="https://th.bing.com/th/id/OIP.BID2wtLq3BNt8tasLGcs3QHaHa?pid=Api&rs=1">
+  <card redirect='Contattaci' data-image="https://th.bing.com/th/id/OIP.BID2wtLq3BNt8tasLGcs3QHaHa?pid=Api&rs=1">
     <h1 slot="header">Contattaci</h1>
     <p slot="content">Se volete il numero di Flavio state attente.</p>
   </card>
