@@ -1,5 +1,8 @@
 <template>
+<div>
+<HeaderContainer/>
    <FooterElement/>
+   </div>
 </template>
 <script>
 import FooterElement from '../components/Footer.vue'

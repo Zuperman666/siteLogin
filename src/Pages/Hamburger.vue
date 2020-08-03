@@ -1,6 +1,7 @@
 <template>
     <div>
-        <p class="TextNameTitle"><a>Hamburgeria Login</a></p>
+      <HeaderContainer/>
+        <p class="TextNameTitle" ><a>Hamburgeria Login</a></p>
         <div class="ImageMenùContainer">
             <div class="ImagineMenù"> </div>
         </div>

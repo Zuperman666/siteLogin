@@ -1,15 +1,14 @@
 <template>
 <div>
-   <OneUnderAnother/>
+   <HeaderContainer/>
    <FooterElement/>
    </div>
 </template>
 <script>
 import FooterElement from '../components/Footer.vue'
-import OneUnderAnother from '../components/OneUnderAnother.vue'
 export default {
    name: 'Cocktails',  
-   components:{FooterElement,OneUnderAnother},
+   components:{FooterElement},
 }
 </script>
 <style lang="scss">

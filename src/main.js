@@ -13,6 +13,11 @@ import Contattaci from './Pages/Contattaci.vue';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import vuetify from '@/plugins/vuetify'
 import Separator from './components/Separator.vue' 
+import VueYouTubeEmbed from 'vue-youtube-embed'
+import HeaderContainer from './components/Header.vue'
+
+
+Vue.use(VueYouTubeEmbed)
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
@@ -50,6 +55,7 @@ export const router = new VueRouter({
 // keep it simple for now.
 Vue.component('card', card)
 Vue.component('separator', Separator)
+Vue.component('HeaderContainer', HeaderContainer)
 
 new Vue({
   vuetify,
