@@ -30,8 +30,6 @@ Vue.config.productionTip = false;
 Vue.config.devtools = true;
 Vue.use(VueRouter);
 
-const Foo = { template: '<div>foo</div>' }
-
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
@@ -41,7 +39,6 @@ export const router = new VueRouter({
   mode: 'history',
   routes:[
   { path: '/',name:"Home",component: HelloWorld},
-  {path: '/Foo',name:"Home",component: Foo},
   {path: '/Hamburgeria',name:"Hamburgeria",component: Hamburgeria},
   {path: '/Cocktails',name:"Cocktails",component: Cocktails},
   {path: '/Fumetteria',name:"Fumetteria",component: Fumetteria},

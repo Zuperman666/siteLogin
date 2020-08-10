@@ -1,5 +1,7 @@
 <template>
 <div>
+  <div class="testacaso">
+  <HeaderContainer/>
 <div class="containerCard">
   <card redirect='Hamburgeria' data-image="https://th.bing.com/th/id/OIP.vjk47l2c4iuJR0NRH8ZjTgAAAA?pid=Api&rs=1"  >
     <h1 slot="header">Hamburgeria</h1>
@@ -28,6 +30,7 @@
   </card>
   
 </div>
+</div>
 <FooterElement></FooterElement> 
 </div>
 
@@ -45,7 +48,10 @@ export default {
 <style lang="scss">
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
+.testacaso{
+  background-image:url("http://risl.net/storage/2019/04/6.png");
+  background-size: contain;
+}
 .title {
   font-family: "Raleway";
   font-size: 24px;

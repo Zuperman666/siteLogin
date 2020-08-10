@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="HeaderContainer" :class="isOpen ? 'active': '' ">
-      <span class="CloseButton" v-on:click="closeModal">CHIUDI</span>
+    <div
+      class="HeaderContainer"
+      :class="[isOpen ? 'active': '' ,startAnimation ? 'activeAnimation':'',closeAnimation ? 'closeAnimation':'']"
+    >
       <div class="listContainer" :class="isOpen ? 'active': '' ">
         <div
           class="Hamburgeria"
@@ -30,14 +32,25 @@
         >Eventi</div>
       </div>
       <div class="hamburgerMenù">
-        <span
+        <div
           class="IconHamburgerMenù"
-          :class="isOpen ? 'active': '' "
+          :class="[iconActive ? 'activeIcon':'' ]"
           v-on:click="openModal()"
-        >HOME</span>
+          id="burger"
+        >
+          <div class="bun top"></div>
+          <div class="filling"></div>
+          <div class="bun bottom"></div>
+        </div>
       </div>
-      <div class="MainHeader">
-        <span class="IconHome" v-on:click="greet('/')">HOME</span>
+       <div class="iconLogo" :class="[iconLogo ? 'activeIcon':'' ]">
+        <div
+          class="logo" 
+        >
+        </div>
+      </div>
+      <div class="MainHeader" :class="isScrolled ? 'scrolled': '' ">
+        <span class="IconHome" v-on:click="greet('/')"></span>
         <div
           class="Hamburgeria"
           :class="currentPath === '/Hamburgeria' ? 'active':''"
@@ -53,6 +66,11 @@
           :class="currentPath === '/Cocktails' ? 'active':''"
           v-on:click="greet('/Cocktails')"
         >Cocktails</div>
+        <div
+          class="SalaLan"
+          :class="currentPath === '/SalaLan' ? 'active':''"
+          v-on:click="greet('/SalaLan')"
+        >SalaLan</div>
         <div
           class="Contatti"
           :class="currentPath === '/Contattaci' ? 'active':''"
@@ -75,31 +93,71 @@ export default {
     return {
       currentPath: this.$route.path,
       isOpen: false,
+      isScrolled: false,
+      startAnimation: false,
+      closeAnimation: false,
+      iconActive:false,
+       iconLogo:false,
     };
   },
+
   methods: {
     greet: function (value) {
       router.push(value);
     },
     openModal: function () {
-      this.isOpen = true;
+      let v = this;
+      if (this.isOpen) {
+        
+        this.iconActive = false;
+        this.closeAnimation = true;
+        setTimeout(function () {
+          v.isOpen = false;
+          v.closeAnimation = false;
+          v.iconLogo = false;
+        }, 1000); 
+      } else {
+        this.iconLogo = true;
+         this.iconActive = true;
+        this.startAnimation = true;
+        setTimeout(function () {
+          v.isOpen = true;
+          v.startAnimation = false;
+        }, 700);
+      }
     },
-    closeModal: function () {
-      this.isOpen = false;
+    handleScroll: function () {
+      this.isScrolled = window.scrollY > 122;
     },
+  },
+  created: function () {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed: function () {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 <style lang="scss" scoped>
 .HeaderContainer {
   width: 100%;
-  height: 50px;
+  height: 127px;
   background-color: transparent;
+  position: fixed;
+  z-index: 999;
 }
 .hamburgerMenù {
   display: none;
 }
+.IconHamburgerMenù {
+  width: 90px;
+  height: 60px;
+  background-size: contain;
+  top: 25px;
+  cursor: pointer;
+}
 .MainHeader {
+  font-size: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -109,7 +167,7 @@ export default {
 
 .MainHeader span {
   position: absolute;
-  left: 20px;
+  left: 75px;
 }
 .listContainer.active {
   width: 60%;
@@ -126,55 +184,224 @@ export default {
 }
 .MainHeader div {
   margin-right: 5%;
+  cursor: pointer;
 }
-
+.MainHeader.scrolled {
+  background-color: rgba(60, 60, 60, 0.5);
+}
 .MainHeader .active {
-  color: blue;
-  pointer-events: none;
-  cursor:not-allowed;
-}
-
-.IconHamburgerMenù.active {
-  display: none;
-}
-.listContainer div {
-  margin-top: 30px;
-}
-.listContainer .active {
-  color: blue;
+  text-decoration: underline;
   pointer-events: none;
   cursor: not-allowed;
 }
+.IconHome {
+  background-image: url("../assets/login_gaming_icon.png");
+  width: 150px;
+  height: 90px;
+  background-size: contain;
+  top: 25px;
+  cursor: pointer;
+}
 
+.iconHome :hover {
+  background-image: url("../assets/login_gaming_icon.png"); //da illuminare
+}
+
+.listContainer div {
+  margin-top: 30px;
+  cursor: pointer;
+}
+.listContainer :nth-child(1) {
+  margin-top: 100px;
+}
+.listContainer .active {
+  pointer-events: none;
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+.iconLogo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    margin-right: 5%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    right:20px;
+}
+.iconLogo.activeIcon{
+  display: none;
+}
+#burger {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  %burgersection {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    height: 10%;
+    width: 70%;
+    transform-origin: 50% 50%;
+    transition: top 0.4s ease 0.4s, transform 0.4s ease 0.4s;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      height: 40%;
+      position: absolute;
+      top: 50%;
+      transform: translate(0%, -45%);
+
+    }
+    &:before {
+      left: 0;
+      width: 100%;
+      border-radius: 10px 0px 0px 10px;
+    }
+  }
+
+  .bun {
+    @extend %burgersection;
+    &.top {
+      top: 25%;
+      box-shadow: #f00 0px 0px 10px 1px;
+      background: #f00;
+    }
+    &.bottom {
+      top: 75%;
+      box-shadow: blue 0px 0px 10px 1px;
+      background: blue;
+    }
+  }
+  .filling {
+    @extend %burgersection;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    animation: green-ls-out 0.8s ease forwards;
+    box-shadow: white 0px 0px 10px 1px;
+    background: white;
+  }
+
+  &.activeIcon {
+    .bun {
+      border-radius: 3px;
+      top: 50%;
+      transition: top 0.4s ease, transform 0.4s ease;
+      &.top {
+        transform: translate(-50%, -50%) rotate(-225deg);
+      }
+      &.bottom {
+        transform: translate(-50%, -50%) rotate(405deg);
+      }
+    }
+    .filling {
+      transform: translate(-50%, -50%) rotate(-90deg);
+      animation: green-ls-in 0.8s ease forwards;
+    }
+  }
+}
+
+@keyframes green-ls-in {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-90deg) translate(200%, 0%);
+  }
+}
+
+@keyframes green-ls-out {
+  0% {
+    transform: translate(-50%, -200%) rotate(-90deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes appear {
+    0% {
+      width: 100%;
+      height: 100px;
+  }
+  50% {
+      width: 80%;
+      height: 100px;
+  }
+  75%{
+     width: 80%;
+     height: 100%;
+  }
+
+  100% {
+     width: 80%;
+     height: 100%;
+  }
+}
 .HeaderContainer.active {
-  background-color: black;
+  background-color: rgba(27, 25, 25, 1);
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 80%;
   z-index: 100;
   height: 100vh;
   opacity: 0.8;
-  .CloseButton {
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 16px;
-    display: block;
+  
+}
+
+@media only screen and (max-width: 790px) {
+  .HeaderContainer {
+    overflow: hidden;
   }
+  .logo {
+  background-image: url("../assets/login_gaming_icon.png");
+  width: 120px;
+  height: 90px;
+  background-size: contain;
+  cursor: not-allowed; 
 }
-.CloseButton {
-  display: none;
-}
-@media only screen and (max-width: 600px) {
+  .HeaderContainer {
+    height: 100px;
+    background-color: rgba(27, 25, 25, 0.8);
+  }
   .hamburgerMenù {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: top;
     margin-left: 5%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 20px;
   }
+  .HeaderContainer.activeAnimation{
+    animation: appear 1s;
+  }
+  .HeaderContainer.closeAnimation{
+    animation: appear 1s reverse;
+  }
+  
   .MainHeader {
     display: none;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .MainHeader {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .MainHeader {
+    font-size: 11px;
   }
 }
 </style>
