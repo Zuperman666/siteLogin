@@ -15,6 +15,7 @@ import vuetify from '@/plugins/vuetify'
 import Separator from './components/Separator.vue' 
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
+import loader from './components/loader.vue'
 
 
 Vue.use(VueYouTubeEmbed)
@@ -53,6 +54,7 @@ export const router = new VueRouter({
 Vue.component('card', card)
 Vue.component('separator', Separator)
 Vue.component('HeaderContainer', HeaderContainer)
+Vue.component('loader', loader)
 
 new Vue({
   vuetify,
