@@ -16,6 +16,9 @@ import Separator from './components/Separator.vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
 import loader from './components/loader.vue'
+import VueInstagram from 'vue-instagram'
+ 
+Vue.use(VueInstagram)
 
 
 Vue.use(VueYouTubeEmbed)

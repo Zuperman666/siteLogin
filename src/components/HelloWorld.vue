@@ -53,19 +53,44 @@
     </div>
     <div class="separatorElement"></div>
     <div class="SalaLanMain">
-      <div class="textRistoro">
+      <div class="textRistoroSala">
         SALA LAN -TORNEI EVENTI <br/>
         E TANTO ALTRO...
         <p>Giochi con un pc o con una console?Qui al Login Abbiamo pensato proprio a tutti !</p>
       </div>
-      <div class="leftImageMain"></div>
-      <div class="rightImageMain"></div>
+      <div class="leftImageMain">
+        <div class="fotoLeftImageMain"></div>
+      </div>
+      <div class="rightImageMain">
+        <div class="TextTitleSalaLan">
+          Postazioni Gaming 
+          <p>Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming</P>
+        </div>
+        <div class="TextTitleSalaLan">
+          Tornei
+          <p>Sfida I tuoi avversari e scala tutte le classifiche</p>
+        </div>
+         <div class="TextTitleSalaLan">
+           Partite Locali
+           <p>Gioca con di tuoi amici con Pc o con Console</p>
+          </div>
+        <div class="TextTitleSalaLan">
+          Sala Streaming
+          <p>Sei uno streamer? Abbiamo una postazione apposta per te </p>
+        </div>
+      </div>
+    </div>
+    <div class="instagramMain">
+         <div class="fotoInstagram" v-for="dynamicContentHtml in dynamicContentHtml"
+        :key="dynamicContentHtml.node.id"
+         :style="{ 'background': 'url(' + dynamicContentHtml.node.display_url + ')' }"></div>
     </div>
     <FooterElement></FooterElement>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import FooterElement from "../components/Footer.vue";
 import { router } from "../main.js";
 export default {
@@ -88,8 +113,17 @@ export default {
     window.setInterval(() => {
       this.rightArrow();
     }, 6000);
+    const a = async() => {
+  // fetch data from a url endpoint    ?access_token=...&count=250
+    const response = await axios.get(' https://www.instagram.com/log_in_gaming/?__a=1')
+    return response
+    }
+    a().then(value => {
+       this.dynamicContentHtml = value.data.graphql.user.edge_owner_to_timeline_media.edges
+      })
   },
   data: () => ({
+    dynamicContentHtml:'',
     i: 0,
     items: [
       {
@@ -164,13 +198,40 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 61px;
   background-size: cover;
 }
+.fotoInstagram{
+  height: 300px;
+  width: 300px;
+  margin-right: 1px;
+  background-size: contain !important;
+}
+.TextTitleSalaLan{
+  color:white;
+  font-size: 20px;
+  margin-top:20px;
+  p{
+    margin-top:10px;
+    color:grey;
+    font-size: 12px;
+  }
+}
 .marginTextUnderCaru {
   color: white;
   margin-top: 120px;
 }
 .SalaLanMain{
+  height: 600px;
+  width: 100%;
+  display: flex;
+    justify-content: center;
+}
+.instagramMain{
   height: 700px;
   width: 100%;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 .centerTextMain {
   position: absolute;
@@ -189,11 +250,17 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   height: 100%;
   width:50%;
   display: flex;
+  margin-top:230px;
 }
 .rightImageMain{
   height: 100%;
   width:50%;
   display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top:230px;
+  text-align: left;
+  margin-left: 20%;
 }
 .imageCarousell {
   width: 700px;
@@ -205,6 +272,12 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 p {
   line-height: 1.5em;
+}
+.fotoLeftImageMain{
+  background:red;
+  height: 300px;
+  width: 80%;
+  margin-left:20%;
 }
 .Ristoro {
   height: 700px;
@@ -232,6 +305,16 @@ p {
   }
 }
 .textRistoro {
+  margin-top: 50px;
+  color: white;
+  font-size: 40px;
+  p {
+    font-size: 15px;
+    color: gray;
+  }
+}
+.textRistoroSala{
+  position: absolute;
   margin-top: 50px;
   color: white;
   font-size: 40px;
@@ -417,6 +500,7 @@ video {
   .bottoneTestoMain {
     margin-top: 20px;
   }
+
   .rightSim {
     height: 50%;
     width: 100%;
