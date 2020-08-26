@@ -81,9 +81,15 @@
       </div>
     </div>
     <div class="instagramMain">
-         <div class="fotoInstagram" v-for="dynamicContentHtml in dynamicContentHtml"
+       <div class="textInstagram">
+        #LOGIN_IN_GAMING
+        <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
+      </div>      
+    <div class="containerInstagram">
+    <div  v-on:click="clickMethod(dynamicContentHtml.node)" class="fotoInstagram" v-for="dynamicContentHtml in dynamicContentHtml"
         :key="dynamicContentHtml.node.id"
          :style="{ 'background': 'url(' + dynamicContentHtml.node.display_url + ')' }"></div>
+    </div>
     </div>
     <FooterElement></FooterElement>
   </div>
@@ -108,6 +114,9 @@ export default {
       if (this.i === 3) return (this.i = 0);
       return this.i++;
     },
+    clickMethod:function (value) {
+      window.open("https://www.instagram.com/p/"+ value.shortcode,'blank')
+    }
   },
   mounted: function () {
     window.setInterval(() => {
@@ -202,7 +211,12 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   height: 300px;
   width: 300px;
   margin-right: 1px;
+  margin-top: 1px;
   background-size: contain !important;
+   cursor: pointer;
+   &:hover{
+   opacity: 0.9;
+  }
 }
 .TextTitleSalaLan{
   color:white;
@@ -225,7 +239,8 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     justify-content: center;
 }
 .instagramMain{
-  height: 700px;
+  height: 100%;
+  min-height: 450px;
   width: 100%;
   background: white;
   display: flex;
@@ -261,6 +276,17 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   margin-top:230px;
   text-align: left;
   margin-left: 20%;
+}
+.textInstagram{
+  margin-top:30px;
+  color:black;
+  font-size: 30px;
+  p{
+    margin-top:10px;
+    font-size: 15px;
+    color: grey;
+    margin-bottom:10px;
+  }
 }
 .imageCarousell {
   width: 700px;
@@ -434,7 +460,14 @@ video {
   transition: 1s $returnEasing, opacity 5s 1s $returnEasing;
   pointer-events: none;
 }
-
+.containerInstagram{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  }
 .card-info {
   padding: 20px;
   position: absolute;
@@ -496,17 +529,19 @@ video {
       margin-top: 10px;
       font-size: 15px;
     }
+    div{
+      width: 450px;
+    text-align: center;
+    }
   }
   .bottoneTestoMain {
     margin-top: 20px;
   }
-
   .rightSim {
     height: 50%;
     width: 100%;
     background-image: url(https://www.sparco-official.com/sim-rig/assets/img/rig-2/block-3-ITA.png);
     background-size: contain;
-    background-size: 75%;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -538,4 +573,22 @@ video {
     margin-top: 80px;
   }
 }
+@media only screen and (max-width: 800px) {
+
+.instagramMain{
+  .fotoInstagram{
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.containerInstagram{
+:nth-child(n+7) {
+      display: none;
+  }
+}
+
+
+}
+
 </style>
