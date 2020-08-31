@@ -83,6 +83,7 @@
         >Eventi</div>
       </div>
     </div>
+    <div class="scrollTop"   v-on:click="scrollTop" :class="isScrolled ? 'active':''"></div>
   </div>
 </template>
 <script>
@@ -104,6 +105,10 @@ export default {
   methods: {
     greet: function (value) {
       router.push(value);
+    },
+     scrollTop: function () {
+       document.body.scrollTop = 0; 
+       document.documentElement.scrollTop = 0; 
     },
     openModal: function () {
       let v = this;
@@ -127,7 +132,10 @@ export default {
       }
     },
     handleScroll: function () {
+      console.log(window.scrollY)
       this.isScrolled = window.scrollY > 122;
+      console.log(this.isScrolled)
+      console.log(window.scrollY > 500)
     },
   },
   created: function () {
@@ -359,6 +367,21 @@ export default {
 }
 
 @media only screen and (max-width: 790px) {
+  .scrollTop{
+  height: 40px;
+  width: 40px;
+  background-image:url(https://cdn3.iconfinder.com/data/icons/arrows-85/24/Arrow-1-512.png);
+  background-size: contain;
+   position: fixed;
+   bottom: 100px;
+   right: 50px;
+  z-index: 99999;
+  cursor: pointer;
+  display: none;
+  &.active{
+    display: block;
+  }
+}
   .HeaderContainer {
     overflow: hidden;
   }

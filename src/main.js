@@ -49,8 +49,11 @@ export const router = new VueRouter({
   {path: '/SalaLan',name:"SalaLan",component: SalaLan},
   {path: '/Eventi',name:"Eventi",component: Eventi},
   {path: '/Contattaci',name:"Contattaci",component: Contattaci},
+ /* {path: '/Privacy',name:"Privacy",component: Privacy},
+  {path: '/Imprint',name:"Imprint",component: Imprint},
+  {path: '/Terms',name:"Terms",component: Terms},
+  {path: '/Cookies',name:"Cookies",component: Cookies},*/
 ]})
-
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
