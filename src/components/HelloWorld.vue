@@ -108,6 +108,10 @@ import axios from 'axios'
 import { router } from "../main.js";
 import LogoAlien from '../assets/alien.png'
 import LogoDeter from '../assets/Logo-Deterpul-1colore.png'
+import FotoCibo1 from '../assets/MNT00026.png'
+import FotoCibo2 from '../assets/MNT00075.png'
+import FotoCibo3 from '../assets/MNT00111.png'
+import FotoCibo4 from '../assets/MNT00097.png'
 import FooterElement from '../components/Footer.vue'
 export default {
   name: "HelloWorld",
@@ -149,16 +153,16 @@ export default {
     i: 0,
     items: [
       {
-        src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
+        src: FotoCibo1,
       },
       {
-        src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+        src: FotoCibo2,
       },
       {
-        src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+        src: FotoCibo3,
       },
       {
-        src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+        src: FotoCibo4,
       },
     ],
     partners: [
@@ -197,7 +201,7 @@ export default {
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .testacaso {
-  background-image: url("http://risl.net/storage/2019/04/6.png");
+  background-image: url("../assets/MNT00276.png");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -219,25 +223,25 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .arrowLeft {
   position: absolute;
-  background-image: url(https://www.seekpng.com/png/full/93-932539_arrow-bw-left-white-left-arrow-png.png);
+  background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-98-xl.png);
   height: 24px;
   width: 24px;
   left: 40px;
   margin-top: 200px;
   height: 40px;
   width: 61px;
-  background-size: cover;
+  background-size: contain;
 }
 .arrowRigth {
   position: absolute;
-  background-image: url(https://w7.pngwing.com/pngs/552/763/png-transparent-white-and-black-arrow-to-right-arrow-symbol-icon-right-arrow-angle-white-text.png);
+  background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-34-xl.png);
   height: 24px;
   width: 24px;
   right: 40px;
   margin-top: 200px;
   height: 40px;
   width: 61px;
-  background-size: cover;
+  background-size: contain;
 }
 .textPart{
   position: absolute;
@@ -277,7 +281,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .marginTextUnderCaru {
   color: white;
-  margin-top: 120px;
+  margin-top: 150px;
 }
 .SalaLanMain{
   height: 600px;
@@ -348,10 +352,10 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .imageCarousell {
   width: 700px;
-  height: 400px;
+  height: 468px;
   justify-content: center;
-  margin-top: 200px;
-  background-size: cover;
+  margin-top: 124px;
+  background-size: 100% 100%;
 }
 
 p {
@@ -364,7 +368,7 @@ p {
   margin-left:20%;
 }
 .Ristoro {
-  height: 700px;
+  height: 735px;
   width: 100%;
 }
 .leftSim {
@@ -592,9 +596,7 @@ video {
     text-align: center;
     }
   }
-  .bottoneTestoMain {
-    margin-top: 20px;
-  }
+  
   .rightSim {
     height: 50%;
     width: 100%;
@@ -615,10 +617,7 @@ video {
       margin-top: 30px;
     }
   }
-  .imageCarousell {
-    margin-top: 85px;
-    width: 100%;
-  }
+  
   .arrowLeft,
   .arrowRigth {
     height: 40px;
@@ -627,9 +626,7 @@ video {
   video {
     height: 100%;
   }
-  .marginTextUnderCaru {
-    margin-top: 80px;
-  }
+ 
 }
 @media only screen and (max-width: 800px) {
 
@@ -648,5 +645,21 @@ video {
 
 
 }
-
+@media only screen and (max-width: 690px) {
+ .marginTextUnderCaru {
+    margin-top: 40px;
+  }
+  .imageCarousell {
+    margin-top: 24px;
+    width: 100%;
+    height: 370px;
+  }
+  .bottoneTestoMain {
+    margin-top: 20px;
+  }
+  .Ristoro {
+  width: 100%;
+  height: 669px;
+}
+}
 </style>
