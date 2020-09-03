@@ -132,10 +132,7 @@ export default {
       }
     },
     handleScroll: function () {
-      console.log(window.scrollY)
       this.isScrolled = window.scrollY > 122;
-      console.log(this.isScrolled)
-      console.log(window.scrollY > 500)
     },
   },
   created: function () {

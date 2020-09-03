@@ -52,6 +52,31 @@
       </div>
     </div>
     <div class="separatorElement"></div>
+    <div class="FumetteriaMain">
+        <div class="textFumetteria">
+          Fumetteria <br/>
+        <p>Nel magico mondo del fantastico abbiamo sicuramente quello che cerchi ed anche quello che non cerchi</p>
+      </div>
+      <div class="JokerPng"><div></div></div>
+      <div class="TestoFumetteriaCentrale">
+       <div>
+        Due Postazioni di Guida.
+        Simulatori ideali per gli e-sports
+        <p>
+          Vieni a scroprire la postazione di guida
+          <br />é la soluzione ideale per transformare la tua passione per la guida in una vera esperienza guidando auto da corsa con il massimo del realismo.
+          <br />
+          <br />Permette sessioni di guida online e offline
+        </p>
+        
+        </div>
+      </div>
+      <div class="batmanLogo">
+      </div>
+      <div class="TotoroPng">
+        <div></div>
+      </div>
+    </div>
     <div class="SalaLanMain">
       <div class="textRistoroSala">
         SALA LAN -TORNEI EVENTI <br/>
@@ -207,6 +232,22 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 100%;
   min-height: 80vh;
 }
+.TestoFumetteriaCentrale{
+  display: flex;
+  align-items: center;
+  width: 33%;
+  justify-content: center;
+  flex-direction: column;
+}
+.TestoFumetteriaCentrale div {
+  margin-top:20px;
+  width: 100%;
+  font-size: 21px;
+  color: #000;
+}
+.TestoFumetteriaCentrale div:nth-child(1) {
+  margin-top:100px;
+}
 .title {
   font-family: "Raleway";
   font-size: 24px;
@@ -232,6 +273,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 61px;
   background-size: contain;
 }
+.BottoneFumetteria{
+  width: 150px;
+}
 .arrowRigth {
   position: absolute;
   background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-34-xl.png);
@@ -243,12 +287,42 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 61px;
   background-size: contain;
 }
+.JokerPng{
+  display: flex;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+}
+.JokerPng div{
+  width:300px;
+  height: 316px;
+  background-image: url("../assets/joker.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.TotoroPng{
+  display: flex;
+  width: 33%;
+    justify-content: center;
+  align-items: center;
+}
+.TotoroPng div{
+  width: 350px;
+  height: 200px;
+  background-image: url("../assets/totoro.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .textPart{
   position: absolute;
   font-size: 30px;
   color: red;
   margin-top:-140px ;
   font-weight: bold;
+}
+.batmanLogo{
+  display: none;
 }
 .fotoInstagram{
   height: 300px;
@@ -289,6 +363,16 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   display: flex;
   justify-content: center;
 }
+
+.FumetteriaMain{
+  height: 500px;
+  width:100%;
+  background-color: #dadada;
+  display: flex;
+  justify-content: center;
+}
+
+
 .partnetLogo{
   height: 100px;
   width: 100px;
@@ -530,6 +614,16 @@ video {
   justify-content: center;
   margin-bottom: 50px;
   }
+    .textFumetteria{
+    font-size: 55px;
+    color: black;
+    position: absolute;
+  margin-top: 30px;
+  }
+   .textFumetteria p{
+    font-size: 16px;
+    color: gray;
+  }
 .card-info {
   padding: 20px;
   position: absolute;
@@ -596,7 +690,7 @@ video {
     text-align: center;
     }
   }
-  
+
   .rightSim {
     height: 50%;
     width: 100%;
@@ -646,6 +740,26 @@ video {
 
 }
 @media only screen and (max-width: 690px) {
+  .TestoFumetteriaCentrale{
+    display: none;
+  }
+  .FumetteriaMain{
+    height: 400px;
+  }
+  .batmanLogo{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    display: block;
+    position: absolute;
+    margin-top: 200px;
+  }
+  .JokerPng{
+  display: none;
+}
+.TotoroPng{
+  display: none;
+}
  .marginTextUnderCaru {
     margin-top: 40px;
   }
