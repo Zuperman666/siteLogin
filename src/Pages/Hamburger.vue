@@ -1,213 +1,200 @@
 <template>
-    <div>
-      <HeaderContainer/>
-        <p class="TextNameTitle" ><a>Hamburgeria Login</a></p>
-        <div class="ImageMenùContainer">
-            <div class="ImagineMenù"> </div>
-        </div>
-        <separator/>
-        <h1 class="TextNameTitleOur">I Nostri Panini</h1>
-        <div class="DivPadre">
-        <v-app>
-    <v-carousel
-      cycle
-      height="400"
-      hide-delimiter-background
-      show-arrows-on-hover
-    >
-      <v-carousel-item
-        v-for="(item, i) in items"
-        :key="i"
-         :src="item.src"
-      >
-        <v-sheet
-          height="100%"
-         
-        >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <div class="display-3">Slide</div>
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
-    </v-carousel>
-    </v-app>
+  <div>
+    <div class="ImageUnderHeaderHamburger">
+      <HeaderContainer />
+      <div class="centerTextMain">
+        Entra nel mondo di Login dove tutto può succedere!!
+        <p>Sottotesto a caso</p>
+        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Prenota Ora</button>
+      </div>
     </div>
-    <div class="DivButton" v-on:click='greet'>
-      <a><span/> <span/> <span/> <span/>PRENOTA ORA</a>
+    <div class="separatorElement"></div>
+    <div class="ImageMenùContainer">
+      <div class="ImagineMenù"></div>
     </div>
-    <FooterElement></FooterElement>  
+    <div class="separatorElement"></div>
+    <div class="Ristoro2">
+      <div class="textRistoro">
+        IL NOSTRO RISTORO
+        <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
+      </div>
+      <div class="carousell2">
+        <div class="imageCarousell2" :style="[bg]"></div>
+        <div class="arrowLeft" v-on:click="leftArrow"></div>
+        <div class="arrowRigth" v-on:click="rightArrow"></div>
+        <div class="textFoodOverCarousel">{{items[i].name}}</div>
+      </div>
     </div>
+    <FooterElement></FooterElement>
+  </div>
 </template>
 <script>
-import FooterElement from '../components/Footer.vue'
-import {router} from '../main.js'
+import FooterElement from "../components/Footer.vue";
+import { router } from "../main.js";
+import FotoCibo2 from "../assets/MNT00075.png";
+import FotoCibo3 from "../assets/MNT00111.png";
+import FotoCibo4 from "../assets/MNT00097.png";
+import FotoCibo5 from "../assets/MNT00011.png";
+import FotoCibo6 from "../assets/MNT00023.png";
+import FotoCibo7 from "../assets/MNT00031.png";
+import FotoCibo8 from "../assets/MNT00037.png";
+import FotoCibo9 from "../assets/MNT00047.png";
+import FotoCibo10 from "../assets/MNT00057.png";
+import FotoCibo11 from "../assets/MNT00070.png";
+import FotoCibo12 from "../assets/MNT00094.png";
+import FotoCibo13 from "../assets/MNT00106.png";
 export default {
-   name: 'Hamburgeria',  
-   components:{FooterElement},
-   data () {
+  name: "Hamburgeria",
+  components: { FooterElement },
+  data() {
     return {
+      i: 0,
       items: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
-        ],
-    }
+        {
+          src: FotoCibo2,
+          name: "Polpette Al Sugo",
+        },
+        {
+          src: FotoCibo3,
+          name: "Piatto Aperitivo",
+        },
+        {
+          src: FotoCibo4,
+          name: "Patate Cheddar e Bacon",
+        },
+        {
+          src: FotoCibo5,
+          name: "Mayor Mc Cheese",
+        },
+        {
+          src: FotoCibo6,
+          name: "Goomba",
+        },
+        {
+          src: FotoCibo7,
+          name: "Onion Knight",
+        },
+        {
+          src: FotoCibo8,
+          name: "Noob",
+        },
+        {
+          src: FotoCibo9,
+          name: "Kikkirikiller",
+        },
+        {
+          src: FotoCibo10,
+          name: "Login Special",
+        },
+        {
+          src: FotoCibo11,
+          name: "Easter Egg",
+        },
+        {
+          src: FotoCibo12,
+          name: "Polpette Cacio e Pepe",
+        },
+        {
+          src: FotoCibo13,
+          name: "Patate Cacio e Pepe",
+        },
+      ],
+    };
   },
-    methods: {
-  greet: function () {
-               router.push('/Contatti');
-            },
-    }
-}
+  mounted: function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.setInterval(() => {
+      this.rightArrow();
+    }, 6000);
+  },
+  methods: {
+    greet: function () {
+      router.push("/Contatti");
+    },
+    leftArrow: function () {
+      if (this.i === 0) return (this.i = 11);
+      return this.i--;
+    },
+    rightArrow: function () {
+      if (this.i === 11) return (this.i = 0);
+      return this.i++;
+    },
+  },
+  computed: {
+    bg() {
+      const i = this.i;
+      return {
+        backgroundImage: `url(${this.items[i].src})`,
+      };
+    },
+  },
+};
 </script>
 <style lang="scss">
-.TextNameTitle{
-    font-size: 40px;
-    color: white;
+.TextNameTitle {
+  font-size: 40px;
+  color: white;
 }
-.TextNameTitleOur{
-    font-size: 30px;
-    color: white;
+.TextNameTitleOur {
+  font-size: 30px;
+  color: white;
 }
-.ImageMenùContainer{
-    display: flex;
-    justify-content: center;
+.ImageMenùContainer {
+  display: flex;
+  justify-content: center;
 }
-.ImagineMenù{
-    width: 600px;
-    height: 400px;
-    background-image: url(https://image.freepik.com/vettori-gratuito/lavagna-menu-hamburger_62951-60.jpg);
-    background-size: cover;
+.ImagineMenù {
+  width: 600px;
+  height: 400px;
+  background-image: url(https://image.freepik.com/vettori-gratuito/lavagna-menu-hamburger_62951-60.jpg);
+  background-size: cover;
 }
 .DivPadre .v-application--wrap {
-    min-height: 0 !important;
-     
-  }
-  .DivPadre .v-application {
-    min-height: 0 !important;
-    height: 100%!important;
-   
-  }
-  .v-image__image{
-    z-index: 0 !important;
-  }
-  @media screen and (max-width: 992px) {
-  .v-image__image{
-    background-size: cover !important;
-  }
+  min-height: 0 !important;
 }
-p a {
-  font-size: 1.5em;
-  color: #228DFF;
-  font-family: Iceland;
+.DivPadre .v-application {
+  min-height: 0 !important;
+  height: 100% !important;
 }
-p a:hover {
-  color: #ffffff;
-}
-p a:hover {
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
-}
-@-webkit-keyframes neon2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-  }
-}
-@keyframes neon2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-  }
-}
-.DivButton{
-  margin-top:20px;
-  height: 50px;
+.ImageUnderHeaderHamburger {
+  background-image: url(/img/MNT00276.0c2ff354.png);
+  background-size: cover;
+  height: 100%;
   width: 100%;
-}
-.DivButton a{
-  color:#2196f3;
-  position:relative;
-  display: inline-block;
-  padding: 15px 30px;
-  overflow: hidden;
-  transition: 0.2s;
-  cursor: pointer;
+  min-height: 80vh;
 }
 
-.DivButton a:hover {
-  color: #255784;
-  background: #2196f3;
-  box-shadow: 0 0 10px  #2196f3,0 0 40px  #2196f3,0 0 80px  #2196f3 ;
-  transition-delay: 1s;
+.v-image__image {
+  z-index: 0 !important;
 }
-.DivButton a span{ 
+.imageCarousell2 {
+  width: 1000px;
+  height: 666px;
+  justify-content: center;
+  margin-top: 124px;
+  background-size: 100% 100%;
+}
+.carousell2 {
+  width: 100%;
+  height: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Ristoro2 {
+  height: 810px;
+  width: 100%;
+}
+.textFoodOverCarousel {
   position: absolute;
-  display: block;
+  color: white;
+  margin-top: 500px;
+  font-size: 30px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.DivButton a span:nth-child(1){ 
-  top:0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,#2196f3);
-}
-.DivButton a:hover span:nth-child(1){ 
-  left: 100%;
-  transition: 1s;
-}
-.DivButton a span:nth-child(3){ 
-  bottom:0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg,transparent,#2196f3);
-}
-.DivButton a:hover span:nth-child(3){ 
-  right:100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-.DivButton a span:nth-child(2){ 
-  top:-100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#2196f3);
-}
-.DivButton a:hover span:nth-child(2){ 
-  top:100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-.DivButton a span:nth-child(4){ 
-  bottom:-100%;
-  left: 0;
-  width:2px;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#2196f3);
-}
-.DivButton a:hover span:nth-child(4){ 
-  bottom:100%;
-  transition: 1s;
-  transition-delay: 0.75s;
+@media screen and (max-width: 992px) {
+  .v-image__image {
+    background-size: cover !important;
+  }
 }
 </style>

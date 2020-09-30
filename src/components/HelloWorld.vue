@@ -161,6 +161,7 @@ export default {
     }
   },
   mounted: function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     window.setInterval(() => {
       this.rightArrow();
     }, 6000);
@@ -272,6 +273,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   height: 40px;
   width: 61px;
   background-size: contain;
+  cursor: pointer;
 }
 .BottoneFumetteria{
   width: 150px;
@@ -286,6 +288,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   height: 40px;
   width: 61px;
   background-size: contain;
+  cursor: pointer;
 }
 .JokerPng{
   display: flex;
@@ -327,9 +330,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .fotoInstagram{
   height: 300px;
   width: 300px;
-  margin-right: 1px;
-  margin-top: 1px;
-  background-size: contain !important;
+  margin-right: 3px;
+  margin-top: 3px;
+  background-size: 100% 100% !important;
    cursor: pointer;
    &:hover{
    opacity: 0.9;
@@ -446,10 +449,11 @@ p {
   line-height: 1.5em;
 }
 .fotoLeftImageMain{
-  background:red;
+  background-image: url("../assets/MNT00280.png");
   height: 300px;
-  width: 80%;
-  margin-left:20%;
+     width: 400px;
+    margin-left: auto;
+  background-size: contain;
 }
 .Ristoro {
   height: 735px;
@@ -723,14 +727,45 @@ video {
  
 }
 @media only screen and (max-width: 800px) {
-
+  .fotoLeftImageMain{
+  margin-left:0%;
+  width: 100%;
+  background-size: 100%100%;
+}
+.textRistoroSala{
+  position: unset;
+  margin-top: 10px;
+  color: white;
+  font-size: 40px;
+}
+.rightImageMain{
+  height: 100%;
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top:0px;
+  text-align: center;
+  margin-left: 0%;
+}
+.leftImageMain{
+  height: 100%;
+  width:100%;
+  display: flex;
+  margin-top: 0px;
+}
+.SalaLanMain{
+  flex-direction: column;
+}
 .instagramMain{
   .fotoInstagram{
     height: 200px;
     width: 200px;
   }
 }
-
+  .SalaLanMain{
+  height: 740px;
+}
 .containerInstagram{
 :nth-child(n+7) {
       display: none;
@@ -743,6 +778,7 @@ video {
   .TestoFumetteriaCentrale{
     display: none;
   }
+
   .FumetteriaMain{
     height: 400px;
   }

@@ -43,11 +43,8 @@
           <div class="bun bottom"></div>
         </div>
       </div>
-       <div class="iconLogo" :class="[iconLogo ? 'activeIcon':'' ]">
-        <div
-          class="logo" 
-        >
-        </div>
+      <div class="iconLogo" :class="[iconLogo ? 'activeIcon':'' ]">
+        <div class="logo"></div>
       </div>
       <div class="MainHeader" :class="isScrolled ? 'scrolled': '' ">
         <span class="IconHome" v-on:click="greet('/')"></span>
@@ -83,7 +80,7 @@
         >Eventi</div>
       </div>
     </div>
-    <div class="scrollTop"   v-on:click="scrollTop" :class="isScrolled ? 'active':''"></div>
+    <div class="scrollTop" v-on:click="scrollTop" :class="isScrolled ? 'active':''"></div>
   </div>
 </template>
 <script>
@@ -97,8 +94,8 @@ export default {
       isScrolled: false,
       startAnimation: false,
       closeAnimation: false,
-      iconActive:false,
-       iconLogo:false,
+      iconActive: false,
+      iconLogo: false,
     };
   },
 
@@ -106,24 +103,23 @@ export default {
     greet: function (value) {
       router.push(value);
     },
-     scrollTop: function () {
-       document.body.scrollTop = 0; 
-       document.documentElement.scrollTop = 0; 
+    scrollTop: function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
     openModal: function () {
       let v = this;
       if (this.isOpen) {
-        
         this.iconActive = false;
         this.closeAnimation = true;
         setTimeout(function () {
           v.isOpen = false;
           v.closeAnimation = false;
           v.iconLogo = false;
-        }, 1000); 
+        }, 1000);
       } else {
         this.iconLogo = true;
-         this.iconActive = true;
+        this.iconActive = true;
         this.startAnimation = true;
         setTimeout(function () {
           v.isOpen = true;
@@ -192,7 +188,7 @@ export default {
   cursor: pointer;
 }
 .MainHeader.scrolled {
-  background-color: rgba(60, 60, 60, 0.5);
+  background-color: rgba(60, 60, 60, 0.9);
 }
 .MainHeader .active {
   text-decoration: underline;
@@ -224,17 +220,17 @@ export default {
   text-decoration: underline;
   cursor: not-allowed;
 }
-.iconLogo{
-    display: flex;
-    justify-content: flex-start;
-    align-items: top;
-    margin-right: 5%;
-    height: 100%;
-    position: absolute;
-    top: 20px;
-    right:20px;
+.iconLogo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+  margin-right: 5%;
+  height: 100%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
-.iconLogo.activeIcon{
+.iconLogo.activeIcon {
   display: none;
 }
 #burger {
@@ -258,7 +254,6 @@ export default {
       position: absolute;
       top: 50%;
       transform: translate(0%, -45%);
-
     }
     &:before {
       left: 0;
@@ -334,22 +329,22 @@ export default {
 }
 
 @keyframes appear {
-    0% {
-      width: 100%;
-      height: 100px;
+  0% {
+    width: 100%;
+    height: 100px;
   }
   50% {
-      width: 80%;
-      height: 100px;
+    width: 80%;
+    height: 100px;
   }
-  75%{
-     width: 80%;
-     height: 100%;
+  75% {
+    width: 80%;
+    height: 100%;
   }
 
   100% {
-     width: 80%;
-     height: 100%;
+    width: 80%;
+    height: 100%;
   }
 }
 .HeaderContainer.active {
@@ -360,35 +355,34 @@ export default {
   z-index: 100;
   height: 100vh;
   opacity: 0.8;
-  
 }
 
 @media only screen and (max-width: 790px) {
-  .scrollTop{
-  height: 40px;
-  width: 40px;
-  background-image:url(https://cdn3.iconfinder.com/data/icons/arrows-85/24/Arrow-1-512.png);
-  background-size: contain;
-   position: fixed;
-   bottom: 100px;
-   right: 50px;
-  z-index: 99999;
-  cursor: pointer;
-  display: none;
-  &.active{
-    display: block;
+  .scrollTop {
+    height: 40px;
+    width: 40px;
+    background-image: url(https://cdn3.iconfinder.com/data/icons/arrows-85/24/Arrow-1-512.png);
+    background-size: contain;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    z-index: 99999;
+    cursor: pointer;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
-}
   .HeaderContainer {
     overflow: hidden;
   }
   .logo {
-  background-image: url("../assets/login_gaming_icon.png");
-  width: 120px;
-  height: 90px;
-  background-size: contain;
-  cursor: not-allowed; 
-}
+    background-image: url("../assets/login_gaming_icon.png");
+    width: 120px;
+    height: 90px;
+    background-size: contain;
+    cursor: not-allowed;
+  }
   .HeaderContainer {
     height: 100px;
     background-color: rgba(27, 25, 25, 0.8);
@@ -403,13 +397,13 @@ export default {
     top: 0;
     left: 20px;
   }
-  .HeaderContainer.activeAnimation{
+  .HeaderContainer.activeAnimation {
     animation: appear 1s;
   }
-  .HeaderContainer.closeAnimation{
+  .HeaderContainer.closeAnimation {
     animation: appear 1s reverse;
   }
-  
+
   .MainHeader {
     display: none;
   }
