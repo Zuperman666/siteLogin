@@ -5,7 +5,9 @@
       <div class="centerTextMain">
         Entra nel mondo di Login dove tutto può succedere!!
         <p>Sottotesto a caso</p>
-        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Prenota Ora</button>
+        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+          Prenota Ora
+        </button>
       </div>
     </div>
     <div class="separatorElement"></div>
@@ -22,14 +24,28 @@
         <div class="imageCarousell2" :style="[bg]"></div>
         <div class="arrowLeft" v-on:click="leftArrow"></div>
         <div class="arrowRigth" v-on:click="rightArrow"></div>
-        <div class="textFoodOverCarousel">{{items[i].name}}</div>
+        <div class="textFoodOverCarousel">{{ items[i].name }}</div>
       </div>
     </div>
+    <div class="textFoodBanner">
+      <div class="textFoodContainer">
+        <p>sdajsnmdasd </p> 
+        <p>sdajsnmdasd </p> 
+        <p>sdajsnmdasd </p> 
+        <p>sdajsnmdasd </p> 
+        <p>sdajsnmdasd </p> 
+      </div>
+      <button v-on:click="modal" class="bottoneTestoMain">
+        Prenota Ora
+      </button>
+    </div>
+       <modal v-if="showModal" />
     <FooterElement></FooterElement>
   </div>
 </template>
 <script>
 import FooterElement from "../components/Footer.vue";
+import modal from "../components/modal.vue"
 import { router } from "../main.js";
 import FotoCibo2 from "../assets/MNT00075.png";
 import FotoCibo3 from "../assets/MNT00111.png";
@@ -45,9 +61,10 @@ import FotoCibo12 from "../assets/MNT00094.png";
 import FotoCibo13 from "../assets/MNT00106.png";
 export default {
   name: "Hamburgeria",
-  components: { FooterElement },
+  components: { FooterElement,modal },
   data() {
     return {
+      showModal: false,
       i: 0,
       items: [
         {
@@ -108,8 +125,12 @@ export default {
     }, 6000);
   },
   methods: {
+    modal:function(){
+        this.showModal = true;
+    }
+    ,
     greet: function () {
-      router.push("/Contatti");
+      router.push("/Contattaci");
     },
     leftArrow: function () {
       if (this.i === 0) return (this.i = 11);
@@ -174,6 +195,14 @@ export default {
   margin-top: 124px;
   background-size: 100% 100%;
 }
+.textFoodContainer {
+  width: 500px;
+  p{
+    margin-top:10px;
+    color: crimson;
+      }
+    
+}
 .carousell2 {
   width: 100%;
   height: 610px;
@@ -181,6 +210,20 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.textFoodBanner {
+  background-color: #3d3c3a;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+    .bottoneTestoMain{
+        margin-top: 30px;
+        color: white;
+      }
+}
+
 .Ristoro2 {
   height: 810px;
   width: 100%;
@@ -195,6 +238,11 @@ export default {
 @media screen and (max-width: 992px) {
   .v-image__image {
     background-size: cover !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .textFoodContainer {
+    width: 100%;
   }
 }
 </style>

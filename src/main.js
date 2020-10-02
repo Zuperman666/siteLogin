@@ -15,7 +15,6 @@ import vuetify from '@/plugins/vuetify'
 import Separator from './components/Separator.vue' 
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
-import loader from './components/loader.vue'
 import VueInstagram from 'vue-instagram'
  
 Vue.use(VueInstagram)
@@ -58,9 +57,11 @@ export const router = new VueRouter({
 // You can pass in additional options here, but let's
 // keep it simple for now.
 Vue.component('card', card)
+Vue.component("modal", {
+  template: "#modal-template"
+});
 Vue.component('separator', Separator)
 Vue.component('HeaderContainer', HeaderContainer)
-Vue.component('loader', loader)
 
 new Vue({
   vuetify,
