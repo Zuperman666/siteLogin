@@ -16,6 +16,10 @@ import Separator from './components/Separator.vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
 import VueInstagram from 'vue-instagram'
+import AssettoCorsa from "./Pages/Team/AssettoCorsa";
+import Digimon from "./Pages/Team/Digimon";
+import Fifa from "./Pages/Team/Fifa";
+import DragonBall from "./Pages/Team/DragonBall";
  
 Vue.use(VueInstagram)
 
@@ -48,6 +52,11 @@ export const router = new VueRouter({
   {path: '/SalaLan',name:"SalaLan",component: SalaLan},
   {path: '/Eventi',name:"Eventi",component: Eventi},
   {path: '/Contattaci',name:"Contattaci",component: Contattaci},
+    {path: '/Team/AssettoCorsa',name:"AssettoCorsa",component: AssettoCorsa},
+    {path: '/Team/Fifa',name:"Fifa",component: Fifa},
+    {path: '/Team/Digimon',name:"Digimon",component: Digimon},
+    {path: '/Team/DragonBall',name:"DragonBall",component: DragonBall},
+
  /* {path: '/Privacy',name:"Privacy",component: Privacy},
   {path: '/Imprint',name:"Imprint",component: Imprint},
   {path: '/Terms',name:"Terms",component: Terms},

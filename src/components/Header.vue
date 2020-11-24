@@ -53,6 +53,22 @@
           :class="currentPath === '/Hamburgeria' ? 'active':''"
           v-on:click="greet('/Hamburgeria')"
         >Hamburgeria</div>
+        <div class="Team"
+             :class="currentPath === '/Team' ? 'active':''"
+             v-on:mouseover="activeSubMenu = true"
+        >Team
+          <div :class="!activeSubMenu ? 'display-none': 'display-block' " v-on:mouseleave="activeSubMenu = false">
+            <div class="relative">
+              <div class="box">
+                <div v-on:click="greet('/Team/AssettoCorsa')" :class="hasColorAssettoCorsa ? 'colorlessAssettoCorsa' : 'coloredAssettoCorsa'" v-on:mouseover="hasColorAssettoCorsa = true" v-on:mouseleave="hasColorAssettoCorsa = false"></div>
+                <div v-on:click="greet('/Team/DragonBall')" :class="hasColorDragonBall ? 'colorlessDragonBall' : 'coloredDragonBall'" v-on:mouseover="hasColorDragonBall = true" v-on:mouseleave="hasColorDragonBall = false"></div>
+                <div v-on:click="greet('/Team/Digimon')" :class="hasColorDigimon ? 'colorlessDigimon' : 'coloredDigimon'" v-on:mouseover="hasColorDigimon = true" v-on:mouseleave="hasColorDigimon = false"></div>
+                <div v-on:click="greet('/Team/Fifa')" :class="hasColorFifa ? 'colorlessFifa' : 'coloredFifa'" v-on:mouseover="hasColorFifa = true" v-on:mouseleave="hasColorFifa = false"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div
           class="Fumetteria"
           :class="currentPath === '/Fumetteria' ? 'active':''"
@@ -96,6 +112,11 @@ export default {
       closeAnimation: false,
       iconActive: false,
       iconLogo: false,
+      activeSubMenu:false,
+      hasColorFifa:false,
+      hasColorAssettoCorsa:false,
+      hasColorDragonBall:false,
+      hasColorDigimon:false,
     };
   },
 
@@ -140,7 +161,75 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.HeaderContainer {
+  .colorlessAssettoCorsa{
+    width: 40%;
+    height: 40%;
+    background: white;
+    margin-bottom: 5%;
+  }
+
+  .coloredAssettoCorsa{
+    width: 40%;
+    height: 40%;
+    background: grey;
+    margin-bottom: 5%;
+  }
+
+  .colorlessDragonBall{
+    width: 40%;
+    height: 40%;
+    background: greenyellow;
+    margin-bottom: 5%;
+  }
+
+  .coloredDragonBall{
+    width: 40%;
+    height: 40%;
+    background: green;
+    margin-bottom: 5%;
+  }
+
+  .colorlessDigimon{
+    width: 40%;
+    height: 40%;
+    background: magenta;
+  }
+
+  .coloredDigimon{
+    width: 40%;
+    height: 40%;
+    background: maroon;
+  }
+
+  .colorlessFifa{
+    width: 40%;
+    height: 40%;
+    background: blue;
+  }
+
+  .coloredFifa{
+    width: 40%;
+    height: 40%;
+    background: blueviolet;
+  }
+
+  .display-none {
+    display: none;
+  }
+  .box {
+    position: absolute;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-content: center;
+    height: 400px;
+    background: red;
+  }
+  .display-block {
+    display: block;
+  }
+  .HeaderContainer {
   width: 100%;
   height: 127px;
   background-color: transparent;
