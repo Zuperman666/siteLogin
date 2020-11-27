@@ -8,8 +8,9 @@
         <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Vienici a trovare</button>
       </div>
     </div>
-    <div class="sim">
-      <div class="leftSim">
+    <div class="sim container">
+      <div class="row">
+      <div class="leftSim col-12 col-md-6">
         <div>
         Due Postazioni di Guida.
         Simulatori ideali per gli e-sports
@@ -23,7 +24,8 @@
         </div>
         <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Per info</button>
       </div>
-      <div class="rightSim"></div>
+      <div class="rightSim col-12 col-md-6"></div>
+      </div>
     </div>
     <video
       poster="https://images.everyeye.it/img-notizie/altre-immagini-preview-dall-anime-the-promised-neverland-v3-357710-1280x720.jpg"
@@ -459,19 +461,12 @@ p {
   width: 100%;
 }
 .leftSim {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   color: black;
   font-size: 20px;
   p {
     margin-top: 20px;
   }
   div{
-    width: 500px;
     text-align: left;
   }
   button {
@@ -677,8 +672,6 @@ video {
     flex-wrap: wrap;
   }
   .leftSim {
-    height: 50%;
-    width: 100%;
     color: black;
     font-size: 15px;
     p {
