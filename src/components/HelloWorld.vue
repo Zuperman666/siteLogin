@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="testacaso">
+    <div class="fixedHeaderContainer">
       <HeaderContainer />
       <div class="centerTextMain">
         Entra nel mondo di Login dove tutto può succedere!!
@@ -226,7 +226,7 @@ export default {
 <style lang="scss">
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-.testacaso {
+.fixedHeaderContainer {
   background-image: url("../assets/MNT00276.png");
   background-size: cover;
   height: 100%;
@@ -399,12 +399,11 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .centerTextMain {
   position: absolute;
-  width: 100%;
-  top: 35vh;
   color: white;
   font-size: 60px;
-  max-width: 900px;
-  left: 30%;
+  top: calc(50% - 63px);
+  min-width: 100%;
+  transform: translate(0,-50%);
   p {
     font-size: 25px;
     margin-top: 30px;
