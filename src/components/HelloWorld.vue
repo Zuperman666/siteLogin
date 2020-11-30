@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="sim">
-      <div class="row noMargin">
+      <div class="row mx-0">
         <div class="leftSim col-md-6">
           <div>
             Due Postazioni di Guida. Simulatori ideali per gli e-sports
@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="separatorElement"></div>
-    <div class="FumetteriaMain row noMargin">
+    <div class="FumetteriaMain row mx-0">
       <div class="textFumetteria">
         Fumetteria <br />
         <p>
@@ -68,9 +68,9 @@
           ed anche quello che non cerchi
         </p>
       </div>
-      <div class="FumetteriaMain row noMargin">
-        <div class="JokerPng col-md-3"><div></div></div>
-        <div class="TestoFumetteriaCentrale col-md-6">
+      <div class="FumetteriaMain py-0 row mx-0">
+        <div class="JokerPng col-md-3 d-none d-md-block"><div></div></div>
+        <div class="TestoFumetteriaCentrale d-none d-md-block col-md-6">
           <div>
             Due Postazioni di Guida. Simulatori ideali per gli e-sports
             <p>
@@ -83,14 +83,14 @@
             </p>
           </div>
         </div>
-        <div class="batmanLogo"></div>
-        <div class="TotoroPng col-md-3">
+        <div class="batmanLogo d-block d-md-none"></div>
+        <div class="TotoroPng col-md-3 d-none d-md-block">
           <div></div>
         </div>
       </div>
     </div>
     <div class="SalaLanMain">
-      <div class="textRistoroSala row noMargin">
+      <div class="textRistoroSala row mx-0">
         <div>
           SALA LAN -TORNEI EVENTI <br />
           E TANTO ALTRO...
@@ -100,7 +100,7 @@
           </p>
         </div>
       </div>
-      <div class="row noMargin">
+      <div class="row mx-0">
         <div class="col-md-6">
           <div class="fotoLeftImageMain"></div>
         </div>
@@ -304,14 +304,14 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .JokerPng div {
   width: 20vw;
-  height: 100%;
+  height: 25vw;
   background-image: url("../assets/joker.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 .TotoroPng div {
   width: 20vw;
-  height: 100%;
+  height: 25vw;
   background-image: url("../assets/totoro.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -323,9 +323,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   color: red;
   margin-top: -140px;
   font-weight: bold;
-}
-.batmanLogo {
-  display: none;
 }
 .fotoInstagram {
   height: 300px;
@@ -641,10 +638,7 @@ video {
   font-weight: 700;
   text-shadow: rgba(black, 0.5) 0 10px 10px;
 }
-.noMargin {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+
 .rightTextRistoro {
   text-align: left;
   width: 80%;
@@ -706,7 +700,7 @@ video {
   .fotoLeftImageMain {
     margin-left: 0%;
     width: 100%;
-    background-size: 100%100%;
+    background-size: 100% 100%;
   }
   .textRistoroSala {
     position: unset;
@@ -750,20 +744,10 @@ video {
   }
 }
 @media only screen and (max-width: 690px) {
-  .TestoFumetteriaCentrale {
-    display: none;
-  }
   .batmanLogo {
     width: 150px;
     height: 150px;
     background-color: red;
-    display: block;
-  }
-  .JokerPng {
-    display: none;
-  }
-  .TotoroPng {
-    display: none;
   }
   .marginTextUnderCaru {
     margin-top: 40px;
