@@ -1,16 +1,75 @@
 <template>
-<div>
-<HeaderContainer/>
-   <FooterElement/>
-   </div>
+  <div class="bg-white">
+    <div class="fixedHeaderContainer">
+      <HeaderContainer />
+    </div>
+    <div class="container text-left">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+           <div class="H1">
+              Contatti
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <form>
+            <div class="row form-group">
+              <div class="col">
+                <label for="name">Nome</label>
+                <input id="name" type="text" class="form-control" v-model="dataSave.nome"/>
+              </div>
+              <div class="col">
+                <label for="lastName">Cognome</label>
+                <input id="lastName" type="text" class="form-control" v-model="dataSave.cognome"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail" v-model="dataSave.email"/>
+            </div>
+            <div class="form-group">
+              <label for="topicSelect">Topic</label>
+              <select id="topicSelect" class="form-control">
+                <option>topic 1</option>
+                <option>topic 2</option>
+              </select>
+            </div>
+            <div class="form-group form-check d-flex">
+              <label class="form-check-label" for="exampleCheck"
+                >Data Processing</label
+              >
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck"
+                v-model="dataSave.check"
+              />
+            </div>
+            <div class="btn btn-primary" v-on:click="sendData(dataSave)">Invia</div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <FooterElement />
+  </div>
 </template>
 <script>
-import FooterElement from '../components/Footer.vue'
+import FooterElement from "../components/Footer.vue";
 export default {
-   name: 'Contattaci',  
-   components:{FooterElement},
-}
+  name: "Contattaci",
+  components: { FooterElement },
+  data(){return {dataSave:{nome: "", cognome: "", email:"",check:false}};},
+  methods:{
+     sendData:(dataSave)=>{
+        console.log(dataSave);
+     }
+  }
+};
+
 </script>
 <style lang="scss">
-
+.fixedHeaderContainer {
+  background-image: url("../assets/MNT00276.png");
+  background-size: cover;
+  min-height: 80vh;
+}
 </style>
