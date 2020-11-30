@@ -368,6 +368,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-color: #dadada;
   padding-top: 50px;
   padding-bottom: 50px;
+  justify-content: center;
 }
 
 .partnetLogo {
@@ -513,6 +514,7 @@ video {
   flex-wrap: nowrap;
   display: flex;
   position: relative;
+  padding: 20px 40px;
 }
 .card-wrap {
   margin: 10px;
