@@ -31,4 +31,5 @@ body{
   margin: 0;
   background: black;
 }
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>

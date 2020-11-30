@@ -298,20 +298,20 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 24px;
   height: 40px;
   width: 61px;
-  right:0;
+  right: 0;
   background-size: contain;
   cursor: pointer;
 }
 .JokerPng div {
-  width: 300px;
-  height: 316px;
+  width: 20vw;
+  height: 100%;
   background-image: url("../assets/joker.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 .TotoroPng div {
-  width: 350px;
-  height: 200px;
+  width: 20vw;
+  height: 100%;
   background-image: url("../assets/totoro.png");
   background-size: contain;
   background-repeat: no-repeat;
