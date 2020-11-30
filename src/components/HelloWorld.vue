@@ -69,8 +69,8 @@
         </p>
       </div>
       <div class="FumetteriaMain row noMargin">
-        <div class="JokerPng"><div></div></div>
-        <div class="TestoFumetteriaCentrale">
+        <div class="JokerPng col-md-3"><div></div></div>
+        <div class="TestoFumetteriaCentrale col-md-6">
           <div>
             Due Postazioni di Guida. Simulatori ideali per gli e-sports
             <p>
@@ -84,48 +84,49 @@
           </div>
         </div>
         <div class="batmanLogo"></div>
-        <div class="TotoroPng">
+        <div class="TotoroPng col-md-3">
           <div></div>
         </div>
       </div>
     </div>
     <div class="SalaLanMain">
       <div class="textRistoroSala row noMargin">
-        <div>SALA LAN -TORNEI EVENTI <br />
-        E TANTO ALTRO...
-        <p>
-          Giochi con un pc o con una console?Qui al Login Abbiamo pensato
-          proprio a tutti !
-        </p>
+        <div>
+          SALA LAN -TORNEI EVENTI <br />
+          E TANTO ALTRO...
+          <p>
+            Giochi con un pc o con una console?Qui al Login Abbiamo pensato
+            proprio a tutti !
+          </p>
         </div>
       </div>
       <div class="row noMargin">
-         <div class="col-md-6">
-        <div class="fotoLeftImageMain"></div>
+        <div class="col-md-6">
+          <div class="fotoLeftImageMain"></div>
+        </div>
+        <div class="col-md-6 justify-center">
+          <div class="rightTextRistoro">
+            <div class="TextTitleSalaLan">
+              Postazioni Gaming
+              <p>
+                Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming
+              </p>
+            </div>
+            <div class="TextTitleSalaLan">
+              Tornei
+              <p>Sfida I tuoi avversari e scala tutte le classifiche</p>
+            </div>
+            <div class="TextTitleSalaLan">
+              Partite Locali
+              <p>Gioca con di tuoi amici con Pc o con Console</p>
+            </div>
+            <div class="TextTitleSalaLan">
+              Sala Streaming
+              <p>Sei uno streamer? Abbiamo una postazione apposta per te</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 justify-center">
-        <div class="rightTextRistoro">
-
-        <div class="TextTitleSalaLan">
-          Postazioni Gaming
-          <p>Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming</p>
-        </div>
-        <div class="TextTitleSalaLan">
-          Tornei
-          <p>Sfida I tuoi avversari e scala tutte le classifiche</p>
-        </div>
-        <div class="TextTitleSalaLan">
-          Partite Locali
-          <p>Gioca con di tuoi amici con Pc o con Console</p>
-        </div>
-        <div class="TextTitleSalaLan">
-          Sala Streaming
-          <p>Sei uno streamer? Abbiamo una postazione apposta per te</p>
-        </div>
-        </div>
-      </div>
-      </div>
-     
     </div>
     <div class="instagramMain">
       <div class="textInstagram">
@@ -261,22 +262,14 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .fixedHeaderContainer {
   background-image: url("../assets/MNT00276.png");
   background-size: cover;
-  height: 100%;
-  width: 100%;
   min-height: 80vh;
 }
 .TestoFumetteriaCentrale {
-  display: flex;
-  align-items: center;
-  width: 33%;
-  justify-content: center;
-  flex-direction: column;
-}
-.TestoFumetteriaCentrale div {
-  margin-top: 20px;
-  width: 100%;
-  font-size: 21px;
-  color: #000;
+  div {
+    margin-top: 20px;
+    font-size: 21px;
+    color: #000;
+  }
 }
 .title {
   font-family: "Raleway";
@@ -285,19 +278,11 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   color: #5d4037;
   text-align: center;
 }
-.carousell {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .arrowLeft {
   position: absolute;
   background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-98-xl.png);
   height: 24px;
   width: 24px;
-  left: 40px;
-  margin-top: 200px;
   height: 40px;
   width: 61px;
   background-size: contain;
@@ -311,18 +296,11 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-34-xl.png);
   height: 24px;
   width: 24px;
-  right: 40px;
-  margin-top: 200px;
   height: 40px;
   width: 61px;
+  right:0;
   background-size: contain;
   cursor: pointer;
-}
-.JokerPng {
-  display: flex;
-  width: 33%;
-  justify-content: center;
-  align-items: center;
 }
 .JokerPng div {
   width: 300px;
@@ -330,12 +308,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-image: url("../assets/joker.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-.TotoroPng {
-  display: flex;
-  width: 33%;
-  justify-content: center;
-  align-items: center;
 }
 .TotoroPng div {
   width: 350px;
@@ -388,18 +360,14 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   color: white;
 }
 .SalaLanMain {
-  width: 100%;
   justify-content: center;
   padding: 50px 0;
 }
 
 .FumetteriaMain {
-  width: 100%;
   background-color: #dadada;
-  display: flex;
-  justify-content: center;
-  padding-top:50px;
-  padding-bottom:50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .partnetLogo {
@@ -434,22 +402,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     margin-top: 30px;
   }
 }
-.leftImageMain {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  margin-top: 230px;
-}
-.rightImageMain {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-top: 230px;
-  text-align: left;
-  margin-left: 20%;
-}
 .textInstagram {
   margin-top: 30px;
   color: black;
@@ -477,11 +429,10 @@ p {
   height: 300px;
   width: 400px;
   margin: auto;
-  margin-top:20px;
+  margin-top: 20px;
   background-size: contain;
 }
 .Ristoro {
-  width: 100%;
   padding: 50px 0;
 }
 .leftSim {
@@ -690,9 +641,9 @@ video {
 }
 .noMargin {
   margin-left: 0 !important;
-  margin-right:0 !important;
+  margin-right: 0 !important;
 }
-.rightTextRistoro{
+.rightTextRistoro {
   text-align: left;
   width: 80%;
   margin: auto;
