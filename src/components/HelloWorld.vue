@@ -48,7 +48,7 @@
       <div class="carousell">
         <div class="imageCarousell" :style="[bg]"></div>
         <div class="arrowLeft" v-on:click="leftArrow"></div>
-        <div class="arrowRigth" v-on:click="rightArrow"></div>
+        <div class="arrowRight" v-on:click="rightArrow"></div>
       </div>
       <div class="marginTextUnderCaru">
         Se volete controllare il nostro menù
@@ -145,15 +145,18 @@
         ></div>
       </div>
     </div>
-    <div class="SponsorDiv">
-      <div class="textPart">Partners</div>
-      <div
-        v-on:click="clickMethodLogo(partner.url)"
-        class="partnetLogo"
-        v-for="partner in partners"
-        :key="partner.src"
-        :style="{ background: 'url(' + partner.src + ')' }"
-      ></div>
+    <div class="m-0 SponsorDiv background">
+       <span v-for="bubble in bubbles" :key="bubble"></span>
+      <div class="row textPart m-0 justify-center">Partners</div>
+      <div class="row m-0">
+        <div
+          v-on:click="clickMethodLogo(partner.url)"
+          class="partnerLogo col justify-center"
+          v-for="partner in partners"
+          :key="partner.src"
+          :style="{ background: 'url(' + partner.src + ')' }"
+        ></div>
+      </div>
     </div>
     <FooterElement />
   </div>
@@ -243,6 +246,7 @@ export default {
         url: "www.google.it",
       },
     ],
+    bubbles: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
   }),
   computed: {
     bg() {
@@ -259,6 +263,7 @@ export default {
 <style lang="scss">
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
 .fixedHeaderContainer {
   background-image: url("../assets/MNT00276.png");
   background-size: cover;
@@ -291,7 +296,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .BottoneFumetteria {
   width: 150px;
 }
-.arrowRigth {
+.arrowRight {
   position: absolute;
   background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-34-xl.png);
   height: 24px;
@@ -318,10 +323,8 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-position: center;
 }
 .textPart {
-  position: absolute;
   font-size: 30px;
-  color: red;
-  margin-top: -140px;
+  color: lightgray;
   font-weight: bold;
 }
 .fotoInstagram {
@@ -336,12 +339,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 }
 .SponsorDiv {
-  height: 200px;
-  width: 100%;
   background-color: #3d3c3a;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 40px 20px;
+   background:  #3E1E68;
 }
 .TextTitleSalaLan {
   color: white;
@@ -368,13 +368,15 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   justify-content: center;
 }
 
-.partnetLogo {
+.partnerLogo {
   height: 100px;
   width: 100px;
   cursor: pointer;
   margin-top: 40px;
+  margin-bottom: 20px;
   background-size: contain !important;
   background-repeat: no-repeat !important;
+  background-position: center !important;
   &:hover {
     opacity: 0.9;
   }
@@ -391,8 +393,8 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .centerTextMain {
   position: absolute;
   color: white;
-  font-size: 60px;
-  top: calc(50% - 63px);
+  font-size: 50px;
+  top: calc(50% - 33px);
   min-width: 100%;
   transform: translate(0, -50%);
   p {
@@ -519,8 +521,6 @@ video {
   transform-style: preserve-3d;
   cursor: pointer;
   box-sizing: content-box;
-  // background-color: #fff;
-
   &:hover {
     .card-info {
       transform: translateY(0);
@@ -688,7 +688,7 @@ video {
   }
 
   .arrowLeft,
-  .arrowRigth {
+  .arrowRight {
     height: 40px;
     width: 49px;
   }
@@ -762,6 +762,52 @@ video {
   }
   .Ristoro {
     width: 100%;
+  }
+}
+.background {
+  background: #3E1E68;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+$particleSize: 20vmin;
+$animationDuration: 6s;
+$amount: 20;
+.background span {
+  width: $particleSize;
+  height: $particleSize;
+  border-radius: $particleSize;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: $animationDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  $colors: (
+    #583C87,
+    #E45A84,
+    #FFACAC
+  );
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      color: nth($colors, random(length($colors)));
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+      $x: if(random() > 0.5, -1, 1);
+      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+    }
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }
 </style>
