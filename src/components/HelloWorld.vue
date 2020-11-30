@@ -5,26 +5,30 @@
       <div class="centerTextMain">
         Entra nel mondo di Login dove tutto può succedere!!
         <p>Sottotesto a caso</p>
-        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Vienici a trovare</button>
+        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+          Vienici a trovare
+        </button>
       </div>
     </div>
-    <div class="sim container">
-      <div class="row">
-      <div class="leftSim col-12 col-md-6">
-        <div>
-        Due Postazioni di Guida.
-        Simulatori ideali per gli e-sports
-        <p>
-          Vieni a scroprire la postazione di guida
-          <br />é la soluzione ideale per transformare la tua passione per la guida in una vera esperienza guidando auto da corsa con il massimo del realismo.
-          <br />
-          <br />Permette sessioni di guida online e offline
-        </p>
-        
+    <div class="sim">
+      <div class="row noMargin">
+        <div class="leftSim col-md-6">
+          <div>
+            Due Postazioni di Guida. Simulatori ideali per gli e-sports
+            <p>
+              Vieni a scroprire la postazione di guida
+              <br />é la soluzione ideale per transformare la tua passione per
+              la guida in una vera esperienza guidando auto da corsa con il
+              massimo del realismo.
+              <br />
+              <br />Permette sessioni di guida online e offline
+            </p>
+          </div>
+          <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+            Per info
+          </button>
         </div>
-        <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">Per info</button>
-      </div>
-      <div class="rightSim col-12 col-md-6"></div>
+        <div class="col-md-6 rightSim"></div>
       </div>
     </div>
     <video
@@ -37,7 +41,7 @@
     </video>
     <div class="separatorElement"></div>
     <div class="Ristoro">
-       <div class="textRistoro">
+      <div class="textRistoro">
         IL NOSTRO RISTORO
         <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
       </div>
@@ -50,99 +54,123 @@
         Se volete controllare il nostro menù
         <br />
         <br />
-        <button v-on:click="greet('/Hamburgeria')" class="bottoneTestoMain">Clikkare qui</button>
+        <button v-on:click="greet('/Hamburgeria')" class="bottoneTestoMain">
+          Clikkare qui
+        </button>
       </div>
     </div>
     <div class="separatorElement"></div>
-    <div class="FumetteriaMain">
-        <div class="textFumetteria">
-          Fumetteria <br/>
-        <p>Nel magico mondo del fantastico abbiamo sicuramente quello che cerchi ed anche quello che non cerchi</p>
-      </div>
-      <div class="JokerPng"><div></div></div>
-      <div class="TestoFumetteriaCentrale">
-       <div>
-        Due Postazioni di Guida.
-        Simulatori ideali per gli e-sports
+    <div class="FumetteriaMain row noMargin">
+      <div class="textFumetteria">
+        Fumetteria <br />
         <p>
-          Vieni a scroprire la postazione di guida
-          <br />é la soluzione ideale per transformare la tua passione per la guida in una vera esperienza guidando auto da corsa con il massimo del realismo.
-          <br />
-          <br />Permette sessioni di guida online e offline
+          Nel magico mondo del fantastico abbiamo sicuramente quello che cerchi
+          ed anche quello che non cerchi
         </p>
-        
+      </div>
+      <div class="FumetteriaMain row noMargin">
+        <div class="JokerPng"><div></div></div>
+        <div class="TestoFumetteriaCentrale">
+          <div>
+            Due Postazioni di Guida. Simulatori ideali per gli e-sports
+            <p>
+              Vieni a scroprire la postazione di guida
+              <br />é la soluzione ideale per transformare la tua passione per
+              la guida in una vera esperienza guidando auto da corsa con il
+              massimo del realismo.
+              <br />
+              <br />Permette sessioni di guida online e offline
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="batmanLogo">
-      </div>
-      <div class="TotoroPng">
-        <div></div>
+        <div class="batmanLogo"></div>
+        <div class="TotoroPng">
+          <div></div>
+        </div>
       </div>
     </div>
     <div class="SalaLanMain">
-      <div class="textRistoroSala">
-        SALA LAN -TORNEI EVENTI <br/>
+      <div class="textRistoroSala row noMargin">
+        <div>SALA LAN -TORNEI EVENTI <br />
         E TANTO ALTRO...
-        <p>Giochi con un pc o con una console?Qui al Login Abbiamo pensato proprio a tutti !</p>
+        <p>
+          Giochi con un pc o con una console?Qui al Login Abbiamo pensato
+          proprio a tutti !
+        </p>
+        </div>
       </div>
-      <div class="leftImageMain">
+      <div class="row noMargin">
+         <div class="col-md-6">
         <div class="fotoLeftImageMain"></div>
       </div>
-      <div class="rightImageMain">
+      <div class="col-md-6 justify-center">
+        <div class="rightTextRistoro">
+
         <div class="TextTitleSalaLan">
-          Postazioni Gaming 
-          <p>Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming</P>
+          Postazioni Gaming
+          <p>Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming</p>
         </div>
         <div class="TextTitleSalaLan">
           Tornei
           <p>Sfida I tuoi avversari e scala tutte le classifiche</p>
         </div>
-         <div class="TextTitleSalaLan">
-           Partite Locali
-           <p>Gioca con di tuoi amici con Pc o con Console</p>
-          </div>
+        <div class="TextTitleSalaLan">
+          Partite Locali
+          <p>Gioca con di tuoi amici con Pc o con Console</p>
+        </div>
         <div class="TextTitleSalaLan">
           Sala Streaming
-          <p>Sei uno streamer? Abbiamo una postazione apposta per te </p>
+          <p>Sei uno streamer? Abbiamo una postazione apposta per te</p>
+        </div>
         </div>
       </div>
+      </div>
+     
     </div>
     <div class="instagramMain">
-       <div class="textInstagram">
+      <div class="textInstagram">
         #LOGIN_IN_GAMING
         <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
-      </div>      
-    <div class="containerInstagram">
-    <div  v-on:click="clickMethod(dynamicContentHtml.node)" class="fotoInstagram" v-for="dynamicContentHtml in dynamicContentHtml"
-        :key="dynamicContentHtml.node.id"
-         :style="{ 'background': 'url(' + dynamicContentHtml.node.display_url + ')' }"></div>
+      </div>
+      <div class="containerInstagram">
+        <div
+          v-on:click="clickMethod(dynamicContentHtml.node)"
+          class="fotoInstagram"
+          v-for="dynamicContentHtml in dynamicContentHtml"
+          :key="dynamicContentHtml.node.id"
+          :style="{
+            background: 'url(' + dynamicContentHtml.node.display_url + ')',
+          }"
+        ></div>
+      </div>
     </div>
-    </div>
-    <div class="SponsorDiv" >
-      <div class="textPart">
-        Partners
-      </div>  
-          <div   v-on:click="clickMethodLogo(partner.url)" class="partnetLogo" v-for="partner in partners"
+    <div class="SponsorDiv">
+      <div class="textPart">Partners</div>
+      <div
+        v-on:click="clickMethodLogo(partner.url)"
+        class="partnetLogo"
+        v-for="partner in partners"
         :key="partner.src"
-         :style="{ 'background': 'url('+ partner.src + ')'}" ></div>
-       </div>
-       <FooterElement/>
+        :style="{ background: 'url(' + partner.src + ')' }"
+      ></div>
+    </div>
+    <FooterElement />
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import { router } from "../main.js";
-import LogoAlien from '../assets/alien.png'
-import LogoDeter from '../assets/Logo-Deterpul-1colore.png'
-import FotoCibo1 from '../assets/MNT00026.png'
-import FotoCibo2 from '../assets/MNT00075.png'
-import FotoCibo3 from '../assets/MNT00111.png'
-import FotoCibo4 from '../assets/MNT00097.png'
-import FooterElement from '../components/Footer.vue'
+import LogoAlien from "../assets/alien.png";
+import LogoDeter from "../assets/Logo-Deterpul-1colore.png";
+import FotoCibo1 from "../assets/MNT00026.png";
+import FotoCibo2 from "../assets/MNT00075.png";
+import FotoCibo3 from "../assets/MNT00111.png";
+import FotoCibo4 from "../assets/MNT00097.png";
+import FooterElement from "../components/Footer.vue";
 export default {
   name: "HelloWorld",
-  components:{FooterElement},
+  components: { FooterElement },
   methods: {
     greet: function (value) {
       router.push(value);
@@ -155,29 +183,32 @@ export default {
       if (this.i === 3) return (this.i = 0);
       return this.i++;
     },
-    clickMethod:function (value) {
-      window.open("https://www.instagram.com/p/"+ value.shortcode,'blank')
+    clickMethod: function (value) {
+      window.open("https://www.instagram.com/p/" + value.shortcode, "blank");
     },
-     clickMethodLogo:function (value) {
-      window.open("https://" + value,'blank')
-    }
+    clickMethodLogo: function (value) {
+      window.open("https://" + value, "blank");
+    },
   },
   mounted: function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     window.setInterval(() => {
       this.rightArrow();
     }, 6000);
-    const a = async() => {
-  // fetch data from a url endpoint    ?access_token=...&count=250
-    const response = await axios.get(' https://www.instagram.com/log_in_gaming/?__a=1')
-    return response
-    }
-    a().then(value => {
-       this.dynamicContentHtml = value.data.graphql.user.edge_owner_to_timeline_media.edges
-      })
+    const a = async () => {
+      // fetch data from a url endpoint    ?access_token=...&count=250
+      const response = await axios.get(
+        " https://www.instagram.com/log_in_gaming/?__a=1"
+      );
+      return response;
+    };
+    a().then((value) => {
+      this.dynamicContentHtml =
+        value.data.graphql.user.edge_owner_to_timeline_media.edges;
+    });
   },
   data: () => ({
-    dynamicContentHtml:'',
+    dynamicContentHtml: "",
     i: 0,
     items: [
       {
@@ -196,19 +227,19 @@ export default {
     partners: [
       {
         src: LogoAlien,
-        url:"https://www.google.it/"
+        url: "https://www.google.it/",
       },
       {
         src: LogoDeter,
-         url:"www.google.it"
+        url: "www.google.it",
       },
       {
         src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-         url:"www.google.it"
+        url: "www.google.it",
       },
       {
         src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-         url:"www.google.it"
+        url: "www.google.it",
       },
     ],
   }),
@@ -218,7 +249,6 @@ export default {
       return {
         backgroundImage: `url(${this.items[i].src})`,
       };
-     
     },
   },
 };
@@ -235,7 +265,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   width: 100%;
   min-height: 80vh;
 }
-.TestoFumetteriaCentrale{
+.TestoFumetteriaCentrale {
   display: flex;
   align-items: center;
   width: 33%;
@@ -243,13 +273,10 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   flex-direction: column;
 }
 .TestoFumetteriaCentrale div {
-  margin-top:20px;
+  margin-top: 20px;
   width: 100%;
   font-size: 21px;
   color: #000;
-}
-.TestoFumetteriaCentrale div:nth-child(1) {
-  margin-top:100px;
 }
 .title {
   font-family: "Raleway";
@@ -260,7 +287,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .carousell {
   width: 100%;
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,7 +303,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-size: contain;
   cursor: pointer;
 }
-.BottoneFumetteria{
+.BottoneFumetteria {
   width: 150px;
 }
 .arrowRigth {
@@ -292,26 +318,26 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-size: contain;
   cursor: pointer;
 }
-.JokerPng{
+.JokerPng {
   display: flex;
   width: 33%;
   justify-content: center;
   align-items: center;
 }
-.JokerPng div{
-  width:300px;
+.JokerPng div {
+  width: 300px;
   height: 316px;
   background-image: url("../assets/joker.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.TotoroPng{
+.TotoroPng {
   display: flex;
   width: 33%;
-    justify-content: center;
+  justify-content: center;
   align-items: center;
 }
-.TotoroPng div{
+.TotoroPng div {
   width: 350px;
   height: 200px;
   background-image: url("../assets/totoro.png");
@@ -319,77 +345,75 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-repeat: no-repeat;
   background-position: center;
 }
-.textPart{
+.textPart {
   position: absolute;
   font-size: 30px;
   color: red;
-  margin-top:-140px ;
+  margin-top: -140px;
   font-weight: bold;
 }
-.batmanLogo{
+.batmanLogo {
   display: none;
 }
-.fotoInstagram{
+.fotoInstagram {
   height: 300px;
   width: 300px;
   margin-right: 3px;
   margin-top: 3px;
   background-size: 100% 100% !important;
-   cursor: pointer;
-   &:hover{
-   opacity: 0.9;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
   }
 }
-.SponsorDiv{
+.SponsorDiv {
   height: 200px;
   width: 100%;
-  background-color:#3d3c3a;
+  background-color: #3d3c3a;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.TextTitleSalaLan{
-  color:white;
+.TextTitleSalaLan {
+  color: white;
   font-size: 20px;
-  margin-top:20px;
-  p{
-    margin-top:10px;
-    color:grey;
+  margin-top: 20px;
+  p {
+    margin-top: 10px;
+    color: grey;
     font-size: 12px;
   }
 }
 .marginTextUnderCaru {
   color: white;
-  margin-top: 150px;
 }
-.SalaLanMain{
-  height: 600px;
+.SalaLanMain {
   width: 100%;
-  display: flex;
   justify-content: center;
+  padding: 50px 0;
 }
 
-.FumetteriaMain{
-  height: 500px;
-  width:100%;
+.FumetteriaMain {
+  width: 100%;
   background-color: #dadada;
   display: flex;
   justify-content: center;
+  padding-top:50px;
+  padding-bottom:50px;
 }
 
-
-.partnetLogo{
+.partnetLogo {
   height: 100px;
   width: 100px;
   cursor: pointer;
-  margin-top:40px;
-  background-size: contain!important;
-  background-repeat: no-repeat!important;
-  &:hover{
+  margin-top: 40px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  &:hover {
     opacity: 0.9;
   }
 }
-.instagramMain{
+.instagramMain {
   height: 100%;
   min-height: 450px;
   width: 100%;
@@ -397,7 +421,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 .centerTextMain {
   position: absolute;
@@ -405,60 +428,61 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   font-size: 60px;
   top: calc(50% - 63px);
   min-width: 100%;
-  transform: translate(0,-50%);
+  transform: translate(0, -50%);
   p {
     font-size: 25px;
     margin-top: 30px;
   }
 }
-.leftImageMain{
+.leftImageMain {
   height: 100%;
-  width:50%;
+  width: 50%;
   display: flex;
-  margin-top:230px;
+  margin-top: 230px;
 }
-.rightImageMain{
+.rightImageMain {
   height: 100%;
-  width:50%;
+  width: 50%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top:230px;
+  margin-top: 230px;
   text-align: left;
   margin-left: 20%;
 }
-.textInstagram{
-  margin-top:30px;
-  color:black;
+.textInstagram {
+  margin-top: 30px;
+  color: black;
   font-size: 30px;
-  p{
-    margin-top:10px;
+  p {
+    margin-top: 10px;
     font-size: 15px;
     color: grey;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
 }
 .imageCarousell {
   width: 700px;
   height: 468px;
   justify-content: center;
-  margin-top: 124px;
+  margin: 50px auto;
   background-size: 100% 100%;
 }
 
 p {
   line-height: 1.5em;
 }
-.fotoLeftImageMain{
+.fotoLeftImageMain {
   background-image: url("../assets/MNT00280.png");
   height: 300px;
-     width: 400px;
-    margin-left: auto;
+  width: 400px;
+  margin: auto;
+  margin-top:20px;
   background-size: contain;
 }
 .Ristoro {
-  height: 735px;
   width: 100%;
+  padding: 50px 0;
 }
 .leftSim {
   color: black;
@@ -466,8 +490,8 @@ p {
   p {
     margin-top: 20px;
   }
-  div{
-    text-align: left;
+  div {
+    text-align: center;
   }
   button {
     margin-top: 50px;
@@ -475,7 +499,6 @@ p {
   }
 }
 .textRistoro {
-  margin-top: 50px;
   color: white;
   font-size: 40px;
   p {
@@ -483,11 +506,11 @@ p {
     color: gray;
   }
 }
-.textRistoroSala{
-  position: absolute;
-  margin-top: 50px;
+.textRistoroSala {
   color: white;
   font-size: 40px;
+  padding: 10px;
+  justify-content: center;
   p {
     font-size: 15px;
     color: gray;
@@ -534,11 +557,11 @@ video {
   width: 100%;
 }
 .sim {
-  height: 500px;
   width: 100%;
   background: #dadada;
   flex-wrap: nowrap;
   display: flex;
+  position: relative;
 }
 .card-wrap {
   margin: 10px;
@@ -604,24 +627,22 @@ video {
   transition: 1s $returnEasing, opacity 5s 1s $returnEasing;
   pointer-events: none;
 }
-.containerInstagram{
+.containerInstagram {
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 50px;
-  }
-    .textFumetteria{
-    font-size: 55px;
-    color: black;
-    position: absolute;
-  margin-top: 30px;
-  }
-   .textFumetteria p{
+}
+.textFumetteria {
+  font-size: 55px;
+  color: black;
+  p {
     font-size: 16px;
     color: gray;
   }
+}
 .card-info {
   padding: 20px;
   position: absolute;
@@ -667,6 +688,18 @@ video {
   font-weight: 700;
   text-shadow: rgba(black, 0.5) 0 10px 10px;
 }
+.noMargin {
+  margin-left: 0 !important;
+  margin-right:0 !important;
+}
+.rightTextRistoro{
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+.justify-center {
+  justify-content: center;
+}
 @media only screen and (max-width: 960px) {
   .sim {
     flex-wrap: wrap;
@@ -681,9 +714,8 @@ video {
       margin-top: 10px;
       font-size: 15px;
     }
-    div{
-      width: 450px;
-    text-align: center;
+    div {
+      text-align: center;
     }
   }
 
@@ -691,9 +723,9 @@ video {
     height: 50%;
     width: 100%;
     background-image: url(https://www.sparco-official.com/sim-rig/assets/img/rig-2/block-3-ITA.png);
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    height: 30vh;
   }
   .centerTextMain {
     position: absolute;
@@ -701,13 +733,13 @@ video {
     top: 40vh;
     color: white;
     font-size: 30px;
-    left: unset;
+    padding: 0 20px;
     p {
       font-size: 15px;
       margin-top: 30px;
     }
   }
-  
+
   .arrowLeft,
   .arrowRigth {
     height: 40px;
@@ -716,79 +748,71 @@ video {
   video {
     height: 100%;
   }
- 
 }
 @media only screen and (max-width: 800px) {
-  .fotoLeftImageMain{
-  margin-left:0%;
-  width: 100%;
-  background-size: 100%100%;
-}
-.textRistoroSala{
-  position: unset;
-  margin-top: 10px;
-  color: white;
-  font-size: 40px;
-}
-.rightImageMain{
-  height: 100%;
-  width:100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-top:0px;
-  text-align: center;
-  margin-left: 0%;
-}
-.leftImageMain{
-  height: 100%;
-  width:100%;
-  display: flex;
-  margin-top: 0px;
-}
-.SalaLanMain{
-  flex-direction: column;
-}
-.instagramMain{
-  .fotoInstagram{
-    height: 200px;
-    width: 200px;
+  .fotoLeftImageMain {
+    margin-left: 0%;
+    width: 100%;
+    background-size: 100%100%;
   }
-}
-  .SalaLanMain{
-  height: 740px;
-}
-.containerInstagram{
-:nth-child(n+7) {
+  .textRistoroSala {
+    position: unset;
+    margin-top: 10px;
+    color: white;
+    font-size: 40px;
+  }
+  .rightImageMain {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 0px;
+    text-align: center;
+    margin-left: 0%;
+    padding: 10px;
+  }
+  .leftImageMain {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin-top: 0px;
+  }
+  .SalaLanMain {
+    flex-direction: column;
+  }
+  .instagramMain {
+    .fotoInstagram {
+      height: 200px;
+      width: 200px;
+    }
+  }
+  .SalaLanMain {
+    height: auto;
+  }
+  .containerInstagram {
+    :nth-child(n + 7) {
       display: none;
+    }
   }
-}
-
-
 }
 @media only screen and (max-width: 690px) {
-  .TestoFumetteriaCentrale{
+  .TestoFumetteriaCentrale {
     display: none;
   }
-
-  .FumetteriaMain{
-    height: 400px;
-  }
-  .batmanLogo{
+  .batmanLogo {
     width: 150px;
     height: 150px;
     background-color: red;
     display: block;
-    position: absolute;
-    margin-top: 200px;
   }
-  .JokerPng{
-  display: none;
-}
-.TotoroPng{
-  display: none;
-}
- .marginTextUnderCaru {
+  .JokerPng {
+    display: none;
+  }
+  .TotoroPng {
+    display: none;
+  }
+  .marginTextUnderCaru {
     margin-top: 40px;
   }
   .imageCarousell {
@@ -800,8 +824,7 @@ video {
     margin-top: 20px;
   }
   .Ristoro {
-  width: 100%;
-  height: 669px;
-}
+    width: 100%;
+  }
 }
 </style>

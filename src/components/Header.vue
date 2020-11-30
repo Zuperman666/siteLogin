@@ -235,6 +235,7 @@ export default {
   background-color: transparent;
   position: fixed;
   z-index: 999;
+  max-width: 100vw;
 }
 .hamburgerMenù {
   display: none;
