@@ -1,5 +1,18 @@
 <template>
   <div>
+    <div class="m-0 SponsorDiv background">
+      <span v-for="bubble in bubbles" :key="bubble"></span>
+      <div class="row textPart m-0 justify-center">Partners</div>
+      <div class="row m-0">
+        <div
+          v-on:click="clickMethodLogo(partner.url)"
+          class="partnerLogo col justify-center"
+          v-for="partner in partners"
+          :key="partner.src"
+          :style="{ background: 'url(' + partner.src + ')' }"
+        ></div>
+      </div>
+    </div>
     <div class="separatorBlack"></div>
     <div class="footer">
       <div class="iconSocial">
@@ -36,7 +49,7 @@
                 required
               />
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <div style="position: absolute; left: -5000px" aria-hidden="true">
                 <input
                   type="text"
                   name="b_1c7e6a125be69ba51d73ca6ba_c0e1859cf2"
@@ -60,7 +73,9 @@
     </div>
     <div class="separatorBlack"></div>
     <div class="underFooter">
-      <div class="copyright">© 2019 - 2020, Login Gaming srl, All rights reserved</div>
+      <div class="copyright">
+        © 2019 - 2020, Login Gaming srl, All rights reserved
+      </div>
       <div class="linkTermAndCond">
         <a class="link" v-on:click="greet('/Privacy')">Privacy</a>
         <a class="link" v-on:click="greet('/Imprint')">Imprint</a>
@@ -98,6 +113,7 @@ export default {
         url: "www.google.it",
       },
     ],
+    bubbles: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
   }),
   methods: {
     greet: function (value) {
@@ -107,17 +123,20 @@ export default {
       window.open("https://" + value, "blank");
     },
     moveIcon: function () {
-      console.log(this.i ,this.j, this.partners[this.i],this.partners[this.j])
+      console.log(this.i, this.j, this.partners[this.i], this.partners[this.j]);
       if (this.i === 3) {
-         this.i = 0;  
-      }else {
-        this.i++
+        this.i = 0;
+      } else {
+        this.i++;
       }
       if (this.j === 3) {
         this.j = 0;
-      }else {
-        this.j++
+      } else {
+        this.j++;
       }
+    },
+    clickMethodLogo: function (value) {
+      window.open("https://" + value, "blank");
     },
   },
   mounted: function () {
@@ -127,11 +146,11 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .footer {
   height: 200px;
   width: 100%;
-  background-color: #dadada;
+  color: white;  
 }
 .partner {
   position: absolute;
@@ -140,8 +159,8 @@ export default {
 .underFooter {
   height: 50px;
   width: 100%;
-  background-color: #dadada;
   position: relative;
+  color: white;
 }
 .copyright {
   font-size: 10px;
@@ -195,7 +214,7 @@ export default {
   height: 100px;
   width: 100px;
   cursor: pointer;
-  margin-top:10px;
+  margin-top: 10px;
   background-size: contain !important;
   background-repeat: no-repeat !important;
 }
@@ -233,6 +252,77 @@ export default {
     margin: auto;
     position: absolute;
     top: 25px;
+  }
+}
+.SponsorDiv {
+  padding: 40px 20px;
+  background:  #3E1E68;
+}
+.textPart {
+  font-size: 30px;
+  color: lightgray;
+  font-weight: bold;
+  z-index: 10;
+}
+.partnerLogo {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.background {
+  background: linear-gradient(0deg,#000000 0%,   rgb(11, 0, 90) 100%);;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+$particleSize: 70px;
+$animationDuration: 6s;
+$amount: 20;
+.background span {
+  width: $particleSize;
+  height: $particleSize;
+  border-radius: $particleSize;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: $animationDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 0;
+  $colors: (
+    white,
+    darkred,
+    darkblue
+  );
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      color: nth($colors, random(length($colors)));
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+      $x: if(random() > 0.5, -1, 1);
+      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+    }
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }
 </style>

@@ -145,19 +145,6 @@
         ></div>
       </div>
     </div>
-    <div class="m-0 SponsorDiv background">
-       <span v-for="bubble in bubbles" :key="bubble"></span>
-      <div class="row textPart m-0 justify-center">Partners</div>
-      <div class="row m-0">
-        <div
-          v-on:click="clickMethodLogo(partner.url)"
-          class="partnerLogo col justify-center"
-          v-for="partner in partners"
-          :key="partner.src"
-          :style="{ background: 'url(' + partner.src + ')' }"
-        ></div>
-      </div>
-    </div>
     <FooterElement />
   </div>
 </template>
@@ -190,9 +177,7 @@ export default {
     clickMethod: function (value) {
       window.open("https://www.instagram.com/p/" + value.shortcode, "blank");
     },
-    clickMethodLogo: function (value) {
-      window.open("https://" + value, "blank");
-    },
+
   },
   mounted: function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -228,25 +213,6 @@ export default {
         src: FotoCibo4,
       },
     ],
-    partners: [
-      {
-        src: LogoAlien,
-        url: "https://www.google.it/",
-      },
-      {
-        src: LogoDeter,
-        url: "www.google.it",
-      },
-      {
-        src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-        url: "www.google.it",
-      },
-      {
-        src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-        url: "www.google.it",
-      },
-    ],
-    bubbles: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
   }),
   computed: {
     bg() {
@@ -322,11 +288,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background-repeat: no-repeat;
   background-position: center;
 }
-.textPart {
-  font-size: 30px;
-  color: lightgray;
-  font-weight: bold;
-}
+
 .fotoInstagram {
   height: 300px;
   width: 300px;
@@ -338,11 +300,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     opacity: 0.9;
   }
 }
-.SponsorDiv {
-  background-color: #3d3c3a;
-  padding: 40px 20px;
-   background:  #3E1E68;
-}
+
 .TextTitleSalaLan {
   color: white;
   font-size: 20px;
@@ -366,20 +324,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   padding-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
-}
-
-.partnerLogo {
-  height: 100px;
-  width: 100px;
-  cursor: pointer;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  &:hover {
-    opacity: 0.9;
-  }
 }
 .instagramMain {
   height: 100%;
@@ -762,52 +706,6 @@ video {
   }
   .Ristoro {
     width: 100%;
-  }
-}
-.background {
-  background: #3E1E68;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-$particleSize: 20vmin;
-$animationDuration: 6s;
-$amount: 20;
-.background span {
-  width: $particleSize;
-  height: $particleSize;
-  border-radius: $particleSize;
-  backface-visibility: hidden;
-  position: absolute;
-  animation-name: move;
-  animation-duration: $animationDuration;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  $colors: (
-    #583C87,
-    #E45A84,
-    #FFACAC
-  );
-  @for $i from 1 through $amount {
-    &:nth-child(#{$i}) {
-      color: nth($colors, random(length($colors)));
-      top: random(100) * 1%;
-      left: random(100) * 1%;
-      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
-      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
-      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
-      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
-      $x: if(random() > 0.5, -1, 1);
-      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
-    }
-  }
-}
-
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }
 </style>
