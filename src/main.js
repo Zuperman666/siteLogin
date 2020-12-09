@@ -15,15 +15,18 @@ import vuetify from '@/plugins/vuetify'
 import Separator from './components/Separator.vue' 
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
+import PrenotaPc from './Pages/PrenotaPc.vue'
 import VueInstagram from 'vue-instagram'
 import AssettoCorsa from "./Pages/Team/AssettoCorsa";
 import Digimon from "./Pages/Team/Digimon";
 import Fifa from "./Pages/Team/Fifa";
 import DragonBall from "./Pages/Team/DragonBall";
- 
+import { Datetime } from 'vue-datetime'
+
+import 'vue-datetime/dist/vue-datetime.css'
+
+Vue.use(Datetime)
 Vue.use(VueInstagram)
-
-
 Vue.use(VueYouTubeEmbed)
 
 // Install BootstrapVue
@@ -55,6 +58,7 @@ export const router = new VueRouter({
     {path: '/Team/AssettoCorsa',name:"AssettoCorsa",component: AssettoCorsa},
     {path: '/Team/Fifa',name:"Fifa",component: Fifa},
     {path: '/Team/Digimon',name:"Digimon",component: Digimon},
+    {path: '/PrenotaPc',name:"PrenotaPc",component: PrenotaPc},
     {path: '/Team/DragonBall',name:"DragonBall",component: DragonBall},
 
  /* {path: '/Privacy',name:"Privacy",component: Privacy},
@@ -71,6 +75,7 @@ Vue.component("modal", {
 });
 Vue.component('separator', Separator)
 Vue.component('HeaderContainer', HeaderContainer)
+Vue.component('datetime', Datetime);
 
 new Vue({
   vuetify,

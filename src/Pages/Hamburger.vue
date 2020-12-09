@@ -178,7 +178,6 @@ export default {
   height: 100% !important;
 }
 .ImageUnderHeaderHamburger {
-  background-image: url(/img/MNT00276.0c2ff354.png);
   background-size: cover;
   height: 100%;
   width: 100%;
