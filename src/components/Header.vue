@@ -94,6 +94,9 @@
           :class="currentPath === '/Eventi' ? 'active':''"
           v-on:click="greet('/Eventi')"
         >Eventi</div>
+        <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMain">
+          Prenota Pc
+        </button>
       </div>
     </div>
     <div class="scrollTop" v-on:click="scrollTop" :class="isScrolled ? 'active':''"></div>
