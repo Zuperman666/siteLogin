@@ -119,11 +119,7 @@ export default {
     greet: function (value) {
       router.push(value);
     },
-    clickMethodLogo: function (value) {
-      window.open("https://" + value, "blank");
-    },
     moveIcon: function () {
-      console.log(this.i, this.j, this.partners[this.i], this.partners[this.j]);
       if (this.i === 3) {
         this.i = 0;
       } else {

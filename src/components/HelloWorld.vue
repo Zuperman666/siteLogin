@@ -152,8 +152,6 @@
 <script>
 import axios from "axios";
 import { router } from "../main.js";
-import LogoAlien from "../assets/alien.png";
-import LogoDeter from "../assets/Logo-Deterpul-1colore.png";
 import FotoCibo1 from "../assets/MNT00026.png";
 import FotoCibo2 from "../assets/MNT00075.png";
 import FotoCibo3 from "../assets/MNT00111.png";
