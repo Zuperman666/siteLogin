@@ -1,6 +1,15 @@
 <template>
 <div>
-   <HeaderContainer/>
+   <div class="ImageUnderHeaderHamburger">
+      <HeaderContainer/>
+      <div class="centerTextMain">
+         Entra nel mondo di Login dove tutto può succedere!!
+         <p>Sottotesto a caso</p>
+         <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+            Prenota Ora
+         </button>
+      </div>
+   </div>
    <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>
    <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="left"/>
    <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>

@@ -1,8 +1,15 @@
 <template>
     <div>
-        <HeaderContainer/>
-
-        <div class="separatoreTop"></div>
+        <div class="ImageUnderHeaderHamburger">
+            <HeaderContainer/>
+            <div class="centerTextMain">
+                Entra nel mondo di Login dove tutto può succedere!!
+                <p>Sottotesto a caso</p>
+                <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+                    Prenota Ora
+                </button>
+            </div>
+        </div>
         <div class="timelineContainer"
              :style="{ 'backgroundImage': indexItems === '-1'  ? 'grey' :'url(' + items[indexItems].src + ')' }">
             <div class="timeline">
@@ -107,11 +114,6 @@
     };
 </script>
 <style lang="scss" scoped>
-    .separatoreTop {
-        height: 130px;
-        width: 100%;
-        display: inline-block;
-    }
 
     @mixin responsive() {
         @media only screen and (max-width: 767px) {
