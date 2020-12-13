@@ -57,6 +57,9 @@ import FooterElement from "../components/Footer.vue";
 export default {
   name: "Contattaci",
   components: { FooterElement },
+  mounted: function () {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  },
   data(){return {dataSave:{nome: "", cognome: "", email:"",check:false}};},
   methods:{
      sendData:(dataSave)=>{

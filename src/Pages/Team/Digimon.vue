@@ -9,6 +9,9 @@
     export default {
         name: 'Digimon',
         components:{FooterElement},
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        },
     }
 </script>
 <style lang="scss">

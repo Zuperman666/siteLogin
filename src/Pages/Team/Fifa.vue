@@ -18,6 +18,9 @@
                listPlayer:arrayListPlayerFifa,
             };
         },
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        },
         components:{TeamStructure, FooterElement},
     }
 </script>

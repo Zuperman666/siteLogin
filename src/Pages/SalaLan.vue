@@ -23,6 +23,9 @@
     export default {
         name: 'SalaLan',
         components: {LetsPlayCards, FooterElement},
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        }
     }
 </script>
 <style lang="scss" scoped>

@@ -45,6 +45,9 @@ import FooterElement from '../components/Footer.vue'
 export default {
    name: 'Fumetteria',  
    components:{FooterElement},
+    mounted: function () {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    },
    data () {
     return {
       items: [

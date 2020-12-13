@@ -41,7 +41,9 @@
         destroyed: function () {
             window.removeEventListener("scroll", this.handleScroll);
         },
-
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        },
         data() {
             return {
                 indexItems: "-1",

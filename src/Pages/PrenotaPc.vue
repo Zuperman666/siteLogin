@@ -80,14 +80,26 @@
 
     export default {
         name: "Contattaci",
-        props: ['typePc'],
         components: {FooterElement},
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        },
         data() {
-            return {dataSave: {nome: "", cognome: "", email: "", check: false, typePc: this.typePc}};
+            return {dataSave: {nome: "", cognome: "", email: "", check: false, typePc: this.setTypePc()}};
         },
         methods: {
             sendData: (dataSave) => {
                 console.log(dataSave);
+            },
+            setTypePc: () => {
+                let uri = window.location.search.substring(1);
+                let params = new URLSearchParams(uri);
+                if (params.get("typePc")) {
+                    console.log(params.get("typePc"))
+                    return params.get("typePc");
+                } else {
+                    return "Pc"
+                }
             }
         }
     };

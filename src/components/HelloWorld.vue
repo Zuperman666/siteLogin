@@ -40,6 +40,7 @@
       <source src="../assets/videoplayback.mp4" type="video/mp4" />
     </video>
     <div class="separatorElement"></div>
+    <DualImageBanner  toYoutube="false" textButton="Visualizza gli eventi passati" text="Oltre ai servizi tipici del locale,organizziamo eventi e collaborazioni con realtà attente all’innovazione" linkImage1="MNT00026.png" linkImage2="MNT00026.png" title="Eventi in programma" redirect="/Eventi"></DualImageBanner>
     <div class="Ristoro">
       <div class="textRistoro">
         IL NOSTRO RISTORO
@@ -60,35 +61,7 @@
       </div>
     </div>
     <div class="separatorElement"></div>
-    <div class="FumetteriaMain row mx-0">
-      <div class="textFumetteria">
-        Fumetteria <br />
-        <p>
-          Nel magico mondo del fantastico abbiamo sicuramente quello che cerchi
-          ed anche quello che non cerchi
-        </p>
-      </div>
-      <div class="FumetteriaMain py-0 row mx-0">
-        <div class="JokerPng col-md-3 d-none d-md-block"><div></div></div>
-        <div class="TestoFumetteriaCentrale d-none d-md-block col-md-6">
-          <div>
-            Due Postazioni di Guida. Simulatori ideali per gli e-sports
-            <p>
-              Vieni a scroprire la postazione di guida
-              <br />é la soluzione ideale per transformare la tua passione per
-              la guida in una vera esperienza guidando auto da corsa con il
-              massimo del realismo.
-              <br />
-              <br />Permette sessioni di guida online e offline
-            </p>
-          </div>
-        </div>
-        <div class="batmanLogo d-block d-md-none"></div>
-        <div class="TotoroPng col-md-3 d-none d-md-block">
-          <div></div>
-        </div>
-      </div>
-    </div>
+    <DualImageBanner toYoutube="false" textButton="Guarda i video" text="Cosa ne pensi delle ultime uscite?Ascolta cosa pensiamo noi e dicci la tua!" linkImage1="MNT00026.png" linkImage2="MNT00026.png" title="La fumetteria" redirect="/Eventi"></DualImageBanner>
     <div class="SalaLanMain">
       <div class="textRistoroSala row mx-0">
         <div>
@@ -157,9 +130,10 @@ import FotoCibo2 from "../assets/MNT00075.png";
 import FotoCibo3 from "../assets/MNT00111.png";
 import FotoCibo4 from "../assets/MNT00097.png";
 import FooterElement from "../components/Footer.vue";
+import DualImageBanner from "../components/DualImageBanner.vue";
 export default {
   name: "HelloWorld",
-  components: { FooterElement },
+  components: { FooterElement,DualImageBanner },
   methods: {
     greet: function (value) {
       router.push(value);
@@ -270,21 +244,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   right: 0;
   background-size: contain;
   cursor: pointer;
-}
-.JokerPng div {
-  width: 20vw;
-  height: 25vw;
-  background-image: url("../assets/joker.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.TotoroPng div {
-  width: 20vw;
-  height: 25vw;
-  background-image: url("../assets/totoro.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .fotoInstagram {
