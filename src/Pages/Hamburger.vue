@@ -12,14 +12,14 @@
         </div>
         <div class="d-md-inline-flex">
             <div class="col-md-6 col-sm-12">
-                <video
+                <iframe
                         poster="https://images-na.ssl-images-amazon.com/images/I/81eNGmjkfsL._AC_SL1500_.jpg"
                         width="100%"
                         height="100%"
                         controls
                 >
                     <source src="../assets/videoplayback.mp4" type="video/mp4"/>
-                </video>
+                </iframe>
             </div>
             <div class="col-md-6 col-sm-12">
                 <img class="imgThree" src=../assets/MNT00026.png>

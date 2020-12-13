@@ -31,14 +31,14 @@
         <div class="col-md-6 rightSim"></div>
       </div>
     </div>
-    <video
+    <iframe
       poster="https://images.everyeye.it/img-notizie/altre-immagini-preview-dall-anime-the-promised-neverland-v3-357710-1280x720.jpg"
       width="100%"
       height="100%"
       controls
     >
       <source src="../assets/videoplayback.mp4" type="video/mp4" />
-    </video>
+    </iframe>
     <div class="separatorElement"></div>
     <DualImageBanner  toYoutube="false" textButton="Visualizza gli eventi passati" text="Oltre ai servizi tipici del locale,organizziamo eventi e collaborazioni con realtà attente all’innovazione" linkImage1="MNT00026.png" linkImage2="MNT00026.png" title="Eventi in programma" redirect="/Eventi"></DualImageBanner>
     <div class="Ristoro">

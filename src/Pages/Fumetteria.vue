@@ -1,79 +1,179 @@
 <template>
     <div>
-      <HeaderContainer/>
-       <p class="TextNameTitle"><a>Fumetteria Login</a></p>
-    <div class="TextSubTitleDiv">
-       <h1>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</h1>
+        <div class="ImageUnderHeaderHamburger">
+            <HeaderContainer/>
+            <div class="centerTextMain">
+                Entra nel mondo di Login dove tutto può succedere!!
+                <p>Sottotesto a caso</p>
+                <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+                    Prenota Ora
+                </button>
+            </div>
+        </div>
+        <div class="containerFum">
+            <div class="col-md-6 col-sm-12">
+                <h1> I VIDEO BELLI</h1>
+                <div
+                        class="testIframe"
+                        v-for="(vid, i) in video"
+                        :key="i"
+                        :class="i !== 0 ? 'displayNoneVid' : ''"
+                >
+                    <div v-html="vid.src"></div>
+                    <h1>{{vid.title}}</h1>
+                    <h2>{{vid.text}}</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h1> I Fumetti BELLI</h1>
+                <div
+                        class="blockFumetto"
+                        v-for="(item, i) in itemsFumetti"
+                        :key="i"
+                >
+                    <img :src="item.src">
+                    <div class="textInsedeFumetto">
+                        <h1>{{item.title}}</h1>
+                        <h2>{{item.descrizione}}</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="buttonFumetteria">
+            <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+                Prenota Ora
+            </button>
+        </div>
+        <FooterElement/>
     </div>
-    <separator/>
-     <div>
-         <p class="TextNameTitle"><a>Le ultime uscite !!!</a></p>
-    </div>
-      <v-app>
-    <v-carousel
-      cycle
-      height="400"
-      hide-delimiter-background
-      show-arrows-on-hover
-    >
-      <v-carousel-item
-        v-for="(item, i) in items"
-        :key="i"
-         :src="item.src"
-      >
-        <v-sheet
-          height="100%"
-        >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <div class="display-3"> Slide</div>
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
-    </v-carousel>
-    </v-app>
-      <p class="TextNameTitle"><a>Il fumetto consigliato del mese</a></p>
-      <youtube video-id="9AZA6fREkoA"></youtube>
-   <FooterElement/>
-   </div>
 </template>
 <script>
-import FooterElement from '../components/Footer.vue'
-export default {
-   name: 'Fumetteria',  
-   components:{FooterElement},
-    mounted: function () {
-        window.scrollTo({top: 0, behavior: "smooth"});
-    },
-   data () {
-    return {
-      items: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
-        ],
+    import FooterElement from '../components/Footer.vue'
+
+    export default {
+        name: 'Fumetteria',
+        components: {FooterElement},
+        mounted: function () {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        },
+        data() {
+            return {
+                itemsFumetti: [
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+                        title: 'Scoglionato',
+                        descrizione: 'Poteva andare peggio ed invece'
+                    },
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+                        title: 'Scoglionato2',
+                        descrizione: 'Poteva andare peggio ed invece2'
+                    },
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+                        title: 'Scoglionato3',
+                        descrizione: 'Poteva andare peggio ed invece3'
+                    },
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+                        title: 'Scoglionato4',
+                        descrizione: 'Poteva andare peggio ed invece4'
+                    },
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+                        title: 'Scoglionato4',
+                        descrizione: 'Poteva andare peggio ed invece4'
+                    },
+                ],
+                video: [{
+                    src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ALFRBMClBwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                    title: 'La mamma di flavio 1 ',
+                    text: 'Bel film ma la trama scarseggia'
+                },
+                    {
+                        src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ALFRBMClBwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                        title: 'La vendetta di Gilda 2',
+                        text: 'Anvedi Gilda'
+                    },
+                    {
+                        src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ALFRBMClBwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                        title: 'Il ritorno del Re 3 ',
+                        text: 'Molto bello questo signore degli anelli'
+                    },
+
+                ],
+            }
+        }
     }
-  }
-}
 </script>
 <style lang="scss" scoped>
-.TextSubTitleDiv{
-   width: 500px;
-   display: inline-block;
-}
-.TextSubTitleDiv h1 {
-   font-size: 20px;
-}
+
+    .testIframe {
+        text-align: left;
+    }
+
+    .testIframe div {
+        height: 460px;
+    }
+
+    .textInsedeFumetto {
+        color: white;
+        text-align: left;
+        margin-left: 10px;
+        h1{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        h2{
+            font-size: 16px;
+        }
+    }
+
+    .displayNoneVid {
+        display: block;
+    }
+
+    .containerFum {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .blockFumetto {
+        display: flex;
+        width: 100%;
+        height: 300px;
+        justify-content: flex-start;
+        margin-bottom: 60px;
+        img {
+            height: 100%;
+            width: 100%;
+            max-width: 40%;
+        }
+    }
+    .buttonFumetteria{
+        background-color: #3d3c3a;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        .bottoneTestoMain{
+            color: white;
+        }
+    }
+    @media only screen and (max-width: 790px) {
+        .testIframe div {
+            height: 360px;
+        }
+        .displayNoneVid {
+            display: none;
+        }
+        .containerFum{
+            display: flex;
+            flex-flow: column;
+        }
+    }
+
 </style>
