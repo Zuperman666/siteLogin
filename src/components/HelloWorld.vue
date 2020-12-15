@@ -294,7 +294,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .centerTextMain {
   position: absolute;
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   top: calc(50% - 33px);
   min-width: 100%;
   transform: translate(0, -50%);
@@ -387,7 +387,8 @@ p {
   background: transparent;
   border: 1px solid white;
   height: 50px;
-  width: 200px;
+  width: auto;
+  padding: 0 10px;
   font-size: 20px;
   outline: none;
   &:hover {

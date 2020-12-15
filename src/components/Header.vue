@@ -2,39 +2,53 @@
   <div>
     <div
       class="HeaderContainer"
-      :class="[isOpen ? 'active': '' ,startAnimation ? 'activeAnimation':'',closeAnimation ? 'closeAnimation':'']"
+      :class="[
+        isOpen ? 'active' : '',
+        startAnimation ? 'activeAnimation' : '',
+        closeAnimation ? 'closeAnimation' : '',
+      ]"
     >
-      <div class="listContainer" :class="isOpen ? 'active': '' ">
+      <div class="listContainer" :class="isOpen ? 'active' : ''">
         <div
           class="Hamburgeria"
-          :class="currentPath === '/Hamburgeria' ? 'active':''"
+          :class="currentPath === '/Hamburgeria' ? 'active' : ''"
           v-on:click="greet('/Hamburgeria')"
-        >Hamburgeria</div>
+        >
+          Hamburgeria
+        </div>
         <div
           class="Fumetteria"
-          :class="currentPath === '/Fumetteria' ? 'active':''"
+          :class="currentPath === '/Fumetteria' ? 'active' : ''"
           v-on:click="greet('/Fumetteria')"
-        >Fumetteria</div>
+        >
+          Fumetteria
+        </div>
         <div
           class="Cocktails"
-          :class="currentPath === '/Cocktails' ? 'active':''"
+          :class="currentPath === '/Cocktails' ? 'active' : ''"
           v-on:click="greet('/Cocktails')"
-        >Cocktails</div>
+        >
+          Cocktails
+        </div>
         <div
           class="Contatti"
-          :class="currentPath === '/Contattaci' ? 'active':''"
+          :class="currentPath === '/Contattaci' ? 'active' : ''"
           v-on:click="greet('/Contattaci')"
-        >Contattaci</div>
+        >
+          Contattaci
+        </div>
         <div
           class="Eventi"
-          :class="currentPath === '/Eventi' ? 'active':''"
+          :class="currentPath === '/Eventi' ? 'active' : ''"
           v-on:click="greet('/Eventi')"
-        >Eventi</div>
+        >
+          Eventi
+        </div>
       </div>
       <div class="hamburgerMenù">
         <div
           class="IconHamburgerMenù"
-          :class="[iconActive ? 'activeIcon':'' ]"
+          :class="[iconActive ? 'activeIcon' : '']"
           v-on:click="openModal()"
           id="burger"
         >
@@ -43,63 +57,116 @@
           <div class="bun bottom"></div>
         </div>
       </div>
-      <div class="iconLogo" :class="[iconLogo ? 'activeIcon':'' ]">
+      <div class="iconLogo" :class="[iconLogo ? 'activeIcon' : '']">
         <div class="logo"></div>
       </div>
-      <div class="MainHeader" :class="isScrolled ? 'scrolled': '' ">
+      <div class="MainHeader" :class="isScrolled ? 'scrolled' : ''">
         <span class="IconHome" v-on:click="greet('/')"></span>
-        <div
-          class="Hamburgeria"
-          :class="currentPath === '/Hamburgeria' ? 'active':''"
-          v-on:click="greet('/Hamburgeria')"
-        >Hamburgeria</div>
-        <div class="Team"
-             :class="currentPath === '/Team' ? 'active':''"
-             v-on:mouseover="activeSubMenu = true"
-        >Team
-          <div :class="!activeSubMenu ? 'display-none': 'display-block' " v-on:mouseleave="activeSubMenu = false">
-            <div class="relative">
-              <div class="box">
-                <div v-on:click="greet('/Team/AssettoCorsa')" :class="hasColorAssettoCorsa ? 'colorlessAssettoCorsa' : 'coloredAssettoCorsa'" v-on:mouseover="hasColorAssettoCorsa = true" v-on:mouseleave="hasColorAssettoCorsa = false"></div>
-                <div v-on:click="greet('/Team/DragonBall')" :class="hasColorDragonBall ? 'colorlessDragonBall' : 'coloredDragonBall'" v-on:mouseover="hasColorDragonBall = true" v-on:mouseleave="hasColorDragonBall = false"></div>
-                <div v-on:click="greet('/Team/Digimon')" :class="hasColorDigimon ? 'colorlessDigimon' : 'coloredDigimon'" v-on:mouseover="hasColorDigimon = true" v-on:mouseleave="hasColorDigimon = false"></div>
-                <div v-on:click="greet('/Team/Fifa')" :class="hasColorFifa ? 'colorlessFifa' : 'coloredFifa'" v-on:mouseover="hasColorFifa = true" v-on:mouseleave="hasColorFifa = false"></div>
+        <div class="navHeader">
+          <div
+            class="Hamburgeria"
+            :class="currentPath === '/Hamburgeria' ? 'active' : ''"
+            v-on:click="greet('/Hamburgeria')"
+          >
+            Hamburgeria
+          </div>
+          <div
+            class="Team"
+            :class="currentPath === '/Team' ? 'active' : ''"
+            v-on:mouseover="activeSubMenu = true"
+          >
+            Team
+            <div
+              :class="!activeSubMenu ? 'display-none' : 'display-block'"
+              v-on:mouseleave="activeSubMenu = false"
+            >
+              <div class="relative">
+                <div class="box">
+                  <div
+                    v-on:click="greet('/Team/AssettoCorsa')"
+                    :class="
+                      hasColorAssettoCorsa
+                        ? 'colorlessAssettoCorsa'
+                        : 'coloredAssettoCorsa'
+                    "
+                    v-on:mouseover="hasColorAssettoCorsa = true"
+                    v-on:mouseleave="hasColorAssettoCorsa = false"
+                  ></div>
+                  <div
+                    v-on:click="greet('/Team/DragonBall')"
+                    :class="
+                      hasColorDragonBall
+                        ? 'colorlessDragonBall'
+                        : 'coloredDragonBall'
+                    "
+                    v-on:mouseover="hasColorDragonBall = true"
+                    v-on:mouseleave="hasColorDragonBall = false"
+                  ></div>
+                  <div
+                    v-on:click="greet('/Team/Digimon')"
+                    :class="
+                      hasColorDigimon ? 'colorlessDigimon' : 'coloredDigimon'
+                    "
+                    v-on:mouseover="hasColorDigimon = true"
+                    v-on:mouseleave="hasColorDigimon = false"
+                  ></div>
+                  <div
+                    v-on:click="greet('/Team/Fifa')"
+                    :class="hasColorFifa ? 'colorlessFifa' : 'coloredFifa'"
+                    v-on:mouseover="hasColorFifa = true"
+                    v-on:mouseleave="hasColorFifa = false"
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div
-          class="Fumetteria"
-          :class="currentPath === '/Fumetteria' ? 'active':''"
-          v-on:click="greet('/Fumetteria')"
-        >Fumetteria</div>
-        <div
-          class="Cocktails"
-          :class="currentPath === '/Cocktails' ? 'active':''"
-          v-on:click="greet('/Cocktails')"
-        >Cocktails</div>
-        <div
-          class="SalaLan"
-          :class="currentPath === '/SalaLan' ? 'active':''"
-          v-on:click="greet('/SalaLan')"
-        >SalaLan</div>
-        <div
-          class="Contatti"
-          :class="currentPath === '/Contattaci' ? 'active':''"
-          v-on:click="greet('/Contattaci')"
-        >Contattaci</div>
-        <div
-          class="Eventi"
-          :class="currentPath === '/Eventi' ? 'active':''"
-          v-on:click="greet('/Eventi')"
-        >Eventi</div>
-        <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMain">
-          Prenota Pc
-        </button>
+          <div
+            class="Fumetteria"
+            :class="currentPath === '/Fumetteria' ? 'active' : ''"
+            v-on:click="greet('/Fumetteria')"
+          >
+            Fumetteria
+          </div>
+          <div
+            class="Cocktails"
+            :class="currentPath === '/Cocktails' ? 'active' : ''"
+            v-on:click="greet('/Cocktails')"
+          >
+            Cocktails
+          </div>
+          <div
+            class="SalaLan"
+            :class="currentPath === '/SalaLan' ? 'active' : ''"
+            v-on:click="greet('/SalaLan')"
+          >
+            SalaLan
+          </div>
+          <div
+            class="Contatti"
+            :class="currentPath === '/Contattaci' ? 'active' : ''"
+            v-on:click="greet('/Contattaci')"
+          >
+            Contattaci
+          </div>
+          <div
+            class="Eventi"
+            :class="currentPath === '/Eventi' ? 'active' : ''"
+            v-on:click="greet('/Eventi')"
+          >
+            Eventi
+          </div>
+          <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMain">
+            Prenota Pc
+          </button>
+        </div>
       </div>
     </div>
-    <div class="scrollTop" v-on:click="scrollTop" :class="isScrolled ? 'active':''"></div>
+    <div
+      class="scrollTop"
+      v-on:click="scrollTop"
+      :class="isScrolled ? 'active' : ''"
+    ></div>
   </div>
 </template>
 <script>
@@ -115,11 +182,11 @@ export default {
       closeAnimation: false,
       iconActive: false,
       iconLogo: false,
-      activeSubMenu:false,
-      hasColorFifa:false,
-      hasColorAssettoCorsa:false,
-      hasColorDragonBall:false,
-      hasColorDigimon:false,
+      activeSubMenu: false,
+      hasColorFifa: false,
+      hasColorAssettoCorsa: false,
+      hasColorDragonBall: false,
+      hasColorDigimon: false,
     };
   },
 
@@ -164,77 +231,77 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  .colorlessAssettoCorsa{
-    width: 40%;
-    height: 40%;
-    background: white;
-    margin-bottom: 5%;
-  }
+.colorlessAssettoCorsa {
+  width: 40%;
+  height: 40%;
+  background: white;
+  margin-bottom: 5%;
+}
 
-  .coloredAssettoCorsa{
-    width: 40%;
-    height: 40%;
-    background: grey;
-    margin-bottom: 5%;
-  }
+.coloredAssettoCorsa {
+  width: 40%;
+  height: 40%;
+  background: grey;
+  margin-bottom: 5%;
+}
 
-  .colorlessDragonBall{
-    width: 40%;
-    height: 40%;
-    background: greenyellow;
-    margin-bottom: 5%;
-  }
+.colorlessDragonBall {
+  width: 40%;
+  height: 40%;
+  background: greenyellow;
+  margin-bottom: 5%;
+}
 
-  .coloredDragonBall{
-    width: 40%;
-    height: 40%;
-    background: green;
-    margin-bottom: 5%;
-  }
+.coloredDragonBall {
+  width: 40%;
+  height: 40%;
+  background: green;
+  margin-bottom: 5%;
+}
 
-  .colorlessDigimon{
-    width: 40%;
-    height: 40%;
-    background: magenta;
-  }
+.colorlessDigimon {
+  width: 40%;
+  height: 40%;
+  background: magenta;
+}
 
-  .coloredDigimon{
-    width: 40%;
-    height: 40%;
-    background: maroon;
-  }
+.coloredDigimon {
+  width: 40%;
+  height: 40%;
+  background: maroon;
+}
 
-  .colorlessFifa{
-    width: 40%;
-    height: 40%;
-    background: blue;
-  }
+.colorlessFifa {
+  width: 40%;
+  height: 40%;
+  background: blue;
+}
 
-  .coloredFifa{
-    width: 40%;
-    height: 40%;
-    background: blueviolet;
-  }
+.coloredFifa {
+  width: 40%;
+  height: 40%;
+  background: blueviolet;
+}
 
-  .display-none {
-    display: none;
-  }
-  .box {
-    position: absolute;
-    width: 400px;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-    align-content: center;
-    height: 400px;
-    background: red;
-  }
-  .display-block {
-    display: block;
-  }
-  .HeaderContainer {
+.display-none {
+  display: none;
+}
+.box {
+  position: absolute;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  align-content: center;
+  height: 400px;
+  background: red;
+}
+.display-block {
+  display: block;
+}
+.HeaderContainer {
   width: 100%;
-  height: 127px;
+  height: 80px;
   background-color: transparent;
   position: fixed;
   z-index: 999;
@@ -244,24 +311,27 @@ export default {
   display: none;
 }
 .IconHamburgerMenù {
-  width: 90px;
-  height: 60px;
+  width: 60px;
+  height: 90%;
   background-size: contain;
-  top: 25px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 .MainHeader {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
   color: white;
-}
+  padding: 0 30px;
+  transition: width 4s ease-out 2s;
+  span {
+    position: absolute;
+    left: 30px;
+  }
 
-.MainHeader span {
-  position: absolute;
-  left: 75px;
 }
 .listContainer.active {
   width: 60%;
@@ -276,9 +346,21 @@ export default {
 .listContainer {
   display: none;
 }
-.MainHeader div {
-  margin-right: 5%;
-  cursor: pointer;
+.MainHeader .navHeader {
+  display: flex;
+  width: calc(100% - 120px);
+  justify-content: center;
+  line-height: 50px;
+  div {
+    margin-right: 3.5%;
+    cursor: pointer;
+  }
+  .bottoneTestoMain {
+    width: auto;
+    padding: 0 10px;
+    font-size: inherit;
+    white-space: nowrap;
+  }
 }
 .MainHeader.scrolled {
   background-color: rgba(60, 60, 60, 0.9);
@@ -290,10 +372,11 @@ export default {
 }
 .IconHome {
   background-image: url("../assets/login_gaming_icon.png");
-  width: 150px;
-  height: 90px;
+  width: 102px;
+  height: 60px;
   background-size: contain;
-  top: 25px;
+  top: 50%;
+  transform: translatey(-50%);
   cursor: pointer;
 }
 
@@ -318,10 +401,11 @@ export default {
   justify-content: flex-start;
   align-items: top;
   margin-right: 5%;
-  height: 100%;
+  height: 80%;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 }
 .iconLogo.activeIcon {
   display: none;
@@ -471,14 +555,14 @@ export default {
   }
   .logo {
     background-image: url("../assets/login_gaming_icon.png");
-    width: 120px;
-    height: 90px;
+    width: 70px;
+    height: 40px;
     background-size: contain;
     cursor: not-allowed;
   }
   .HeaderContainer {
-    height: 100px;
     background-color: rgba(27, 25, 25, 0.8);
+    height: 50px;
   }
   .hamburgerMenù {
     display: flex;
@@ -488,7 +572,6 @@ export default {
     height: 100%;
     position: absolute;
     top: 0;
-    left: 20px;
   }
   .HeaderContainer.activeAnimation {
     animation: appear 1s;
