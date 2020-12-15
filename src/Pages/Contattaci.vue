@@ -1,51 +1,68 @@
 <template>
-  <div class="bg-white">
+  <div>
     <div class="fixedHeaderContainer">
       <HeaderContainer />
     </div>
-    <div class="container text-left">
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-           <div class="H1">
-              Contatti
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <form>
-            <div class="row form-group">
-              <div class="col">
-                <label for="name">Nome</label>
-                <input id="name" type="text" class="form-control" v-model="dataSave.nome"/>
+    <div class="bg-white">
+      <div class="container text-left">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="H1">Contatti</div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <form>
+              <div class="row form-group">
+                <div class="col">
+                  <label for="name">Nome</label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    v-model="dataSave.nome"
+                  />
+                </div>
+                <div class="col">
+                  <label for="lastName">Cognome</label>
+                  <input
+                    id="lastName"
+                    type="text"
+                    class="form-control"
+                    v-model="dataSave.cognome"
+                  />
+                </div>
               </div>
-              <div class="col">
-                <label for="lastName">Cognome</label>
-                <input id="lastName" type="text" class="form-control" v-model="dataSave.cognome"/>
+              <div class="form-group">
+                <label for="exampleInputEmail">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail"
+                  v-model="dataSave.email"
+                />
               </div>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail" v-model="dataSave.email"/>
-            </div>
-            <div class="form-group">
-              <label for="topicSelect">Topic</label>
-              <select id="topicSelect" class="form-control">
-                <option>topic 1</option>
-                <option>topic 2</option>
-              </select>
-            </div>
-            <div class="form-group form-check d-flex">
-              <label class="form-check-label" for="exampleCheck"
-                >Data Processing</label
-              >
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck"
-                v-model="dataSave.check"
-              />
-            </div>
-            <div class="btn btn-primary" v-on:click="sendData(dataSave)">Invia</div>
-          </form>
+              <div class="form-group">
+                <label for="topicSelect">Topic</label>
+                <select id="topicSelect" class="form-control">
+                  <option>topic 1</option>
+                  <option>topic 2</option>
+                </select>
+              </div>
+              <div class="form-group form-check d-flex">
+                <label class="form-check-label" for="exampleCheck"
+                  >Data Processing</label
+                >
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck"
+                  v-model="dataSave.check"
+                />
+              </div>
+              <div class="btn btn-primary" v-on:click="sendData(dataSave)">
+                Invia
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -58,16 +75,17 @@ export default {
   name: "Contattaci",
   components: { FooterElement },
   mounted: function () {
-    window.scrollTo({top: 0, behavior: "smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
-  data(){return {dataSave:{nome: "", cognome: "", email:"",check:false}};},
-  methods:{
-     sendData:(dataSave)=>{
-        console.log(dataSave);
-     }
-  }
+  data() {
+    return { dataSave: { nome: "", cognome: "", email: "", check: false } };
+  },
+  methods: {
+    sendData: (dataSave) => {
+      console.log(dataSave);
+    },
+  },
 };
-
 </script>
 <style lang="scss">
 .fixedHeaderContainer {
