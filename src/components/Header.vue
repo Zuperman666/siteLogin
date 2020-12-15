@@ -312,14 +312,14 @@ export default {
 }
 .IconHamburgerMenù {
   width: 60px;
-  height: 60px;
+  height: 40px;
   background-size: contain;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   &.activeIcon{
     top:25px;
-    height: 60px;
+    height: 40px;
   }
 }
 .MainHeader {
@@ -584,7 +584,7 @@ export default {
     animation: appear 1s reverse;
     .IconHamburgerMenù {
       top: 25px;
-      height: 60px;
+      height: 40px;
     }
   }
 
