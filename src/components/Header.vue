@@ -312,11 +312,15 @@ export default {
 }
 .IconHamburgerMenù {
   width: 60px;
-  height: 90%;
+  height: 60px;
   background-size: contain;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  &.activeIcon{
+    top:25px;
+    height: 60px;
+  }
 }
 .MainHeader {
   font-size: 18px;
@@ -508,11 +512,11 @@ export default {
 @keyframes appear {
   0% {
     width: 100%;
-    height: 100px;
+    height: 50px;
   }
   50% {
     width: 80%;
-    height: 100px;
+    height: 50px;
   }
   75% {
     width: 80%;
@@ -578,6 +582,10 @@ export default {
   }
   .HeaderContainer.closeAnimation {
     animation: appear 1s reverse;
+    .IconHamburgerMenù {
+      top: 25px;
+      height: 60px;
+    }
   }
 
   .MainHeader {
