@@ -194,7 +194,7 @@ export default {
 .iconImage1 {
   width: 50px;
   height: 50px;
-  background-image: url("https://image.shutterstock.com/image-vector/phone-volume-vector-icon-on-260nw-1135845185.jpg");
+  background-image: url("../assets/icon/facebook.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -202,7 +202,7 @@ export default {
   width: 50px;
   height: 50px;
   margin-left: 50px;
-  background-image: url("https://image.shutterstock.com/image-vector/phone-volume-vector-icon-on-260nw-1135845185.jpg");
+  background-image: url("../assets/icon/instagramLogo.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -221,7 +221,7 @@ export default {
   width: 50px;
   height: 50px;
   margin-left: 50px;
-  background-image: url("https://image.shutterstock.com/image-vector/phone-volume-vector-icon-on-260nw-1135845185.jpg");
+  background-image: url("../assets/icon/twitch.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -229,7 +229,7 @@ export default {
   width: 50px;
   height: 50px;
   margin-left: 50px;
-  background-image: url("https://image.shutterstock.com/image-vector/phone-volume-vector-icon-on-260nw-1135845185.jpg");
+  background-image: url("../assets/icon/youtube.png");
   background-size: contain;
   background-repeat: no-repeat;
 }

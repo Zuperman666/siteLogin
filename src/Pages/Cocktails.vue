@@ -10,18 +10,21 @@
          </button>
       </div>
    </div>
-   <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>
-   <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="left"/>
-   <CardwithLaterText text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>
+   <CardwithLaterText text="ciao mamma" title="Pickel Rick" img="pickle.jpg" direction="right"/>
+   <CardwithLaterText text="ciao mamma" title="Dr. Manatthan" img="drman.jpg" direction="left"/>
+   <CardwithLaterText text="ciao mamma" title="Hulk Spacca" img="hulk.jpg" direction="right"/>
+   <CardwithLaterText text="ciao mamma" title="Kurama" img="kurama.jpg" direction="left"/>
+   <scrollableVideo />
    <FooterElement/>
    </div>
 </template>
 <script>
 import FooterElement from '../components/Footer.vue'
 import CardwithLaterText from "../components/CardwithLaterText";
+import scrollableVideo from "../components/ScrollableVideo";
 export default {
    name: 'Cocktails',  
-   components:{CardwithLaterText, FooterElement},
+   components:{CardwithLaterText, FooterElement,scrollableVideo},
    mounted: function () {
       window.scrollTo({top: 0, behavior: "smooth"});
    }

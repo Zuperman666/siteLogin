@@ -19,12 +19,26 @@
 <script>
     import LetsPlayCards from '../components/LetsPlayCard.vue'
     import FooterElement from '../components/Footer.vue'
-
     export default {
         name: 'SalaLan',
         components: {LetsPlayCards, FooterElement},
         mounted: function () {
             window.scrollTo({top: 0, behavior: "smooth"});
+
+            function a () {
+                (window).Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "elektro.gaming.asd@gmail.com",
+                    Password : "Teamelektro18.",
+                    To : 'elektro.gaming.asd@gmail.com',
+                    From : "elektro.gaming.asd@gmail.com",
+                    Subject : "This is the subject",
+                    Body : "And this is the body"
+                }).then(
+                    console.log("a")
+                );
+            }
+            a()
         }
     }
 </script>
@@ -44,8 +58,13 @@
     }
 
     .fixedHeaderContainer {
-        background-image: url("../assets/MNT00276.png");
-        background-size: cover;
-        min-height: 80vh;
+        background-image: url("../assets/copertina.jpg");
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    @media only screen and (max-width: 972px) {
+        .fixedHeaderContainer {
+            background-image: url("../assets/joker.png");
+        }
     }
 </style>

@@ -61,29 +61,19 @@
             return {
                 itemsFumetti: [
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+                        src: '../assets/fumetteria1.jpg',
                         title: 'Scoglionato',
                         descrizione: 'Poteva andare peggio ed invece'
                     },
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+                        src: '../assets/fumetteria2.jpg',
                         title: 'Scoglionato2',
                         descrizione: 'Poteva andare peggio ed invece2'
                     },
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+                        src: '../assets/fumetteria3.jpg',
                         title: 'Scoglionato3',
                         descrizione: 'Poteva andare peggio ed invece3'
-                    },
-                    {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-                        title: 'Scoglionato4',
-                        descrizione: 'Poteva andare peggio ed invece4'
-                    },
-                    {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-                        title: 'Scoglionato4',
-                        descrizione: 'Poteva andare peggio ed invece4'
                     },
                 ],
                 video: [{
