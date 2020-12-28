@@ -25,7 +25,7 @@ import {Datetime} from 'vue-datetime';
 import landingPagesNotFounf from "./Pages/404";
 
 import 'vue-datetime/dist/vue-datetime.css'
-
+import * as VueGoogleMaps from "vue2-google-maps";
 Vue.use(Datetime)
 Vue.use(VueInstagram)
 Vue.use(VueYouTubeEmbed)
@@ -39,6 +39,15 @@ Vue.use(VueCarousel);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "",
+    language:" it"
+  }
+});
+
+
 Vue.use(VueRouter);
 
 // 2. Define some routes

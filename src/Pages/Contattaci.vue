@@ -8,6 +8,7 @@
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div class="H1">Contatti</div>
+                        <GoogleMap />
           </div>
           <div class="col-md-6 col-sm-12">
             <form>
@@ -70,10 +71,11 @@
   </div>
 </template>
 <script>
+import GoogleMap from '../components/GoogleMap.vue';
 import FooterElement from "../components/Footer.vue";
 export default {
   name: "Contattaci",
-  components: { FooterElement },
+  components: { FooterElement,GoogleMap },
   mounted: function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   },

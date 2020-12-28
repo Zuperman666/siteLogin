@@ -23,11 +23,13 @@
     "run": "^1.4.0",
     "serve": "^11.3.2",
     "vue": "^2.6.11",
+    "vue-cli": "^2.9.6",
     "vue-datetime": "^1.0.0-beta.14",
     "vue-instagram": "^3.0.0",
     "vue-intersection-observer": "^0.1.6",
     "vue-router": "^3.3.4",
     "vue-youtube-embed": "^2.2.2",
+    "vue2-google-maps": "^0.10.7",
     "vuetify": "^2.3.6",
     "weekstart": "^1.0.1"
   },
