@@ -4,8 +4,8 @@
             <div class="title"> {{title}}</div>
             <Observer @on-change="onChange">
                 <div class="d-flex imageCenter" :class="isVisible ? 'fade-in' : ''">
-                    <img v-bind:src="require(`../assets/${linkImage1}`)"/>
-                    <img v-bind:src="require(`../assets/${linkImage2}`)"/>
+                    <img :src="getImageUrl(1)" v-on:mouseenter="img1.actual = linkImage1Alt" v-on:mouseleave="img1.actual = linkImage1"/>
+                    <img :src="getImageUrl(2)" v-on:mouseenter="img2.actual = linkImage2Alt" v-on:mouseleave="img2.actual = linkImage2"/>
                 </div>
             </Observer>
 
@@ -21,7 +21,7 @@
     import Observer from 'vue-intersection-observer';
 
     export default {
-        props: ['toYoutube', 'title', 'linkImage1', 'linkImage2', 'text', 'redirect', 'textButton'],
+        props: ['toYoutube', 'title', 'linkImage1', 'linkImage2', 'text', 'redirect', 'textButton','linkImage1Alt', 'linkImage2Alt',],
         name: 'DualImageBanner',
         components: {
             Observer
@@ -29,6 +29,12 @@
         data: function () {
             return {
                 isVisible: false,
+                img1: {
+                    actual:this.linkImage1,
+                },
+                img2: {
+                    actual:this.linkImage2,
+                },
             };
         },
         methods: {
@@ -40,6 +46,10 @@
             },
             onChange(entry) {
                 this.isVisible = entry.isIntersecting;
+            },
+            getImageUrl: function (value) {
+                if(value === 1 ) return require(`../assets/${this.img1.actual}`)
+                return require(`../assets/${this.img2.actual}`)
             }
         }
     }
@@ -89,37 +99,61 @@
             text-decoration: underline;
         }
     }
+
     .fade-in {
-        animation: fadeIn  3s;
-        -webkit-animation: fadeIn  3s;
+        animation: fadeIn 3s;
+        -webkit-animation: fadeIn 3s;
     }
+
     .background {
         background: white;
     }
+
     @keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     @-moz-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     @-webkit-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     @-o-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     @-ms-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
+
     @media only screen and (max-width: 600px) {
         img {
             width: 100%;

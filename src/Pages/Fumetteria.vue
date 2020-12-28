@@ -50,6 +50,9 @@
 </template>
 <script>
     import FooterElement from '../components/Footer.vue'
+    import Fumetteria1 from "../assets/fumetteria1.jpg"
+    import Fumetteria2 from "../assets/fumetteria2.jpg"
+    import Fumetteria3 from "../assets/fumetteria3.jpg"
 
     export default {
         name: 'Fumetteria',
@@ -61,17 +64,17 @@
             return {
                 itemsFumetti: [
                     {
-                        src: '../assets/fumetteria1.jpg',
+                        src: Fumetteria1,
                         title: 'Scoglionato',
                         descrizione: 'Poteva andare peggio ed invece'
                     },
                     {
-                        src: '../assets/fumetteria2.jpg',
+                        src: Fumetteria2,
                         title: 'Scoglionato2',
                         descrizione: 'Poteva andare peggio ed invece2'
                     },
                     {
-                        src: '../assets/fumetteria3.jpg',
+                        src: Fumetteria3,
                         title: 'Scoglionato3',
                         descrizione: 'Poteva andare peggio ed invece3'
                     },

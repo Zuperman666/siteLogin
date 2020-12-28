@@ -16,7 +16,7 @@ export default {
 @font-face {
   font-family: "Design";
   src: local("Design"),
-   url(./fonts/Design/Typo_Hoop_Regular_Demo.otf);
+   url(./fonts/Design/coolveticarg.ttf);
 }
 #app {
   font-family: Design,Avenir, Helvetica, Arial, sans-serif;

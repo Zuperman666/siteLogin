@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="d-md-inline-flex">
-      <div class="col-md-6 col-sm-12">
+      <div class="col-12 col-md-6">
         <iframe
           poster="https://images-na.ssl-images-amazon.com/images/I/81eNGmjkfsL._AC_SL1500_.jpg"
           width="100%"
@@ -21,16 +21,16 @@
           <source src="../assets/videoplayback.mp4" type="video/mp4" />
         </iframe>
       </div>
-      <div class="col-md-6 col-sm-12">
-        <img class="imgThree" src=../assets/MNT00026.png>
+      <div class="col-12 col-md-6">
+        <img class="imgThree" src=../assets/drman.jpg>
       </div>
     </div>
     <div class="d-md-inline-flex">
-      <div class="col-md-6 col-sm-12">
-        <img class="imgThree" src=../assets/MNT00026.png>
+      <div class="col-12 col-md-6">
+        <img class="imgThree" src=../assets/spritz.jpg>
       </div>
-      <div class="col-md-6 col-sm-12">
-        <img class="imgThree" src=../assets/MNT00026.png>
+      <div class="col-12 col-md-6">
+        <img class="imgThree" src=../assets/logincarosello.jpg>
       </div>
     </div>
     <div class="separatorElement"></div>
@@ -79,18 +79,16 @@
 import FooterElement from "../components/Footer.vue";
 import modal from "../components/modal.vue";
 import { router } from "../main.js";
-import FotoCibo2 from "../assets/MNT00075.png";
-import FotoCibo3 from "../assets/MNT00111.png";
-import FotoCibo4 from "../assets/MNT00097.png";
-import FotoCibo5 from "../assets/MNT00011.png";
-import FotoCibo6 from "../assets/MNT00023.png";
-import FotoCibo7 from "../assets/MNT00031.png";
-import FotoCibo8 from "../assets/MNT00037.png";
-import FotoCibo9 from "../assets/MNT00047.png";
-import FotoCibo10 from "../assets/MNT00057.png";
-import FotoCibo11 from "../assets/MNT00070.png";
-import FotoCibo12 from "../assets/MNT00094.png";
-import FotoCibo13 from "../assets/MNT00106.png";
+import FotoCibo2 from "../assets/polpsugocarosello.jpg";
+import FotoCibo3 from "../assets/aperitivopiatto.jpg";
+import FotoCibo4 from "../assets/patatecheddarebacon.jpg";
+import FotoCibo5 from "../assets/mayorcarosello.jpg";
+import FotoCibo6 from "../assets/goombacarosello.jpg";
+import FotoCibo7 from "../assets/onioncarosello.jpg";
+import FotoCibo10 from "../assets/logincarosello.jpg";
+import FotoCibo11 from "../assets/eastercarosello.jpg";
+import FotoCibo12 from "../assets/polpcaciocarosello.jpg";
+import FotoCibo13 from "../assets/patatecacio.jpg";
 
 /* NOTA: SE SI AGGIUNGE UN ITEM IN ITEMS, 
 BISOGNA AUMENTARE LA VARIABILE SASS $carousel-dimension */
@@ -125,14 +123,6 @@ export default {
         {
           src: FotoCibo7,
           name: "Onion Knight",
-        },
-        {
-          src: FotoCibo8,
-          name: "Noob",
-        },
-        {
-          src: FotoCibo9,
-          name: "Kikkirikiller",
         },
         {
           src: FotoCibo10,

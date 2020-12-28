@@ -10,9 +10,9 @@
                 </button>
             </div>
         </div>
-        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>
-        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="left"/>
-        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="MNT00026.png" direction="right"/>
+        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="foto1Letsplay.jpg" direction="right"/>
+        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="foto2Letsplay.jpg" direction="left"/>
+        <LetsPlayCards text="ciao mamma" title="TITOLO BELLO" img="simLetsplay.jpg" direction="right"/>
         <FooterElement/>
     </div>
 </template>
@@ -58,7 +58,7 @@
     }
 
     .fixedHeaderContainer {
-        background-image: url("../assets/copertina.jpg");
+        background-image: url("../assets/copertinaLetsplay.jpg");
         background-size: 100% 100%;
         min-height: 100vh;
     }

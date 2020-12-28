@@ -89,7 +89,7 @@ export default {
 </script>
 <style lang="scss">
 .fixedHeaderContainer {
-  background-image: url("../assets/MNT00276.png");
+  background-image: url("../assets/logincarosello.jpg");
   background-size: cover;
   min-height: 80vh;
 }

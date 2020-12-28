@@ -86,8 +86,8 @@
                     v-on:click="greet('/Team/AssettoCorsa')"
                     :class="
                       hasColorAssettoCorsa
-                        ? 'colorlessAssettoCorsa'
-                        : 'coloredAssettoCorsa'
+                        ? 'coloredAssettoCorsa'
+                        : 'colorlessAssettoCorsa'
                     "
                     v-on:mouseover="hasColorAssettoCorsa = true"
                     v-on:mouseleave="hasColorAssettoCorsa = false"
@@ -96,8 +96,8 @@
                     v-on:click="greet('/Team/DragonBall')"
                     :class="
                       hasColorDragonBall
-                        ? 'colorlessDragonBall'
-                        : 'coloredDragonBall'
+                        ? 'coloredDragonBall'
+                        : 'colorlessDragonBall'
                     "
                     v-on:mouseover="hasColorDragonBall = true"
                     v-on:mouseleave="hasColorDragonBall = false"
@@ -105,14 +105,14 @@
                   <div
                     v-on:click="greet('/Team/Digimon')"
                     :class="
-                      hasColorDigimon ? 'colorlessDigimon' : 'coloredDigimon'
+                      hasColorDigimon ? 'coloredDigimon' : 'colorlessDigimon'
                     "
                     v-on:mouseover="hasColorDigimon = true"
                     v-on:mouseleave="hasColorDigimon = false"
                   ></div>
                   <div
                     v-on:click="greet('/Team/Fifa')"
-                    :class="hasColorFifa ? 'colorlessFifa' : 'coloredFifa'"
+                    :class="hasColorFifa ?'coloredFifa'  : 'colorlessFifa'"
                     v-on:mouseover="hasColorFifa = true"
                     v-on:mouseleave="hasColorFifa = false"
                   ></div>
@@ -192,7 +192,11 @@ export default {
 
   methods: {
     greet: function (value) {
-      router.push(value);
+      if(value === this.currentPath) {
+        this.scrollTop()
+      }else {
+        router.push(value);
+      }
     },
     scrollTop: function () {
       document.body.scrollTop = 0;
@@ -234,29 +238,33 @@ export default {
 .colorlessAssettoCorsa {
   width: 40%;
   height: 40%;
-  background: white;
+  background: url("../assets/assettoCorsaTeamColorless.jpg");
+  background-size: cover;
   margin-bottom: 5%;
 }
 
 .coloredAssettoCorsa {
   width: 40%;
   height: 40%;
-  background: grey;
+  background: url("../assets/assettoCorsaTeamColor.jpg");
   margin-bottom: 5%;
+  background-size: cover;
 }
 
 .colorlessDragonBall {
   width: 40%;
   height: 40%;
-  background: greenyellow;
+  background: url("../assets/dragonBallTeamColorless.jpg");
   margin-bottom: 5%;
+  background-size: cover;
 }
 
 .coloredDragonBall {
   width: 40%;
   height: 40%;
-  background: green;
+  background: url("../assets/dragonBallTeamColor.jpg");
   margin-bottom: 5%;
+  background-size: cover;
 }
 
 .colorlessDigimon {
@@ -274,13 +282,15 @@ export default {
 .colorlessFifa {
   width: 40%;
   height: 40%;
-  background: blue;
+  background-size: cover;
+  background-image: url("../assets/fifaTeamColorless.jpg");
 }
 
 .coloredFifa {
   width: 40%;
   height: 40%;
-  background: blueviolet;
+  background-size: cover;
+  background-image: url("../assets/fifaTeamColor.jpg");
 }
 
 .display-none {
@@ -294,7 +304,7 @@ export default {
   flex-flow: wrap;
   align-content: center;
   height: 400px;
-  background: red;
+  background: grey;
 }
 .display-block {
   display: block;
@@ -371,8 +381,6 @@ export default {
 }
 .MainHeader .active {
   text-decoration: underline;
-  pointer-events: none;
-  cursor: not-allowed;
 }
 .IconHome {
   background-image: url("../assets/login_gaming_icon.png");

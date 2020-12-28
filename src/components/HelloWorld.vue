@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fixedHeaderContainer">
+        <div class="fixedHeaderContainerHomePage">
             <HeaderContainer/>
             <div class="centerTextMain">
                 Nel mondo di Login tutto può succedere
@@ -41,22 +41,24 @@
         <div class="separatorElement"></div>
         <DualImageBanner toYoutube="false" textButton="Visualizza gli eventi passati"
                          text="Oltre ai servizi tipici del locale,organizziamo eventi e collaborazioni con realtà attente all’innovazione"
-                         linkImage1="MNT00026.png" linkImage2="MNT00026.png" title="Eventi in programma"
+                         linkImage1="logintime1.0.jpg" linkImage2="aperol1.0.jpg" title="Eventi in programma"
+                         linkImage1Alt="logintime1.1.jpg"  linkImage2Alt="aperol1.1.jpg"
                          redirect="/Eventi"></DualImageBanner>
         <div class="Ristoro">
             <div class="col-md-6 col-sm-12">
                 <p>Cibo</p>
-                <img class="imgThree" src=../assets/MNT00026.png>
+                <img class="imgThree" src=../assets/hamburgerHome.jpg>
             </div>
             <div class="col-md-6 col-sm-12">
                 <p>Cocktails</p>
-                <img class="imgThree" src=../assets/MNT00026.png>
+                <img class="imgThree" src=../assets/cocktailHome.jpg>
             </div>
         </div>
         <div class="separatorElement"></div>
         <DualImageBanner toYoutube="false" textButton="Guarda i video"
                          text="Cosa ne pensi delle ultime uscite?Ascolta cosa pensiamo noi e dicci la tua!"
-                         linkImage1="MNT00026.png" linkImage2="MNT00026.png" title="La fumetteria"
+                         linkImage1="fumetteria1.0.jpg" linkImage2="digimon.jpg" title="La fumetteria"
+                         linkImage1Alt="fumetteria1.1.jpg"  linkImage2Alt="digimon1.1.jpg"
                          redirect="/Eventi"></DualImageBanner>
         <div class="SalaLanMain">
             <div class="textRistoroSala row mx-0">
@@ -121,10 +123,6 @@
 <script>
     import axios from "axios";
     import {router} from "../main.js";
-    import FotoCibo1 from "../assets/MNT00026.png";
-    import FotoCibo2 from "../assets/MNT00075.png";
-    import FotoCibo3 from "../assets/MNT00111.png";
-    import FotoCibo4 from "../assets/MNT00097.png";
     import FooterElement from "../components/Footer.vue";
     import DualImageBanner from "../components/DualImageBanner.vue";
 
@@ -168,44 +166,22 @@
         data: () => ({
             dynamicContentHtml: "",
             i: 0,
-            items: [
-                {
-                    src: FotoCibo1,
-                },
-                {
-                    src: FotoCibo2,
-                },
-                {
-                    src: FotoCibo3,
-                },
-                {
-                    src: FotoCibo4,
-                },
-            ],
             video: {
                 src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ALFRBMClBwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             },
         }),
-        computed: {
-            bg() {
-                const i = this.i;
-                return {
-                    backgroundImage: `url(${this.items[i].src})`,
-                };
-            },
-        },
     };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" >
     $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
     $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-    .fixedHeaderContainer {
-        background-image: url("../assets/MNT00276.png");
+    .fixedHeaderContainerHomePage {
+        background-image: url("../assets/copertina.jpg");
         background-size: cover;
-        min-height: 80vh;
+        min-height: 100vh;
     }
     .testIframe div {
       height: 960px;
@@ -308,7 +284,7 @@
     }
 
     .fotoLeftImageMain {
-        background-image: url("../assets/MNT00280.png");
+        background-image: url("../assets/logincarosello.jpg");
         height: 300px;
         width: 400px;
         margin: auto;
@@ -356,9 +332,8 @@
         height: 100%;
         width: 50%;
         display: flex;
-        background-image: url(https://www.sparco-official.com/sim-rig/assets/img/rig-2/block-3-ITA.png);
+        background-image: url("../assets/simrig2.jpg");
         background-size: contain;
-        background-size: 75%;
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -582,7 +557,7 @@
         .rightSim {
             height: 50%;
             width: 100%;
-            background-image: url(https://www.sparco-official.com/sim-rig/assets/img/rig-2/block-3-ITA.png);
+            background-image: url("../assets/simrig2.jpg");
             background-repeat: no-repeat;
             background-position: center;
             height: 30vh;
