@@ -73,9 +73,6 @@ export const router = new VueRouter({
 // You can pass in additional options here, but let's
 // keep it simple for now.
 Vue.component('card', card)
-Vue.component("modal", {
-    template: "#modal-template"
-});
 Vue.component('separator', Separator)
 Vue.component('HeaderContainer', HeaderContainer)
 Vue.component('datetime', Datetime);
