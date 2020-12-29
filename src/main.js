@@ -23,6 +23,7 @@ import Fifa from "./Pages/Team/Fifa";
 import DragonBall from "./Pages/Team/DragonBall";
 import {Datetime} from 'vue-datetime';
 import landingPagesNotFounf from "./Pages/404";
+import ChiSiamo from "./Pages/ChiSiamo";
 
 import 'vue-datetime/dist/vue-datetime.css'
 import * as VueGoogleMaps from "vue2-google-maps";
@@ -42,7 +43,7 @@ Vue.config.devtools = true;
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "",
+    key: "AIzaSyBr0l8iENRFpNlItoiPKiW--J3H-6OnSAQ",
     language:" it"
   }
 });
@@ -70,6 +71,7 @@ export const router = new VueRouter({
         {path: '/Team/Digimon', name: "Digimon", component: Digimon},
         {path: '/PrenotaPc', name: "PrenotaPc", component: PrenotaPc},
         {path: '/Team/DragonBall', name: "DragonBall", component: DragonBall},
+        {path: '/ChiSiamo',name:"ChiSiamo",component: ChiSiamo},
         { path: '*', name: 'notFound', component: landingPagesNotFounf},
 
         /* {path: '/Privacy',name:"Privacy",component: Privacy},

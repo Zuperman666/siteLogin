@@ -81,6 +81,7 @@
         <a class="link" v-on:click="greet('/Imprint')">Imprint</a>
         <a class="link" v-on:click="greet('/Terms')">Terms</a>
         <a class="link" v-on:click="greet('/Cookies')">Cookies</a>
+        <a class="link" v-on:click="greet('/ChiSiamo')">Chi Siamo</a>
       </div>
     </div>
   </div>

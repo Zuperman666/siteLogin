@@ -73,7 +73,7 @@
           <div
             class="Team"
             :class="currentPath === '/Team' ? 'active' : ''"
-            v-on:mouseover="activeSubMenu = true"
+            v-on:mouseover="activeSubMenu = true" v-on:mouseleave="activeSubMenu = false"
           >
             Team
             <div
@@ -312,7 +312,7 @@ export default {
 .HeaderContainer {
   width: 100%;
   height: 80px;
-  background-color: transparent;
+  background-color: rgba(60, 60, 60, 0.9);
   position: fixed;
   z-index: 999;
   max-width: 100vw;
