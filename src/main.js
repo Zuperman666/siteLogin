@@ -2,29 +2,30 @@ import Vue from 'vue'
 import App from './App.vue'
 import card from './components/Card.vue'
 import HelloWorld from './components/HelloWorld.vue'
-import Hamburgeria from './Pages/Hamburger.vue'
 import VueRouter from 'vue-router'
-import Cocktails from './Pages/Cocktails.vue';
-import Fumetteria from './Pages/Fumetteria.vue';
-import SalaLan from './Pages/SalaLan.vue';
-import Eventi from './Pages/Eventi.vue';
-import Contattaci from './Pages/Contattaci.vue';
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import vuetify from '@/plugins/vuetify'
 import HeaderContainer from './components/Header.vue'
-import PrenotaPc from './Pages/PrenotaPc.vue'
 import VueInstagram from 'vue-instagram'
-import AssettoCorsa from "./Pages/Team/AssettoCorsa";
-import Digimon from "./Pages/Team/Digimon";
-import Fifa from "./Pages/Team/Fifa";
-import DragonBall from "./Pages/Team/DragonBall";
 import landingPagesNotFounf from "./Pages/404";
-import ChiSiamo from "./Pages/ChiSiamo";
 import VueMeta from 'vue-meta';
 import 'vue-datetime/dist/vue-datetime.css'
 import VueAnalytics from 'vue-analytics';
 
 import * as VueGoogleMaps from "vue2-google-maps";
+
+const Hamburgeria = () => import(/* webpackChunkName: "group-foo" */'./Pages/Hamburger.vue')
+const Cocktails = () => import(/* webpackChunkName: "group-foo" */'./Pages/Cocktails.vue')
+const Fumetteria = () => import(/* webpackChunkName: "group-foo" */'./Pages/Fumetteria.vue')
+const SalaLan = () => import(/* webpackChunkName: "group-foo" */'./Pages/SalaLan.vue')
+const Eventi = () => import(/* webpackChunkName: "group-foo" */'./Pages/Eventi.vue')
+const Contattaci = () => import(/* webpackChunkName: "group-foo" */'./Pages/Contattaci.vue')
+const AssettoCorsa = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/AssettoCorsa')
+const Digimon = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/Digimon')
+const Fifa = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/Fifa')
+const DragonBall = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/DragonBall')
+const ChiSiamo = () => import(/* webpackChunkName: "group-foo" */'./Pages/ChiSiamo')
+const PrenotaPc = () => import(/* webpackChunkName: "group-foo" */'./Pages/PrenotaPc')
 
 
 Vue.use(VueInstagram)
