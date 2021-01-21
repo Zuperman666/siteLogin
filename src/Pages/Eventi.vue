@@ -3,7 +3,7 @@
         <div class="ImageUnderHeaderHamburger">
             <HeaderContainer/>
             <div class="centerTextMain">
-                Entra nel mondo di Login dove tutto può succedere!!
+                <h1>Entra nel mondo di Login dove tutto può succedere!!</h1>
                 <p>Sottotesto a caso</p>
                 <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
                     Prenota Ora
@@ -39,6 +39,14 @@
 
     export default {
         name: "Eventi",
+        metaInfo: {
+            title: 'Eventi LoginGaming',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Pagina degli eventi del LoginGaming' },
+                { name:'keyword',content:'Eventi LoginGaming'}
+            ]
+        },
         components: {
             FooterElement
         },

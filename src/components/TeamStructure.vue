@@ -6,7 +6,7 @@
             <div v-on:mouseleave="ArrayPlayer.isActive = false" v-on:mouseover="ArrayPlayer.isActive  = true"
                  class="CardPLayer" v-for="(ArrayPlayer, i) in ArrayPlayers"
                  :key="i"
-                 :style="{ 'background': 'url(' + ArrayPlayer.src + ')' }
+                 :style="{ 'background-image': 'url(' + ArrayPlayer.src + ')' }
                  ">
                 <div class="none" :class="ArrayPlayer.isActive  ? 'visible fade-in' : ''">
                     <div>
@@ -75,6 +75,8 @@
     .CardPLayer {
         width: 300px;
         height: 300px;
+        background-size: cover;
+        color: white;
     }
 
     .flexBox {

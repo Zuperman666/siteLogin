@@ -3,7 +3,7 @@
         <div class="ImageUnderHeaderHamburger">
             <HeaderContainer/>
             <div class="centerTextMain">
-                Entra nel mondo di Login dove tutto può succedere!!
+                <h1>Entra nel mondo di Login dove tutto può succedere!!</h1>
                 <p>Sottotesto a caso</p>
                 <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
                     Prenota Ora
@@ -59,6 +59,14 @@
         components: {FooterElement},
         mounted: function () {
             window.scrollTo({top: 0, behavior: "smooth"});
+        },
+        metaInfo: {
+            title: 'Fumetteria LoginGaming',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Pagina dedicata alla fumetteria del LoginGaming' },
+                { name:'keyword',content:'Fumetteria LoginGaming'}
+            ]
         },
         data() {
             return {

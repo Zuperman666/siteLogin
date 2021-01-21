@@ -3,7 +3,7 @@
     <div class="ImageUnderHeaderHamburger">
       <HeaderContainer />
       <div class="centerTextMain">
-        Entra nel mondo di Login dove tutto può succedere!!
+        <h1>Entra nel mondo di Login dove tutto può succedere!!</h1>
         <p>Sottotesto a caso</p>
         <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
           Prenota Ora
@@ -36,7 +36,7 @@
     <div class="separatorElement"></div>
     <div class="Ristoro2">
       <div class="textRistoro">
-        IL NOSTRO RISTORO
+        <h1> IL NOSTRO RISTORO</h1>
         <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
       </div>
       <div class="slider">
@@ -63,10 +63,6 @@
     </div>
     <div class="textFoodBanner">
       <div class="textFoodContainer">
-        <p>sdajsnmdasd</p>
-        <p>sdajsnmdasd</p>
-        <p>sdajsnmdasd</p>
-        <p>sdajsnmdasd</p>
         <p>sdajsnmdasd</p>
       </div>
       <button v-on:click="modal" class="bottoneTestoMain">Prenota Ora</button>
@@ -95,6 +91,14 @@ BISOGNA AUMENTARE LA VARIABILE SASS $carousel-dimension */
 export default {
   name: "Hamburgeria",
   components: { FooterElement, modal },
+  metaInfo: {
+    title: 'Hamburger LoginGaming',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'description', content: 'Pagina Hamburgeria LoginGaming' },
+      { name:'keyword',content:'Hamburgeria LoginGaming'}
+    ]
+  },
   data() {
     return {
       showModal: false,

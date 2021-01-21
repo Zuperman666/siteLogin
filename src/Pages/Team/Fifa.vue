@@ -12,6 +12,14 @@
     import alien from "../../assets/alien.png"
     export default {
         name: 'Fifa',
+        metaInfo: {
+            title: 'Fifa LoginGaming Team',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Pagina dedicata al team di Fifa del Login Gaming' },
+                { name:'keyword',content:'Fifa LoginGaming Team'}
+            ]
+        },
         data () {
             return {
                 imgSrc:alien,

@@ -16,65 +16,15 @@
     <div class="separatorBlack"></div>
     <div class="footer">
       <div class="iconSocial">
-        <div class="iconImage1"></div>
-        <div class="iconImage2"></div>
-        <div class="iconImage3"></div>
-        <div class="iconImage4"></div>
-      </div>
-      <div>
-        <link
-          href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <div id="mc_embed_signup">
-          <form
-            action="https://gmail.us17.list-manage.com/subscribe/post?u=1c7e6a125be69ba51d73ca6ba&amp;id=c0e1859cf2"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            class="validate"
-            target="_blank"
-            novalidate
-          >
-            <div id="mc_embed_signup_scroll">
-              <label for="mce-EMAIL">Subscribe for HOT news</label>
-              <input
-                type="email"
-                value
-                name="EMAIL"
-                class="email"
-                id="mce-EMAIL"
-                placeholder="email address"
-                required
-              />
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px" aria-hidden="true">
-                <input
-                  type="text"
-                  name="b_1c7e6a125be69ba51d73ca6ba_c0e1859cf2"
-                  tabindex="-1"
-                  value
-                />
-              </div>
-              <div class="clear">
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  name="subscribe"
-                  id="mc-embedded-subscribe"
-                  class="button"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
+        <div class="iconImage1" v-on:click="goLink('https://www.facebook.com')"></div>
+        <div class="iconImage2" v-on:click="goLink('https://www.instagram.com')"></div>
+        <div class="iconImage3" v-on:click="goLink('https://www.twitch.com')"></div>
+        <div class="iconImage4" v-on:click="goLink('https://www.youtube.com')"></div>
       </div>
     </div>
-    <div class="separatorBlack"></div>
     <div class="underFooter">
       <div class="copyright">
-        © 2019 - 2020, Login Gaming srl, All rights reserved
+        <p>© 2019 - 2020, Login Gaming srl, All rights reserved</p>
       </div>
       <div class="linkTermAndCond">
         <a class="link" v-on:click="greet('/Privacy')">Privacy</a>
@@ -120,6 +70,9 @@ export default {
     greet: function (value) {
       router.push(value);
     },
+    goLink: function (value) {
+      window.open(value, '_blank');
+    },
     moveIcon: function () {
       if (this.i === 3) {
         this.i = 0;
@@ -145,9 +98,10 @@ export default {
 </script>
 <style lang="scss">
 .footer {
-  height: 200px;
+  height: 100px;
   width: 100%;
-  color: white;  
+  color: white;
+  background: white;
 }
 .partner {
   position: absolute;
@@ -191,6 +145,9 @@ export default {
   height: 100px;
   justify-content: center;
   align-items: center;
+  & > div {
+    cursor: pointer;
+  }
 }
 .iconImage1 {
   width: 50px;
@@ -203,7 +160,7 @@ export default {
   width: 50px;
   height: 50px;
   margin-left: 50px;
-  background-image: url("../assets/icon/instagramLogo.png");
+  background-image: url("../assets/icon/instagram.png");
   background-size: contain;
   background-repeat: no-repeat;
 }

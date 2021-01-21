@@ -7,7 +7,10 @@
             <div class="container text-left">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <div class="H1">Contatti</div>
+                        <div class="H1">
+                            <h1>
+                                Contatti
+                            </h1></div>
                         <GoogleMap/>
                     </div>
                     <div class="col-md-6 col-sm-12">
@@ -59,9 +62,9 @@
                                         v-model="dataSave.check"
                                 />
                             </div>
-                            <div class="btn btn-primary" v-on:click="sendData()">
+                            <button class="btn btn-primary" v-on:click="sendData()">
                                 Invia
-                            </div>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -78,6 +81,14 @@
     export default {
         name: "Contattaci",
         components: {FooterElement, GoogleMap},
+        metaInfo: {
+            title: 'Contattaci LoginGaming',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Pagina dedicata alla pagina del contattaci del LoginGaming' },
+                { name:'keyword',content:'Page Not Found LoginGaming'}
+            ]
+        },
         mounted: function () {
             window.scrollTo({top: 0, behavior: "smooth"});
         },

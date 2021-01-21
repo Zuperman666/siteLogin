@@ -1,38 +1,49 @@
 <template>
     <Observer @on-change="onChange">
-    <div class="container-fluid containerCard" id="test" :class="isVisible ? 'fade-in' : ''">
+    <div class="container-fluid containerCard" id="test">
         <div v-if="direction === 'left' " class="row textBox">
             <div class="textLeft">
-                <div class="textBoxTitle">{{title}}</div>
+                <div class="textBoxTitle">
+                    <h1>
+                        {{title}}
+                    </h1>
+                    </div>
                 <div class="textBoxDescription">
-                    {{text}}
+                    <h1>
+                        {{text}}
+                    </h1>
+
                 </div>
             </div>
             <div class="col-md-6 col-sm-12"></div>
-            <div class="col-md-6 col-sm-12 imgBox ">
-                <img v-bind:src="require(`../assets/${img}`)" class="imgCss" alt="">
+            <div class="col-md-6 col-sm-12 imgBox " :class="isVisible ? 'fade-in' : ''">
+                <img v-bind:src="require(`../assets/${img}`)" class="imgCss" :alt="alt">
             </div>
             <div class="textUnder">
-                <div class="textBoxTitle">{{title}}</div>
+                <div class="textBoxTitle">
+                    <h1>{{title}}</h1></div>
                 <div class="textBoxDescription">
-                    {{text}}
+                    <h2>{{text}}</h2>
                 </div>
             </div>
         </div>
         <div v-if="direction ==='right'" class="row textBox">
-            <div class="col-md-6 col-sm-12 imgBox">
-                <img v-bind:src="require(`../assets/${img}`)" class="imgCss" alt="">
+            <div class="col-md-6 col-sm-12 imgBox" :class="isVisible ? 'fade-in' : ''">
+                <img v-bind:src="require(`../assets/${img}`)" class="imgCss" :alt="alt">
             </div>
             <div class="textUnder">
-                <div class="textBoxTitle">{{title}}</div>
+                <div class="textBoxTitle">
+                    <h1>{{title}}</h1></div>
                 <div class="textBoxDescription">
-                    {{text}}
+                    <h2>{{text}}</h2>
                 </div>
             </div>
             <div class="textRight">
-                <div class="textBoxTitle">{{title}}</div>
+                <div class="textBoxTitle">
+                    <h1>{{title}}</h1>
+                </div>
                 <div class="textBoxDescription">
-                    {{text}}
+                    <h2>{{text}}</h2>
                 </div>
             </div>
 
@@ -44,7 +55,7 @@
     import Observer from 'vue-intersection-observer';
     export default {
         name: 'CardwithLaterText',
-        props: ["title", "text", "img", "direction"],
+        props: ["title", "text", "img", "direction","alt"],
         data: function () {
             return {
                 isVisible: false,

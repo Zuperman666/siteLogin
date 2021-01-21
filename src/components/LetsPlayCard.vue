@@ -1,28 +1,28 @@
 <template>
     <Observer @on-change="onChange">
-        <div class="container-fluid containerCard" id="test" :class="isVisible ? 'fade-in' : ''">
+        <div class="container-fluid containerCard" id="test" >
             <div v-if="direction === 'left' " class="row">
                 <div class=" col-sm-12  col-md-6 textBox borderRight">
-                    <div class="textBoxTitle">{{title}}</div>
+                    <div class="textBoxTitle">
+                        <h1>{{title}}</h1></div>
                     <div class="textBoxDescription">
-                        {{text}}
+                        <h2>{{text}}</h2>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 imgBox ">
-                    <img v-bind:src="require(`../assets/${img}`)" class="imgCss" alt="">
+                <div class="col-md-6 col-sm-12 imgBox " :class="isVisible ? 'fade-in' : ''">
+                    <img v-bind:src="require(`../assets/${img}`)" class="imgCss" :alt="alt">
                 </div>
             </div>
             <div v-if="direction ==='right'" class="row">
-                <div class="col-md-6 col-sm-12 imgBox borderLeft">
-                    <img v-bind:src="require(`../assets/${img}`)" class="imgCss" alt="">
+                <div class="col-md-6 col-sm-12 imgBox borderLeft" :class="isVisible ? 'fade-in' : ''">
+                    <img v-bind:src="require(`../assets/${img}`)" class="imgCss" :alt="alt">
                 </div>
                 <div class=" col-sm-12  col-md-6 textBox ">
-                    <div class="textBoxTitle">{{title}}</div>
+                    <div class="textBoxTitle"><h1>{{title}}</h1></div>
                     <div class="textBoxDescription">
-                        {{text}}
+                        <h2>{{text}}</h2>
                     </div>
                 </div>
-
             </div>
         </div>
     </Observer>
@@ -32,7 +32,7 @@
 
     export default {
         name: 'LetsPlayCards',
-        props: ["title", "text", "img", "direction"],
+        props: ["title", "text", "img", "direction","alt"],
         data: function () {
             return {
                 isVisible: false,

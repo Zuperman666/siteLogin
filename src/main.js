@@ -4,7 +4,6 @@ import card from './components/Card.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Hamburgeria from './Pages/Hamburger.vue'
 import VueRouter from 'vue-router'
-import VueCarousel from '@chenfengyuan/vue-carousel';
 import Cocktails from './Pages/Cocktails.vue';
 import Fumetteria from './Pages/Fumetteria.vue';
 import SalaLan from './Pages/SalaLan.vue';
@@ -12,8 +11,6 @@ import Eventi from './Pages/Eventi.vue';
 import Contattaci from './Pages/Contattaci.vue';
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import vuetify from '@/plugins/vuetify'
-import Separator from './components/Separator.vue'
-import VueYouTubeEmbed from 'vue-youtube-embed'
 import HeaderContainer from './components/Header.vue'
 import PrenotaPc from './Pages/PrenotaPc.vue'
 import VueInstagram from 'vue-instagram'
@@ -21,22 +18,21 @@ import AssettoCorsa from "./Pages/Team/AssettoCorsa";
 import Digimon from "./Pages/Team/Digimon";
 import Fifa from "./Pages/Team/Fifa";
 import DragonBall from "./Pages/Team/DragonBall";
-import {Datetime} from 'vue-datetime';
 import landingPagesNotFounf from "./Pages/404";
 import ChiSiamo from "./Pages/ChiSiamo";
-
+import VueMeta from 'vue-meta';
 import 'vue-datetime/dist/vue-datetime.css'
-import * as VueGoogleMaps from "vue2-google-maps";
-Vue.use(Datetime)
-Vue.use(VueInstagram)
-Vue.use(VueYouTubeEmbed)
+import VueAnalytics from 'vue-analytics';
 
+import * as VueGoogleMaps from "vue2-google-maps";
+
+
+Vue.use(VueInstagram)
+Vue.use(VueMeta);
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
-
-Vue.use(VueCarousel);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
@@ -80,13 +76,16 @@ export const router = new VueRouter({
          {path: '/Cookies',name:"Cookies",component: Cookies},*/
     ]
 })
+
+Vue.use(VueAnalytics, {
+    id: '187769244',
+    router
+})
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
 Vue.component('card', card)
-Vue.component('separator', Separator)
 Vue.component('HeaderContainer', HeaderContainer)
-Vue.component('datetime', Datetime);
 
 new Vue({
     vuetify,

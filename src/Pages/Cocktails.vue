@@ -3,17 +3,19 @@
    <div class="ImageUnderHeaderHamburger">
       <HeaderContainer/>
       <div class="centerTextMain">
-         Entra nel mondo di Login dove tutto può succedere!!
+         <h1>
+            Entra nel mondo di Login dove tutto può succedere!!
+         </h1>
          <p>Sottotesto a caso</p>
          <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
-            Prenota Ora
+               Prenota Ora
          </button>
       </div>
    </div>
-   <CardwithLaterText text="ciao mamma" title="Pickel Rick" img="pickle.jpg" direction="right"/>
-   <CardwithLaterText text="ciao mamma" title="Dr. Manatthan" img="drman.jpg" direction="left"/>
-   <CardwithLaterText text="ciao mamma" title="Hulk Spacca" img="hulk.jpg" direction="right"/>
-   <CardwithLaterText text="ciao mamma" title="Kurama" img="kurama.jpg" direction="left"/>
+   <CardwithLaterText text="ciao mamma" title="Pickle Rick" img="pickle.jpg" direction="right" alt="Pickle Rick cocktail"/>
+   <CardwithLaterText text="ciao mamma" title="Dr.Manatthan" img="drman.jpg" direction="left" alt="Dr.Manatthan cocktail"/>
+   <CardwithLaterText text="ciao mamma" title="Hulk Spacca" img="hulk.jpg" direction="right" alt="Hulk Spacca cocktail"/>
+   <CardwithLaterText text="ciao mamma" title="Kurama" img="kurama.jpg" direction="left" alt="Kurama cocktail"/>
    <scrollableVideo />
    <FooterElement/>
    </div>
@@ -25,6 +27,14 @@ import scrollableVideo from "../components/ScrollableVideo";
 export default {
    name: 'Cocktails',  
    components:{CardwithLaterText, FooterElement,scrollableVideo},
+   metaInfo: {
+      title: 'Cooktails LoginGaming',
+      meta: [
+         { charset: 'utf-8' },
+         { name: 'description', content: 'Pagina dedicata ai vari cocktails realizzati nel LoginGaming' },
+         { name:'keyword',content:'Cocktails LoginGaming'}
+      ]
+   },
    mounted: function () {
       window.scrollTo({top: 0, behavior: "smooth"});
    }

@@ -105,6 +105,14 @@ export default {
   mounted: function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   },
+  metaInfo: {
+    title: 'PrenotaPc LoginGaming',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'description', content: 'Pagina dedicata alla prenotazione dei pc del LoginGaming' },
+      { name:'keyword',content:'PrenotaPc LoginGaming'}
+    ]
+  },
   data() {
     return {
       dataSave: {

@@ -5,21 +5,12 @@
         </div>
         <div class="subText">
             <h1>Chi Siamo</h1>
-            asdasdasdasdasd asd a
-            d a
-            d a
-            sd
-            asd
-            a
-            sd
-            asd
-            as
-            d a
-            sdas das dasd as da sd
         </div>
         <div class="col-12 LogoBox">
             <div class="col-12">
-                La creazione del logo
+                <h1>
+                    La creazione del logo
+                </h1>
             </div>
             <div class="col-12 d-flex flex-md-row flex-column">
                 <div class="col-12 col-md-6">
@@ -28,7 +19,9 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    Testo sotto al logo
+                    <h1>
+                        Testo sotto al logo
+                    </h1>
                 </div>
             </div>
         </div>
@@ -40,6 +33,14 @@
 
     export default {
         name: "Chi Siamo",
+        metaInfo: {
+            title: 'Chi Siamo LoginGaming',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Pagina che racconta alcune vicende di come è nato il LoginGaming' },
+                { name:'keyword',content:'Chi Siamo LoginGaming'}
+            ]
+        },
         components: {FooterElement},
         mounted: function () {
             window.scrollTo({top: 0, behavior: "smooth"});

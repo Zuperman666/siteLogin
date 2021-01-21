@@ -4,8 +4,8 @@
             <div class="title"> {{title}}</div>
             <Observer @on-change="onChange">
                 <div class="d-flex imageCenter" :class="isVisible ? 'fade-in' : ''">
-                    <img :src="getImageUrl(1)" v-on:mouseenter="img1.actual = linkImage1Alt" v-on:mouseleave="img1.actual = linkImage1"/>
-                    <img :src="getImageUrl(2)" v-on:mouseenter="img2.actual = linkImage2Alt" v-on:mouseleave="img2.actual = linkImage2"/>
+                    <img :src="getImageUrl(1)" v-on:mouseenter="img1.actual = linkImage1Alt" v-on:mouseleave="img1.actual = linkImage1" :alt="linkImage1Desc"/>
+                    <img :src="getImageUrl(2)" v-on:mouseenter="img2.actual = linkImage2Alt" v-on:mouseleave="img2.actual = linkImage2" :alt="linkImage2Desc"/>
                 </div>
             </Observer>
 
@@ -21,7 +21,7 @@
     import Observer from 'vue-intersection-observer';
 
     export default {
-        props: ['toYoutube', 'title', 'linkImage1', 'linkImage2', 'text', 'redirect', 'textButton','linkImage1Alt', 'linkImage2Alt',],
+        props: ['toYoutube', 'title', 'linkImage1', 'linkImage2', 'text', 'redirect', 'textButton','linkImage1Alt', 'linkImage2Alt',"linkImage1Desc","linkImage2Desc"],
         name: 'DualImageBanner',
         components: {
             Observer

@@ -3,8 +3,9 @@
         <div class="fixedHeaderContainerHomePage">
             <HeaderContainer/>
             <div class="centerTextMain">
-                Nel mondo di Login tutto può succedere
-                <p></p>
+                <h1>
+                    Nel mondo di Login tutto può succedere
+                </h1>
                 <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
                     Vieni a scoprirlo
                 </button>
@@ -14,7 +15,9 @@
             <div class="row mx-0">
                 <div class="leftSim col-md-6">
                     <div>
-                        Due Postazioni di Guida. Simulatori ideali per gli e-sports
+                        <h1>
+                            Due Postazioni di Guida. Simulatori ideali per gli e-sports
+                        </h1>
                         <p>
                             Vieni a scroprire la postazione di guida
                             <br/>é la soluzione ideale per transformare la tua passione per
@@ -41,30 +44,32 @@
         <div class="separatorElement"></div>
         <DualImageBanner toYoutube="false" textButton="Visualizza gli eventi passati"
                          text="Oltre ai servizi tipici del locale,organizziamo eventi e collaborazioni con realtà attente all’innovazione"
-                         linkImage1="logintime1.0.jpg" linkImage2="aperol1.0.jpg" title="Eventi in programma"
-                         linkImage1Alt="logintime1.1.jpg"  linkImage2Alt="aperol1.1.jpg"
+                         linkImage1="logintime1.0.jpg" linkImage1Desc="Cortometraggio LogIn Time" linkImage2="aperol1.0.jpg" title="Eventi in programma"
+                         linkImage1Alt="logintime1.1.jpg"  linkImage2Desc="Foto Evento Aperol" linkImage2Alt="aperol1.1.jpg"
                          redirect="/Eventi"></DualImageBanner>
         <div class="Ristoro">
             <div class="col-md-6 col-sm-12">
                 <p>Cibo</p>
-                <img class="imgThree" src=../assets/hamburgerHome.jpg>
+                <img class="imgThree" src=../assets/hamburgerHome.jpg alt="Hamburger Login">
             </div>
             <div class="col-md-6 col-sm-12">
                 <p>Cocktails</p>
-                <img class="imgThree" src=../assets/cocktailHome.jpg>
+                <img class="imgThree" src=../assets/cocktailHome.jpg alt="Cocktail Login">
             </div>
         </div>
         <div class="separatorElement"></div>
         <DualImageBanner toYoutube="false" textButton="Guarda i video"
                          text="Cosa ne pensi delle ultime uscite?Ascolta cosa pensiamo noi e dicci la tua!"
                          linkImage1="fumetteria1.0.jpg" linkImage2="digimon.jpg" title="La fumetteria"
-                         linkImage1Alt="fumetteria1.1.jpg"  linkImage2Alt="digimon1.1.jpg"
+                         linkImage1Alt="fumetteria1.1.jpg"  linkImage1Desc="Foto Fumetteria Login" linkImage2Desc="Foto Digimon Login" linkImage2Alt="digimon1.1.jpg"
                          redirect="/Eventi"></DualImageBanner>
         <div class="SalaLanMain">
             <div class="textRistoroSala row mx-0">
                 <div>
-                    SALA LAN -TORNEI EVENTI <br/>
-                    E TANTO ALTRO...
+                    <h1>
+                        SALA LAN -TORNEI EVENTI <br/>
+                        E TANTO ALTRO...
+                    </h1>
                     <p>
                         Giochi con un pc o con una console?Qui al Login Abbiamo pensato
                         proprio a tutti !
@@ -78,21 +83,29 @@
                 <div class="col-md-6 justify-center">
                     <div class="rightTextRistoro">
                         <div class="TextTitleSalaLan">
-                            Postazioni Gaming
+                            <h1>
+                                Postazioni Gaming
+                            </h1>
                             <p>
                                 Uniscici con i tuoi amici, abbiamo più di 20 postazioni gaming
                             </p>
                         </div>
                         <div class="TextTitleSalaLan">
-                            Tornei
+                            <h1>
+                                Tornei
+                            </h1>
                             <p>Sfida I tuoi avversari e scala tutte le classifiche</p>
                         </div>
                         <div class="TextTitleSalaLan">
-                            Partite Locali
+                            <h1>
+                                Partite Locali
+                            </h1>
                             <p>Gioca con di tuoi amici con Pc o con Console</p>
                         </div>
                         <div class="TextTitleSalaLan">
-                            Sala Streaming
+                            <h1>
+                                Sala Streaming
+                            </h1>
                             <p>Sei uno streamer? Abbiamo una postazione apposta per te</p>
                         </div>
                     </div>
@@ -101,7 +114,9 @@
         </div>
         <div class="instagramMain">
             <div class="textInstagram">
-                #LOGIN_IN_GAMING
+                <h1>
+                    #LOGIN_IN_GAMING
+                </h1>
                 <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
             </div>
             <div class="containerInstagram">
@@ -129,6 +144,15 @@
     export default {
         name: "HelloWorld",
         components: {FooterElement, DualImageBanner},
+        metaInfo: {
+            title: 'Home Page LoginGaming',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'description', content: 'Home Page LoginGaming Pagina dedicata al pub di Roma' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { name:'keyword',content:'HomePage LoginGaming'}
+            ]
+        },
         methods: {
             greet: function (value) {
                 router.push(value);
@@ -167,7 +191,7 @@
             dynamicContentHtml: "",
             i: 0,
             video: {
-                src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ALFRBMClBwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                src: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_0cSvQeHL6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             },
         }),
     };
