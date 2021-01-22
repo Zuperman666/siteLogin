@@ -1,4 +1,5 @@
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const CompressionPlugin = require("compression-webpack-plugin");
 const paths = [
     {
         path: '/',
@@ -11,6 +12,7 @@ const paths = [
 module.exports = {
     configureWebpack: {
         plugins: [
+            new CompressionPlugin(),
             new SitemapPlugin({
                 base:'https://logingaming.com',
                 paths,

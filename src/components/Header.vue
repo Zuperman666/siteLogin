@@ -21,14 +21,14 @@
                         :class="currentPath === '/Fumetteria' ? 'active' : ''"
                         v-on:click="greet('/Fumetteria')"
                 >
-                   <h2>Fumetteria</h2>
+                    <h2>Fumetteria</h2>
                 </div>
                 <div
                         class="Team"
                         :class="currentPath === '/Team' ? 'active' : ''"
                         v-on:click="isActiveTeam = !isActiveTeam"
                 >
-                  <h2>Team</h2>
+                    <h2>Team</h2>
                 </div>
                 <div v-if="isActiveTeam" class="subHeaderTeam">
                     <div
@@ -36,14 +36,14 @@
                             :class="currentPath === '/Team/Digimon' ? 'active' : ''"
                             v-on:click="greet('/Team/Digimon')"
                     >
-                       <h2>Digimon</h2>
+                        <h2>Digimon</h2>
                     </div>
                     <div
                             class="Fifa"
                             :class="currentPath === '/Team/Fifa' ? 'active' : ''"
                             v-on:click="greet('/Team/Fifa')"
                     >
-                       <h2>Fifa</h2>
+                        <h2>Fifa</h2>
                     </div>
                     <div
                             class="AssettoCorsa"
@@ -72,14 +72,14 @@
                         :class="currentPath === '/Contattaci' ? 'active' : ''"
                         v-on:click="greet('/Contattaci')"
                 >
-                   <h2>Contattaci</h2>
+                    <h2>Contattaci</h2>
                 </div>
                 <div
                         class="Eventi"
                         :class="currentPath === '/Eventi' ? 'active' : ''"
                         v-on:click="greet('/Eventi')"
                 >
-                   <h2>Eventi</h2>
+                    <h2>Eventi</h2>
                 </div>
             </div>
             <div class="hamburgerMenù">
@@ -100,6 +100,12 @@
             <div class="MainHeader" :class="isScrolled ? 'scrolled' : ''">
                 <span class="IconHome" v-on:click="greet('/')"></span>
                 <div class="navHeader">
+                    <div class="led" onclick="window.open(
+  'https://www.twitch.tv/log_in_gaming',
+  '_blank' // <- This is what makes it open in a new window.
+);">
+                        <img src="../assets/gif live.gif"/>
+                    </div>
                     <div
                             class="Hamburgeria"
                             :class="currentPath === '/Hamburgeria' ? 'active' : ''"
@@ -170,7 +176,7 @@
                             :class="currentPath === '/Cocktails' ? 'active' : ''"
                             v-on:click="greet('/Cocktails')"
                     >
-                       <h2>Cocktails</h2>
+                        <h2>Cocktails</h2>
                     </div>
                     <div
                             class="SalaLan"
@@ -274,6 +280,16 @@
     };
 </script>
 <style lang="scss" scoped>
+    .led {
+        width: 100px;
+        height: 100px;
+
+        img {
+            width: 120px;
+            height: 100px;
+        }
+    }
+
     .colorlessAssettoCorsa {
         width: 40%;
         height: 40%;
@@ -335,13 +351,16 @@
     .display-none {
         display: none;
     }
-    .subHeaderTeam{
+
+    .subHeaderTeam {
         margin-top: 10px;
         margin-left: 50px;
-        :nth-child(1){
+
+        :nth-child(1) {
             margin-top: 0 !important;
         }
     }
+
     .box {
         position: absolute;
         width: 400px;
@@ -394,6 +413,10 @@
         padding: 0 30px;
         transition: width 4s ease-out 2s;
 
+        h2 {
+            font-size: 18px;
+        }
+
         span {
             position: absolute;
             left: 30px;
@@ -425,6 +448,11 @@
         div {
             margin-right: 3.5%;
             cursor: pointer;
+            align-self: center
+        }
+
+        button {
+            align-self: center
         }
 
         .bottoneTestoMain {

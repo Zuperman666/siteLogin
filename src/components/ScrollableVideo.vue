@@ -39,11 +39,10 @@
             scrollPlay() {
                 let vid = document.getElementById('myVideo');
                 let setHeight = document.getElementById("scatola");
-                if(vid.duration) {
+                if(vid && vid.duration) {
                     const distanceFromTop = window.scrollY + setHeight.getBoundingClientRect().top;
                     const rawPercentScrolled = (window.scrollY - distanceFromTop) / (setHeight.scrollHeight - window.innerHeight);
                     const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
-                    console.log(percentScrolled)
                     vid.currentTime = vid.duration * Math.abs(percentScrolled -1) ;
                 }
                 requestAnimationFrame(this.scrollPlay);
