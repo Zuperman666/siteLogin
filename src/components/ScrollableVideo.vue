@@ -2,7 +2,7 @@
     <Observer @on-change="onChange">
         <div id="scatola" class="scatola">
             <video id="myVideo" class="myVideo">
-                <source src="../assets/video/alessio.mp4" type="video/mp4"/>
+                <source src="../assets/Player/CocktailsVideo.mp4" type="video/mp4"/>
             </video>
         </div>
     </Observer>
@@ -15,7 +15,7 @@
             return {
                 frameNumber: 0, // start video at frame 0
                 // lower numbers = faster playback
-                playbackConst: 1000,
+                playbackConst: 500,
                 // get page height from video duration
 
                 // select video element
@@ -28,6 +28,9 @@
             let setHeight = document.getElementById("scatola");
             vid.addEventListener('loadedmetadata', function () {
                 setHeight.style.height = Math.floor(vid.duration) * this.playbackConst + "px";
+            });
+            window.addEventListener('scroll', function () {
+                this.scrollPlay
             });
             window.requestAnimationFrame(this.scrollPlay);
 

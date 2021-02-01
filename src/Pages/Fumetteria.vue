@@ -134,7 +134,13 @@
     .displayNoneVid {
         display: block;
     }
-
+    .ImageUnderHeaderHamburger {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url("../assets/copertinaChiSiamo.jpg");
+    }
     .containerFum {
         display: flex;
         flex-flow: row;

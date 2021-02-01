@@ -10,7 +10,7 @@
         </button>
       </div>
     </div>
-    <div class="d-md-inline-flex">
+    <div class="d-md-inline-flex w-100">
       <div class="col-12 col-md-6">
         <iframe
           poster="https://images-na.ssl-images-amazon.com/images/I/81eNGmjkfsL._AC_SL1500_.jpg"
@@ -60,12 +60,6 @@
           </label>
         </div>
       </div>
-    </div>
-    <div class="textFoodBanner">
-      <div class="textFoodContainer">
-        <p>sdajsnmdasd</p>
-      </div>
-      <button v-on:click="modal" class="bottoneTestoMain">Prenota Ora</button>
     </div>
     <modal v-if="showModal" />
     <FooterElement></FooterElement>
@@ -196,7 +190,17 @@ $carousel-dimension: 12;
   background-image: url(https://image.freepik.com/vettori-gratuito/lavagna-menu-hamburger_62951-60.jpg);
   background-size: cover;
 }
+.textRistoro {
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  justify-content: center;
 
+  p {
+    font-size: 15px;
+    color: gray;
+  }
+}
 .DivPadre .v-application--wrap {
   min-height: 0 !important;
 }
@@ -210,7 +214,7 @@ $carousel-dimension: 12;
   background-size: cover;
   height: 100%;
   width: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .v-image__image {
@@ -258,7 +262,7 @@ $carousel-dimension: 12;
 }
 
 .Ristoro2 {
-  height: 810px;
+  height: 720px;
   width: 100%;
 }
 

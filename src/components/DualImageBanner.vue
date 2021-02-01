@@ -107,6 +107,8 @@
 
     .background {
         background: white;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     @keyframes fadeIn {

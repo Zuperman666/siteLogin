@@ -14,57 +14,72 @@
                         <GoogleMap/>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <form>
-                            <div class="row form-group">
-                                <div class="col">
-                                    <label for="name">Nome</label>
-                                    <input
-                                            id="name"
-                                            type="text"
-                                            class="form-control"
-                                            v-model="dataSave.nome"
-                                    />
+                        <form action="https://api.elasticemail.com/contact/add?version=2" data-id="togWPeyyVt" method="post" id="ewf_subscriptionForm_togWPeyyVt" class="EWF__form Inline">
+                            <div class="headers" style="">
+                                <h4 id="ewf_formheader" class="EWF__header" style="">Contattaci
+                                </h4>
+                                <p id="ewf_formdesc" style="">
+                                </p>
+                            </div>
+                            <fieldset style="border:none;" class="webform-custominputs">
+                                <div class="inputs">
+                                    <div>
+                                        <label for="email" class="requiredInput">Email
+                                        </label>
+                                        <input maxlength="60" class="form-control webform__form-control" name="email" size="20" type="email" required="" placeholder="Inserisci la tua email">
+                                    </div>
+                                    <div>
+                                        <label for="field_lastname">Nome
+                                        </label>
+                                        <input maxlength="60" class="form-control webform__form-control" name="field_lastname" size="20" type="text" false="" placeholder="Inserisci il tuo nome">
+                                    </div>
+                                    <div>
+                                        <label for="field_firstname">Cognome
+                                        </label>
+                                        <input maxlength="60" class="form-control" name="field_firstname" size="20" type="text" placeholder="Inserisci il tuo cognome">
+                                    </div>
+                                    <div class="requiredInput">
+                                        <label for="field_motivazione">Motivazione
+                                        </label>
+                                        <input maxlength="60" class="form-control" name="field_motivazione" size="20" type="text" placeholder="" required="">
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <label for="lastName">Cognome</label>
-                                    <input
-                                            id="lastName"
-                                            type="text"
-                                            class="form-control"
-                                            v-model="dataSave.cognome"
-                                    />
+                                <div class="checkboxes">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail">Email</label>
-                                <input
-                                        type="email"
-                                        class="form-control"
-                                        id="exampleInputEmail"
-                                        v-model="dataSave.email"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="topicSelect">Topic</label>
-                                <select id="topicSelect" class="form-control">
-                                    <option>topic 1</option>
-                                    <option>topic 2</option>
-                                </select>
-                            </div>
-                            <div class="form-group form-check d-flex">
-                                <label class="form-check-label" for="exampleCheck"
-                                >Data Processing</label
-                                >
-                                <input
-                                        type="checkbox"
-                                        class="form-check-input"
-                                        id="exampleCheck"
-                                        v-model="dataSave.check"
-                                />
-                            </div>
-                            <button class="btn btn-primary" v-on:click="sendData()">
-                                Invia
-                            </button>
+                                <div class="webform-lists" style="display: none;">
+                                    <div style="display:flex;" class="checkboxes js-Persone">
+                                        <label class="container-box">
+                                            <input type="checkbox" name="publiclistid" id="zUkSZMzm" value="3604e3a5-e40d-458c-94a5-f2b9fe4081ac" checked="checked">
+                                        </label>
+                                        <label class="publiclistlabel" for="zUkSZMzm">Persone
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="consent">
+                                    <div class="consentcontainer">
+                                    </div>
+                                </div>
+                                <p id="ewf_datadisclaimer">We use Elastic Email as our marketing automation service. By submitting this form, you agree that the information you provide will be transferred to Elastic Email for processing in accordance with their
+                                    <a href="https://elasticemail.com/resources/usage-policies/terms-of-use/" target="_blank">Terms of Use</a> and
+                                    <a href="https://elasticemail.com/resources/usage-policies/privacy-policy/" target="_blank">Privacy Policy</a>.
+                                </p>
+                            </fieldset>
+                            <fieldset class="webform-options style-updated" style="border:none;">
+                                <div id="trackconsentscript">
+                                </div>
+                                <input type="submit" name="submit" value="Invia" id="eesubmit" class="EWF__subscribe">
+                                <input type="hidden" name="publicaccountid" value="189050db-a241-4d15-bff5-f603db2c7208">
+                                <input type="hidden" name="returnUrl" value="">
+                                <input type="hidden" name="activationReturnUrl" value="">
+                                <input type="hidden" name="alreadyactiveurl" value="">
+                                <input type="hidden" name="activationTemplate" value="">
+                                <input type="hidden" name="source" value="WebForm">
+                                <input type="hidden" name="verifyemail" value="false" id="ewf_verifyEmails">
+                                <input type="hidden" id="ewf_captcha" name="captcha" value="false">
+                                <input type="hidden" name="notifyEmail" value="">
+                                <button type="button" name="dismissForm" id="ewf_dismissForm" style="display:none; position: absolute; top: 0; right: 0; float: right">X
+                                </button>
+                            </fieldset>
                         </form>
                     </div>
                 </div>

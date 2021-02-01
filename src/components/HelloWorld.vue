@@ -4,7 +4,7 @@
             <HeaderContainer/>
             <div class="centerTextMain">
                 <h1>
-                    Nel mondo di Login tutto può succedere
+                    NEL MONDO DI LOGIN TUTTO PUÒ SUCCEDERE
                 </h1>
                 <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
                     Vieni a scoprirlo
@@ -27,7 +27,7 @@
                             <br/>Permette sessioni di guida online e offline
                         </p>
                     </div>
-                    <button v-on:click="greet('/Contattaci')" class="bottoneTestoMain">
+                    <button v-on:click="greet('/Contattaci')" class="bottoneTestoMainBlack">
                         Per info
                     </button>
                 </div>
@@ -51,10 +51,12 @@
             <div class="col-md-6 col-sm-12">
                 <p>Cibo</p>
                 <img class="imgThree" src=../assets/hamburgerHome.jpg alt="Hamburger Login">
+                <h1>Testo sotto foto cibo</h1>
             </div>
             <div class="col-md-6 col-sm-12">
                 <p>Cocktails</p>
                 <img class="imgThree" src=../assets/cocktailHome.jpg alt="Cocktail Login">
+                <h1>Testo sotto foto cocktails</h1>
             </div>
         </div>
         <div class="separatorElement"></div>
@@ -285,6 +287,9 @@
         min-width: 100%;
         transform: translate(0, -50%);
 
+        h1{
+            letter-spacing: 4px;
+        }
         p {
             font-size: 25px;
             margin-top: 30px;
@@ -309,17 +314,26 @@
 
     .fotoLeftImageMain {
         background-image: url("../assets/logincarosello.jpg");
-        height: 300px;
-        width: 400px;
-        margin: auto;
+        height: 100%;
         margin-top: 20px;
         background-size: contain;
+        width: auto;
+        margin-left: 70px;
     }
 
     .Ristoro {
-        padding: 50px 0;
+        padding: 50px 0 30px 0;
         display: flex;
         flex-flow: nowrap;
+        p {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 10px;
+        }
+        h1{
+            margin-top: 20px;
+        }
     }
 
     .leftSim {
@@ -356,7 +370,7 @@
         height: 100%;
         width: 50%;
         display: flex;
-        background-image: url("../assets/simrig2.jpg");
+        background-image: url("../assets/simrig2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -371,11 +385,26 @@
     .bottoneTestoMain {
         background: transparent;
         border: 1px solid white;
-        height: 50px;
+        height: 60px;
         width: auto;
-        padding: 0 10px;
+        padding: 0 30px;
         font-size: 20px;
         outline: none;
+        margin-top: 35px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .bottoneTestoMainBlack {
+        background: transparent;
+        border: 1px solid black;
+        height: 60px;
+        width: auto;
+        padding: 0 30px;
+        font-size: 20px;
+        outline: none;
+        margin-top: 35px;
 
         &:hover {
             text-decoration: underline;
@@ -401,11 +430,11 @@
 
     .sim {
         width: 100%;
-        background: #dadada;
+        background: white;
         flex-wrap: nowrap;
         display: flex;
         position: relative;
-        padding: 20px 40px;
+        padding: 100px 40px;
     }
 
     .card-wrap {
@@ -581,7 +610,7 @@
         .rightSim {
             height: 50%;
             width: 100%;
-            background-image: url("../assets/simrig2.jpg");
+            background-image: url("../assets/simrig2.png");
             background-repeat: no-repeat;
             background-position: center;
             height: 30vh;
@@ -609,6 +638,7 @@
             margin-left: 0%;
             width: 100%;
             background-size: 100% 100%;
+            height: 400px;
         }
 
         .textRistoroSala {

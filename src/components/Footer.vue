@@ -32,6 +32,7 @@
         <a class="link" v-on:click="greet('/Terms')">Terms</a>
         <a class="link" v-on:click="greet('/Cookies')">Cookies</a>
         <a class="link" v-on:click="greet('/ChiSiamo')">Chi Siamo</a>
+        <a class="link" v-on:click="greet('/Contattaci')">Contatti</a>
       </div>
     </div>
   </div>

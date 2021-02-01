@@ -100,18 +100,27 @@
             <div class="MainHeader" :class="isScrolled ? 'scrolled' : ''">
                 <span class="IconHome" v-on:click="greet('/')"></span>
                 <div class="navHeader">
-                    <div class="led" onclick="window.open(
-  'https://www.twitch.tv/log_in_gaming',
-  '_blank' // <- This is what makes it open in a new window.
-);">
-                        <img src="../assets/gif live.gif"/>
-                    </div>
+
                     <div
                             class="Hamburgeria"
                             :class="currentPath === '/Hamburgeria' ? 'active' : ''"
                             v-on:click="greet('/Hamburgeria')"
                     >
                         <h2>Hamburgeria</h2>
+                    </div>
+                    <div
+                            class="Cocktails"
+                            :class="currentPath === '/Cocktails' ? 'active' : ''"
+                            v-on:click="greet('/Cocktails')"
+                    >
+                        <h2>Cocktails</h2>
+                    </div>
+                    <div
+                            class="Fumetteria"
+                            :class="currentPath === '/Fumetteria' ? 'active' : ''"
+                            v-on:click="greet('/Fumetteria')"
+                    >
+                        <h2>Fumetteria</h2>
                     </div>
                     <div
                             class="Team"
@@ -163,34 +172,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <div
-                            class="Fumetteria"
-                            :class="currentPath === '/Fumetteria' ? 'active' : ''"
-                            v-on:click="greet('/Fumetteria')"
-                    >
-                        <h2>Fumetteria</h2>
-                    </div>
-                    <div
-                            class="Cocktails"
-                            :class="currentPath === '/Cocktails' ? 'active' : ''"
-                            v-on:click="greet('/Cocktails')"
-                    >
-                        <h2>Cocktails</h2>
-                    </div>
                     <div
                             class="SalaLan"
                             :class="currentPath === '/SalaLan' ? 'active' : ''"
                             v-on:click="greet('/SalaLan')"
                     >
-                        <h2>SalaLan</h2>
-                    </div>
-                    <div
-                            class="Contatti"
-                            :class="currentPath === '/Contattaci' ? 'active' : ''"
-                            v-on:click="greet('/Contattaci')"
-                    >
-                        <h2>Contattaci</h2>
+                        <h2>Sala Lan</h2>
                     </div>
                     <div
                             class="Eventi"
@@ -199,9 +186,15 @@
                     >
                         <h2>Eventi</h2>
                     </div>
-                    <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMain">
+                    <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMainHeader">
                         <h2>Prenota Pc</h2>
                     </button>
+                    <div class="led" onclick="window.open(
+  'https://www.twitch.tv/log_in_gaming',
+  '_blank'
+);">
+                        <img src="../assets/gif live.gif"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -214,6 +207,7 @@
 </template>
 <script>
     import {router} from "../main.js";
+    import axios from "axios";
 
     export default {
         name: "HeaderContainer",
@@ -234,7 +228,9 @@
                 hasColorDigimon: false,
             };
         },
-
+        mounted: function () {
+            this.twitch()
+        },
         methods: {
             greet: function (value) {
                 if (value === this.currentPath) {
@@ -242,6 +238,15 @@
                 } else {
                     router.push(value);
                 }
+            },
+            twitch: async function () {
+                const response = await axios.get("https://api.twitch.tv/helix/search/channels?query=log_in_gaming", {
+                    headers: {
+                        'client-id': 'n43a8qbk9j2sdbqi63svnx9al2zc6s',
+                        'Authorization': 'Bearer 2gbdx6oar67tqtcmt49t3wpcgycthx'
+                    }
+                });
+                console.log(response)
             },
             scrollTop: function () {
                 document.body.scrollTop = 0;
@@ -360,7 +365,19 @@
             margin-top: 0 !important;
         }
     }
+    .bottoneTestoMainHeader {
+        background: transparent;
+        border: 1px solid white;
+        height: 50px;
+        width: auto;
+        padding: 0 10px;
+        font-size: 20px;
+        outline: none;
 
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     .box {
         position: absolute;
         width: 400px;
