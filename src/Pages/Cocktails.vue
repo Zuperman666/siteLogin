@@ -16,17 +16,17 @@
    <CardwithLaterText text="ciao mamma" title="Dr.Manatthan" img="drman.jpg" direction="left" alt="Dr.Manatthan cocktail"/>
    <CardwithLaterText text="ciao mamma" title="Hulk Spacca" img="hulk.jpg" direction="right" alt="Hulk Spacca cocktail"/>
    <CardwithLaterText text="ciao mamma" title="Kurama" img="kurama.jpg" direction="left" alt="Kurama cocktail"/>
-   <scrollableVideo />
+   <VideoCocktails/>
    <FooterElement/>
    </div>
 </template>
 <script>
 import FooterElement from '../components/Footer.vue'
 import CardwithLaterText from "../components/CardwithLaterText";
-import scrollableVideo from "../components/ScrollableVideo";
+import VideoCocktails from "../components/videoCocktails"
 export default {
    name: 'Cocktails',  
-   components:{CardwithLaterText, FooterElement,scrollableVideo},
+   components:{CardwithLaterText, FooterElement,VideoCocktails},
    metaInfo: {
       title: 'Cooktails LoginGaming',
       meta: [
@@ -40,6 +40,11 @@ export default {
    }
 }
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+.ImageUnderHeaderHamburger {
+   background-size: cover;
+   height: 100%;
+   width: 100%;
+   min-height: 100vh;
+}
 </style>

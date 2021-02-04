@@ -122,7 +122,13 @@
     };
 </script>
 <style lang="scss" scoped>
-
+    .ImageUnderHeaderHamburger {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url("../assets/copertinaChiSiamo.jpg");
+    }
     @mixin responsive() {
         @media only screen and (max-width: 767px) {
             @content;

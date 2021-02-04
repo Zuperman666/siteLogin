@@ -95,7 +95,9 @@
                 </div>
             </div>
             <div class="iconLogo" :class="[iconLogo ? 'activeIcon' : '']">
-                <div class="logo"></div>
+                <div class="logo" v-on:click="greet('/')">
+
+                </div>
             </div>
             <div class="MainHeader" :class="isScrolled ? 'scrolled' : ''">
                 <span class="IconHome" v-on:click="greet('/')"></span>
@@ -189,7 +191,7 @@
                     <button v-on:click="greet('/PrenotaPC')" class="bottoneTestoMainHeader">
                         <h2>Prenota Pc</h2>
                     </button>
-                    <div class="led" onclick="window.open(
+                    <div v-if="isLiveCheck" class="led" onclick="window.open(
   'https://www.twitch.tv/log_in_gaming',
   '_blank'
 );">
@@ -216,6 +218,7 @@
                 isActiveTeam: false,
                 currentPath: this.$route.path,
                 isOpen: false,
+                isLiveCheck:false,
                 isScrolled: false,
                 startAnimation: false,
                 closeAnimation: false,
@@ -228,8 +231,8 @@
                 hasColorDigimon: false,
             };
         },
-        mounted: function () {
-            this.twitch()
+        mounted() {
+            this.twitch();
         },
         methods: {
             greet: function (value) {
@@ -240,13 +243,20 @@
                 }
             },
             twitch: async function () {
+                let self = this;
                 const response = await axios.get("https://api.twitch.tv/helix/search/channels?query=log_in_gaming", {
                     headers: {
-                        'client-id': 'n43a8qbk9j2sdbqi63svnx9al2zc6s',
-                        'Authorization': 'Bearer 2gbdx6oar67tqtcmt49t3wpcgycthx'
+                        'Client-ID': 'n43a8qbk9j2sdbqi63svnx9al2zc6s',
+                        'Authorization': 'Bearer siek6i52gik8w84z555wr87qtb4p6r'
                     }
                 });
-                console.log(response)
+                let isLive =false;
+                for(let i=0;i < response.data.data.length; i ++){
+                    if(response.data.data[i].is_live){
+                        isLive = true
+                    }
+                }
+                self.isLiveCheck = isLive
             },
             scrollTop: function () {
                 document.body.scrollTop = 0;
@@ -692,7 +702,7 @@
             width: 70px;
             height: 40px;
             background-size: contain;
-            cursor: not-allowed;
+            cursor: pointer;
         }
         .HeaderContainer {
             background-color: rgba(27, 25, 25, 0.8);

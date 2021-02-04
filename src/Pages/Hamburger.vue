@@ -25,7 +25,7 @@
         <img class="imgThree" src=../assets/drman.jpg>
       </div>
     </div>
-    <div class="d-md-inline-flex">
+    <div class="d-md-inline-flex w-100">
       <div class="col-12 col-md-6">
         <img class="imgThree" src=../assets/spritz.jpg>
       </div>

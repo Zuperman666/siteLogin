@@ -26,6 +26,7 @@ const Fifa = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/Fifa
 const DragonBall = () => import(/* webpackChunkName: "group-team" */'./Pages/Team/DragonBall')
 const ChiSiamo = () => import(/* webpackChunkName: "group-foo" */'./Pages/ChiSiamo')
 const PrenotaPc = () => import(/* webpackChunkName: "group-foo" */'./Pages/PrenotaPc')
+const Privacy = () => import(/* webpackChunkName: "group-foo" */'./Pages/Privacy')
 
 
 Vue.use(VueInstagram)
@@ -71,8 +72,8 @@ export const router = new VueRouter({
         {path: '/ChiSiamo',name:"ChiSiamo",component: ChiSiamo},
         { path: '*', name: 'notFound', component: landingPagesNotFounf},
 
-        /* {path: '/Privacy',name:"Privacy",component: Privacy},
-         {path: '/Imprint',name:"Imprint",component: Imprint},
+         {path: '/Privacy',name:"Privacy",component: Privacy},
+        /* {path: '/Imprint',name:"Imprint",component: Imprint},
          {path: '/Terms',name:"Terms",component: Terms},
          {path: '/Cookies',name:"Cookies",component: Cookies},*/
     ]

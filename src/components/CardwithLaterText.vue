@@ -55,7 +55,7 @@
     import Observer from 'vue-intersection-observer';
     export default {
         name: 'CardwithLaterText',
-        props: ["title", "text", "img", "direction","alt"],
+        props: ["title", "text", "img", "direction","alt","background"],
         data: function () {
             return {
                 isVisible: false,
@@ -130,7 +130,7 @@
     .textLeft {
         position: absolute;
         padding: 30px;
-        background: grey;
+        background: url("../assets/dr.manhattanBackground.jpg");
         z-index: 9;
         top: 40%;
         min-width: 500px;

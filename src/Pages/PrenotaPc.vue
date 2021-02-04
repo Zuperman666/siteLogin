@@ -132,7 +132,6 @@ export default {
       let uri = window.location.search.substring(1);
       let params = new URLSearchParams(uri);
       if (params.get("typePc")) {
-        console.log(params.get("typePc"));
         return params.get("typePc");
       } else {
         return "Pc";

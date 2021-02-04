@@ -152,7 +152,7 @@
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Home Page LoginGaming Pagina dedicata al pub di Roma' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                { name:'keyword',content:'HomePage LoginGaming'}
+                { name:'keyword',content:'2021, Hamburger, Panini, LOGIN ESPORTS, LOGIN GAMING ESPORTS, SIM RACING, SQUADRE, TEAMS, SIMULATORI DI GUIDA, COMICS, MANGA, FUMETTERIA, ASSETTO CORSA, ASSETTO CORSA COMPETIZIONE, EVENTI, PARTNERS, GUARDS, SQUALO, SHARK, AUTO DA CORSA, CONTATTI, ESPORTS ACADEMY, TORNEI, PROGETTO, PROJECT, GIOCHI DI CARTE, CARD GAME, ULTIMI VOLUMI, ULTIMI CAPITOLI, SALA LAN, ESPORTS BAR, ESPORTS PUB, GAMING AREA, SOCIAL NETWORK, SOCIAL, COCKTAILS, COCKTAIL'}
             ]
         },
         methods: {
@@ -180,7 +180,7 @@
             const a = async () => {
                 // fetch data from a url endpoint    ?access_token=...&count=250
                 const response = await axios.get(
-                    " https://www.instagram.com/log_in_gaming/?__a=1"
+                    " https://www.instagram.com/log_in_gaming/?_a=1"
                 );
                 return response;
             };
@@ -253,7 +253,7 @@
         p {
             margin-top: 10px;
             color: grey;
-            font-size: 12px;
+            font-size: 14px;
         }
     }
 
@@ -325,6 +325,9 @@
         padding: 50px 0 30px 0;
         display: flex;
         flex-flow: nowrap;
+        img {
+            width: 100%;
+        }
         p {
             color: white;
             font-size: 30px;

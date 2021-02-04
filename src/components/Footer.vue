@@ -121,7 +121,7 @@ export default {
   top: 21px;
 }
 .linkTermAndCond {
-  font-size: 12px;
+  font-size: 14px;
   position: absolute;
   right: 100px;
   top: 20px;
