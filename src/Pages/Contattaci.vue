@@ -101,7 +101,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata alla pagina del contattaci del LoginGaming' },
-                { name:'keyword',content:'Page Not Found LoginGaming'}
+                { name:'keywords',content:'Page Not Found LoginGaming'}
             ]
         },
         mounted: function () {

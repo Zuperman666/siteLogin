@@ -38,7 +38,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina che racconta alcune vicende di come è nato il LoginGaming' },
-                { name:'keyword',content:'Chi Siamo LoginGaming'}
+                { name:'keywords',content:'Chi Siamo LoginGaming'}
             ]
         },
         components: {FooterElement},

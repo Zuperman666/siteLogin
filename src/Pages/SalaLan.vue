@@ -27,7 +27,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata alla sala lan del LoginGaming' },
-                { name:'keyword',content:'SalaLan LoginGaming'}
+                { name:'keywords',content:'SalaLan LoginGaming'}
             ]
         },
         mounted: function () {

@@ -14,7 +14,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata al team di Assetto Corsa del Login Gaming' },
-                { name:'keyword',content:'Assetto Corsa LoginGaming Team'}
+                { name:'keywords',content:'Assetto Corsa LoginGaming Team'}
             ]
         },
         mounted: function () {

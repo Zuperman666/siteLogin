@@ -110,7 +110,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'description', content: 'Pagina dedicata alla prenotazione dei pc del LoginGaming' },
-      { name:'keyword',content:'PrenotaPc LoginGaming'}
+      { name:'keywords',content:'PrenotaPc LoginGaming'}
     ]
   },
   data() {

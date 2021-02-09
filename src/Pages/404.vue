@@ -13,7 +13,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina per la gestione degli errori di pagina non trovata del LoginGaming' },
-                { name:'keyword',content:'Page Not Found LoginGaming'}
+                { name:'keywords',content:'Page Not Found LoginGaming'}
             ]
         },
         mounted: function () {

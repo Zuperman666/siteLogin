@@ -65,7 +65,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata alla fumetteria del LoginGaming' },
-                { name:'keyword',content:'Fumetteria LoginGaming'}
+                { name:'keywords',content:'Fumetteria LoginGaming'}
             ]
         },
         data() {

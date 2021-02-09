@@ -14,7 +14,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata al team di Digimon del Login Gaming' },
-                { name:'keyword',content:'Digimon LoginGaming Team'}
+                { name:'keywords',content:'Digimon LoginGaming Team'}
             ]
         },
         mounted: function () {

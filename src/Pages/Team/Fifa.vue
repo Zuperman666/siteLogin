@@ -17,7 +17,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata al team di Fifa del Login Gaming' },
-                { name:'keyword',content:'Fifa LoginGaming Team'}
+                { name:'keywords',content:'Fifa LoginGaming Team'}
             ]
         },
         data () {

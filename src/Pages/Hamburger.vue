@@ -90,7 +90,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'description', content: 'Pagina Hamburgeria LoginGaming' },
-      { name:'keyword',content:'Hamburgeria LoginGaming'}
+      { name:'keywords',content:'Hamburgeria LoginGaming'}
     ]
   },
   data() {

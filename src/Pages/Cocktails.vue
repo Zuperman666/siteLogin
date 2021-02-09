@@ -32,7 +32,7 @@ export default {
       meta: [
          { charset: 'utf-8' },
          { name: 'description', content: 'Pagina dedicata ai vari cocktails realizzati nel LoginGaming' },
-         { name:'keyword',content:'Cocktails LoginGaming'}
+         { name:'keywords',content:'Cocktails LoginGaming'}
       ]
    },
    mounted: function () {

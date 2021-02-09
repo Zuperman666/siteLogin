@@ -34,6 +34,18 @@
         <a class="link" v-on:click="greet('/ChiSiamo')">Chi Siamo</a>
         <a class="link" v-on:click="greet('/Contattaci')">Contatti</a>
       </div>
+      <div class="linkTermAndCondMob">
+        <div>
+        <a class="link" v-on:click="greet('/Privacy')">Privacy</a>
+        <a class="link" v-on:click="greet('/Imprint')">Imprint</a>
+        <a class="link" v-on:click="greet('/Terms')">Terms</a>
+        <a class="link" v-on:click="greet('/Cookies')">Cookies</a>
+        </div>
+        <div>
+        <a class="link" v-on:click="greet('/ChiSiamo')">Chi Siamo</a>
+        <a class="link" v-on:click="greet('/Contattaci')">Contatti</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -98,6 +110,9 @@ export default {
 };
 </script>
 <style lang="scss">
+  .linkTermAndCondMob{
+    display: none;
+  }
 .footer {
   height: 100px;
   width: 100%;
@@ -115,7 +130,7 @@ export default {
   color: white;
 }
 .copyright {
-  font-size: 10px;
+  font-size: 12px;
   position: absolute;
   left: 100px;
   top: 21px;
@@ -194,7 +209,7 @@ export default {
 }
 @media only screen and (max-width: 800px) {
   .copyright {
-    font-size: 10px;
+    font-size: 12px;
     position: absolute;
     left: 0;
     right: 0;
@@ -202,11 +217,13 @@ export default {
     top: 10px;
   }
   .linkTermAndCond {
-    left: 0;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    top: 25px;
+  display: none;
+  }
+  .linkTermAndCondMob{
+    display: flex;
+    flex-flow: column;
+    padding-top: 45px;
+    padding-bottom: 10px;
   }
 }
 .SponsorDiv {

@@ -14,7 +14,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina dedicata al team di DragonBall del Login Gaming' },
-                { name:'keyword',content:'DragonBall LoginGaming Team'}
+                { name:'keywords',content:'DragonBall LoginGaming Team'}
             ]
         },
         mounted: function () {

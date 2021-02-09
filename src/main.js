@@ -6,11 +6,12 @@ import VueRouter from 'vue-router'
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import vuetify from '@/plugins/vuetify'
 import HeaderContainer from './components/Header.vue'
-import VueInstagram from 'vue-instagram'
 import landingPagesNotFounf from "./Pages/404";
 import VueMeta from 'vue-meta';
-import 'vue-datetime/dist/vue-datetime.css'
 import VueAnalytics from 'vue-analytics';
+import * as VueThreejs from 'vue-threejs' // >= 0.2.0
+
+
 
 import * as VueGoogleMaps from "vue2-google-maps";
 
@@ -27,9 +28,7 @@ const DragonBall = () => import(/* webpackChunkName: "group-team" */'./Pages/Tea
 const ChiSiamo = () => import(/* webpackChunkName: "group-foo" */'./Pages/ChiSiamo')
 const PrenotaPc = () => import(/* webpackChunkName: "group-foo" */'./Pages/PrenotaPc')
 const Privacy = () => import(/* webpackChunkName: "group-foo" */'./Pages/Privacy')
-
-
-Vue.use(VueInstagram)
+Vue.use(VueThreejs)
 Vue.use(VueMeta);
 // Install BootstrapVue
 Vue.use(BootstrapVue)

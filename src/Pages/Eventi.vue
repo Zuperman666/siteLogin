@@ -44,7 +44,7 @@
             meta: [
                 { charset: 'utf-8' },
                 { name: 'description', content: 'Pagina degli eventi del LoginGaming' },
-                { name:'keyword',content:'Eventi LoginGaming'}
+                { name:'keywords',content:'Eventi LoginGaming'}
             ]
         },
         components: {
