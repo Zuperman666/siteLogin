@@ -65,7 +65,7 @@
                         :class="currentPath === '/Cocktails' ? 'active' : ''"
                         v-on:click="greet('/Cocktails')"
                 >
-                    Cocktails
+                    <h2>Cocktails</h2>
                 </div>
                 <div
                         class="Contatti"
@@ -738,9 +738,20 @@
         .MainHeader {
             font-size: 15px;
         }
+        .listContainer :nth-child(1) {
+            margin-top: 30px;
+        }
+        .subHeaderTeam h2 {
+            font-size: 12px!important;
+        }
+        .listContainer.active  h2{
+            font-size: 15px;
+        }
+
     }
 
     @media only screen and (max-width: 960px) {
+
         .MainHeader {
             font-size: 11px;
         }
