@@ -122,15 +122,7 @@
                 <p>Bla,BlaBla ,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla,Bla</p>
             </div>
             <div class="containerInstagram">
-                <div
-                        v-on:click="clickMethod(dynamicContentHtml.node)"
-                        class="fotoInstagram"
-                        v-for="dynamicContentHtml in dynamicContentHtml"
-                        :key="dynamicContentHtml.node.id"
-                        :style="{
-            background: 'url(' + dynamicContentHtml.node.display_url + ')',
-          }"
-                ></div>
+                <div class="elfsight-app-6ac799a2-5437-490e-a8b6-26396bcb78c5"></div>
             </div>
         </div>
         <FooterElement/>
@@ -138,7 +130,6 @@
 </template>
 
 <script>
-    import axios from "axios";
     import {router} from "../main.js";
     import FooterElement from "../components/Footer.vue";
     import DualImageBanner from "../components/DualImageBanner.vue";
@@ -167,27 +158,12 @@
                 if (this.i === 3) return (this.i = 0);
                 return this.i++;
             },
-            clickMethod: function (value) {
-                window.open("https://www.instagram.com/p/" + value.shortcode, "blank");
-            },
-
         },
         mounted: function () {
             window.scrollTo({top: 0, behavior: "smooth"});
             window.setInterval(() => {
                 this.rightArrow();
             }, 6000);
-            const a = async () => {
-                // fetch data from a url endpoint    ?access_token=...&count=250
-                const response = await axios.get(
-                    " https://www.instagram.com/log_in_gaming/?_a=1"
-                );
-                return response;
-            };
-            a().then((value) => {
-                this.dynamicContentHtml =
-                    value.data.graphql.user.edge_owner_to_timeline_media.edges;
-            });
         },
         data: () => ({
             dynamicContentHtml: "",
@@ -201,6 +177,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" >
+    .elfsight-app-6ac799a2-5437-490e-a8b6-26396bcb78c5{
+        > .eapps-link {
+            display: none!important;
+        }
+    }
     $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
     $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 

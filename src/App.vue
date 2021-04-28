@@ -1,14 +1,16 @@
 <template>
 <div id="app">
+    <Cookie></Cookie>
   <router-view>
   </router-view>
    </div>
 </template>
   
 <script>
+import Cookie from "./components/Cookie";
 export default {
   name: 'App',
-  
+    components: {Cookie},
 }
 </script>
 
